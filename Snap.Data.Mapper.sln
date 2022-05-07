@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snap.Data.Mapper", "Snap.Data.Mapper\Snap.Data.Mapper.csproj", "{02015BFE-2189-4490-8145-578B23927CF0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snap.Data.Mapper.Abstraction", "Snap.Data.Mapper.Abstraction\Snap.Data.Mapper.Abstraction.csproj", "{0DA27B2F-CFA9-45A9-BA27-392FB685450C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B0E12747-E63E-4D9C-A3C5-357D72BFC224}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snap.Data.Mapper.Model", "Snap.Data.Mapper.Model\Snap.Data.Mapper.Model.csproj", "{E64E46B0-7E42-4648-B031-EBE2B63794E4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snap.Data.Mapper.Converter", "Snap.Data.Mapper.Converter\Snap.Data.Mapper.Converter.csproj", "{10EC629D-E9FF-4286-885C-BBF69E35D004}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snap.Data.Visualizer", "Snap.Data.Visualizer\Snap.Data.Visualizer.csproj", "{33DAFF02-EE01-4381-A043-6A7F84A2E6F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02015BFE-2189-4490-8145-578B23927CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02015BFE-2189-4490-8145-578B23927CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02015BFE-2189-4490-8145-578B23927CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02015BFE-2189-4490-8145-578B23927CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DA27B2F-CFA9-45A9-BA27-392FB685450C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DA27B2F-CFA9-45A9-BA27-392FB685450C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DA27B2F-CFA9-45A9-BA27-392FB685450C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DA27B2F-CFA9-45A9-BA27-392FB685450C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E64E46B0-7E42-4648-B031-EBE2B63794E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64E46B0-7E42-4648-B031-EBE2B63794E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64E46B0-7E42-4648-B031-EBE2B63794E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64E46B0-7E42-4648-B031-EBE2B63794E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10EC629D-E9FF-4286-885C-BBF69E35D004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10EC629D-E9FF-4286-885C-BBF69E35D004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10EC629D-E9FF-4286-885C-BBF69E35D004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10EC629D-E9FF-4286-885C-BBF69E35D004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33DAFF02-EE01-4381-A043-6A7F84A2E6F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33DAFF02-EE01-4381-A043-6A7F84A2E6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33DAFF02-EE01-4381-A043-6A7F84A2E6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33DAFF02-EE01-4381-A043-6A7F84A2E6F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E385232-8C1C-4BA7-9720-69A5433D7792}
+	EndGlobalSection
+EndGlobal

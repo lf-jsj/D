@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.435">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta3.22114.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Snap.Data.Mapper.Abstraction\Snap.Data.Mapper.Abstraction.csproj" />
+    <ProjectReference Include="..\Snap.Data.Mapper.Model\Snap.Data.Mapper.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Binary\" />
+    <Folder Include="ExcelBinary\Achievement\" />
+  </ItemGroup>
+
+</Project>
