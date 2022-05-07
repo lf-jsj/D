@@ -7,7 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime;
 using System.Runtime.CompilerServices;
 
-namespace Snap.Data.Mapper.Core.Validation;
+namespace Snap.Data.Visualizer.Core.Validation;
 
 /// <summary>
 /// 封装验证方法,简化微软验证

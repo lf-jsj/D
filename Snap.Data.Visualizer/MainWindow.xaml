@@ -4,14 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Snap.Data.Visualizer"
-        xmlns:wu="clr-namespace:WPFUI.Controls;assembly=WPFUI"
-        Style="{StaticResource UiWindow}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <wu:TitleBar
-            Title="Snap Data Visualizer"
-            UseSnapLayout="True"
-            />
-    </Grid>
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:view="clr-namespace:Snap.Data.Visualizer.View"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="Snap Data Visualizer"
+        Height="450"
+        Width="800">
+    <view:MainView/>
 </Window>

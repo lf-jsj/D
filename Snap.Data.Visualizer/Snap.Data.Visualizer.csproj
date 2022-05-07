@@ -5,10 +5,23 @@
     <TargetFramework>net6.0-windows10.0.18362.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="WPF-UI" Version="1.2.6" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Snap.Data.Mapper.Abstraction\Snap.Data.Mapper.Abstraction.csproj" />
+    <ProjectReference Include="..\Snap.Data.Mapper.Converter\Snap.Data.Mapper.Converter.csproj" />
+    <ProjectReference Include="..\Snap.Data.Mapper.Model\Snap.Data.Mapper.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Binary\BinOutput\" />
   </ItemGroup>
 
 </Project>

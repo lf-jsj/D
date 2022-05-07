@@ -3,7 +3,6 @@
 
 namespace Snap.Data.Mapper.Abstraction;
 
-public interface IExcelBinOutput<TOutput>
+public interface IBinOutputHandler : IOutputHandler
 {
-
 }

@@ -11,7 +11,7 @@ public interface ITextMap
     /// <summary>
     /// 获取此映射的语言的字符串表示形式
     /// </summary>
-    string Launguage { get; }
+    string Language { get; }
 
     /// <summary>
     /// 获取此映射的键个数

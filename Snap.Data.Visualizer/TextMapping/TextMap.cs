@@ -2,13 +2,13 @@
 // Licensed under the MIT license.
 
 using Snap.Data.Mapper.Abstraction;
-using Snap.Data.Mapper.Core.Validation;
+using Snap.Data.Visualizer.Core.Validation;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace Snap.Data.Mapper.TextMapping;
+namespace Snap.Data.Visualizer.TextMapping;
 
 /// <summary>
 /// 默认的文本映射实现
@@ -35,7 +35,7 @@ internal class TextMap : ITextMap
     }
 
     /// <inheritdoc/>
-    public string Launguage
+    public string Language
     {
         get => language;
     }
