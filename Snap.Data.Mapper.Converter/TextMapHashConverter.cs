@@ -12,9 +12,9 @@ public class TextMapHashConverter : JsonConverter<TextMapHash>
         this.textMap = textMap;
     }
 
-    public override TextMapHash? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override TextMapHash Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        return new(textMap[reader.GetString()] ?? string.Empty);
+        return new(textMap[reader.GetUInt64().ToString()] ?? string.Empty);
     }
 
     public override void Write(Utf8JsonWriter writer, TextMapHash value, JsonSerializerOptions options)
@@ -22,14 +22,3 @@ public class TextMapHashConverter : JsonConverter<TextMapHash>
         writer.WriteStringValue(value.Value);
     }
 }
-
-public class TextMapHash
-{
-    public TextMapHash(string value)
-    {
-        Value = value;
-    }
-
-    public string Value { get; set; }
-}
-

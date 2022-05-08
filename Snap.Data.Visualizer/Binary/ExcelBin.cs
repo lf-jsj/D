@@ -14,9 +14,18 @@ internal class ExcelBin
 
         return new List<NamedValue<Lazy<IOutputHandler>>>
         {
-            new(
-                "AbilityOverrideExcelConfigData",
-                new(() => new AbilityOverrideExcelConfigDataHandler(targetFolder))),
+            FromType<AbilityOverrideExcelConfigDataHandler>(targetFolder),
+            FromType<AbilityPropExcelConfigDataHandler>(targetFolder),
+            FromType<AbilityStateResistanceByIDExcelConfigDataHandler>(targetFolder),
+            FromType<AchievementExcelConfigDataHandler>(targetFolder),
         };
+    }
+
+    private static NamedValue<Lazy<IOutputHandler>> FromType<T>(string targetFolder)
+        where T : IExcelBinOutputHandler
+    {
+        return new(
+            typeof(T).Name.Replace("Handler", string.Empty),
+            new(() => (T)Activator.CreateInstance(typeof(T),targetFolder)!));
     }
 }

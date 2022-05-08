@@ -10,7 +10,7 @@ public interface IOutputHandler
     /// <summary>
     /// 仅用作实验Parse阶段的可能的枚举值的验证
     /// </summary>
-    IList<KeyValuePair<string, IList<string>>> KeyEnumerations { get; }
+    IList<KeyValuePair<string, List<string>>> KeyEnumerations { get; }
 
     string Output { get; }
 }
