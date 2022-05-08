@@ -3,7 +3,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Snap.Data.Mapper.Converter;
-public class TextMapHashConverter : JsonConverter<TextMapHash>
+public class TextMapHashConverter : JsonConverter<MappedText>
 {
     private readonly ITextMap textMap;
 
@@ -12,12 +12,12 @@ public class TextMapHashConverter : JsonConverter<TextMapHash>
         this.textMap = textMap;
     }
 
-    public override TextMapHash Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override MappedText Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         return new(textMap[reader.GetUInt64().ToString()] ?? string.Empty);
     }
 
-    public override void Write(Utf8JsonWriter writer, TextMapHash value, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter writer, MappedText value, JsonSerializerOptions options)
     {
         writer.WriteStringValue(value.Value);
     }

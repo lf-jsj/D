@@ -1,8 +1,8 @@
 ﻿namespace Snap.Data.Mapper.Converter;
 
-public struct TextMapHash
+public struct MappedText
 {
-    public TextMapHash(string value)
+    public MappedText(string value)
     {
         Value = value;
     }

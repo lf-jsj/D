@@ -65,12 +65,7 @@ internal class MainViewModel : ObservableObject
         set
         {
             SetProperty(ref selectedTextMap, value);
-            JsonContext.Options = new()
-            {
-                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-                PropertyNameCaseInsensitive = true,
-                WriteIndented = true,
-            };
+            JsonContext.Options = JsonContext.CreateDefaultOption();
 
             if (value != null)
             {

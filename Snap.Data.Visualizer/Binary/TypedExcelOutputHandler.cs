@@ -44,14 +44,24 @@ internal abstract class TypedExcelOutputHandler<TElement> : IExcelBinOutputHandl
             PropertyInfo[]? porperties = dataItem.GetType().GetProperties();
             foreach (PropertyInfo property in porperties)
             {
-                string key = $"{modelName}.{property.Name}";
-                TryFindEnumInObject(dataItem, property, key);
+                if (property.PropertyType != typeof(string) && property.PropertyType.IsAssignableTo(typeof(IEnumerable)))
+                {
+                    // explore inner data structure
+                    string baseKey = $"{modelName}.{property!.PropertyType.GetGenericArguments()[0].Name}";
+                    TryFindEnumInEnumerable((IEnumerable)property.GetValue(dataItem)!, baseKey);
+                }
+                else
+                {
+                    string key = $"{modelName}.{property.Name}";
+                    TryFindEnumInObject(dataItem, property, key);
+                }
             }
         }
     }
 
     private void TryFindEnumInObject(object dataItem, PropertyInfo property, string key)
     {
+        //TODO fix reading 2DARRAY
         object? valueRef = property.GetValue(dataItem);
 
         if (property.PropertyType == typeof(string))

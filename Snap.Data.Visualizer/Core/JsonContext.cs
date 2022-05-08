@@ -1,16 +1,23 @@
 ﻿using System.IO;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Snap.Data.Visualizer.Core;
 internal static class JsonContext
 {
-    private static JsonSerializerOptions options = new()
+    private static JsonSerializerOptions options = CreateDefaultOption();
+
+    public static JsonSerializerOptions CreateDefaultOption()
     {
-        DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-        PropertyNameCaseInsensitive = true,
-        WriteIndented = true,
-    };
+        return new()
+        {
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+            PropertyNameCaseInsensitive = true,
+            WriteIndented = true,
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+        };
+    }
 
     public static JsonSerializerOptions Options { get => options; set => options = value; }
 

@@ -1,6 +1,6 @@
-﻿using Snap.Data.Mapper.Model;
+﻿using Snap.Data.Mapper.Model.Achievement;
 
-namespace Snap.Data.Visualizer.Binary.ExcelBinOutput;
+namespace Snap.Data.Visualizer.Binary.ExcelBinOutput.Achievement;
 
 internal class AchievementExcelConfigDataHandler : TypedExcelOutputHandler<AchievementExcelConfigData>
 {

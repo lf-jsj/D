@@ -9,7 +9,7 @@
         xmlns:view="clr-namespace:Snap.Data.Visualizer.View"
         ui:WindowHelper.UseModernWindowStyle="True"
         Title="Snap Data Visualizer"
-        Height="450"
-        Width="800">
+        Height="720"
+        Width="1260">
     <view:MainView/>
 </Window>

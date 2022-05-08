@@ -45,7 +45,8 @@
         <ui:SplitView
             Grid.Row="1"
             IsPaneOpen="True"
-            DisplayMode="Inline">
+            DisplayMode="Inline"
+            OpenPaneLength="360">
             <ui:SplitView.Pane>
                 <ui:ListView
                     ItemsSource="{Binding OutputHandlers}"
@@ -53,55 +54,65 @@
                     DisplayMemberPath="Name"/>
             </ui:SplitView.Pane>
             <ui:SplitView.Content>
-                <ScrollViewer>
-                    <ItemsControl Margin="12"
-                        ItemsSource="{Binding SelectedOutputHandler.Value.Value.KeyEnumerations}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock
-                                        Margin="0,24,0,0"
-                                        Text="{Binding Key}"
-                                        Style="{StaticResource BaseTextBlockStyle}"/>
-                                    <TextBlock
-                                        Margin="0,6,0,0"
-                                        Text="{Binding Value.Count}"
-                                        Style="{StaticResource BaseTextBlockStyle}"/>
-                                    <ItemsControl
-                                        Margin="0,12,0,0"
-                                        ItemsSource="{Binding Value}">
-                                        <ItemsControl.ItemsPanel>
-                                            <ItemsPanelTemplate>
-                                                <UniformGrid Columns="5"/>
-                                            </ItemsPanelTemplate>
-                                        </ItemsControl.ItemsPanel>
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <TextBox
-                                                    Margin="0,0,6,6"
-                                                    Text="{Binding Mode=OneTime}"
-                                                    >
-                                                    <TextBox.Style>
-                                                        <Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{Binding Mode=OneTime}" Value="">
-                                                                    <Setter Property="ui:ControlHelper.PlaceholderText" Value="string.Empty"/>
-                                                                </DataTrigger>
-                                                                <DataTrigger Binding="{Binding Mode=OneTime}" Value="{x:Null}">
-                                                                    <Setter Property="ui:ControlHelper.PlaceholderText" Value="null"/>
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </TextBox.Style>
-                                                </TextBox>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
+                <TabControl>
+                    <TabItem Header="Possible Enum">
+                        <ScrollViewer>
+                            <ItemsControl Margin="12"
+                                ItemsSource="{Binding SelectedOutputHandler.Value.Value.KeyEnumerations}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock
+                                                Margin="0,24,0,0"
+                                                Text="{Binding Key}"
+                                                Style="{StaticResource BaseTextBlockStyle}"/>
+                                            <TextBlock
+                                                Margin="0,6,0,0"
+                                                Text="{Binding Value.Count}"
+                                                Style="{StaticResource BaseTextBlockStyle}"/>
+                                            <ItemsControl
+                                                Margin="0,12,0,0"
+                                                ItemsSource="{Binding Value}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <UniformGrid Columns="5"/>
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <TextBox
+                                                            Margin="0,0,6,6"
+                                                            Text="{Binding Mode=OneTime}"
+                                                            >
+                                                            <TextBox.Style>
+                                                                <Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">
+                                                                    <Style.Triggers>
+                                                                        <DataTrigger Binding="{Binding Mode=OneTime}" Value="">
+                                                                            <Setter Property="ui:ControlHelper.PlaceholderText" Value="string.Empty"/>
+                                                                        </DataTrigger>
+                                                                        <DataTrigger Binding="{Binding Mode=OneTime}" Value="{x:Null}">
+                                                                            <Setter Property="ui:ControlHelper.PlaceholderText" Value="null"/>
+                                                                        </DataTrigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBox.Style>
+                                                        </TextBox>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
+                    </TabItem>
+                    <TabItem Header="Output">
+                        <ScrollViewer>
+                            <TextBlock
+                                Text="{Binding SelectedOutputHandler.Value.Value.Output}"/>
+                        </ScrollViewer>
+                    </TabItem>
+                </TabControl>
             </ui:SplitView.Content>
         </ui:SplitView>
     </Grid>

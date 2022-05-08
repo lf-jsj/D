@@ -1,12 +1,13 @@
-﻿namespace Snap.Data.Mapper.Model;
+﻿namespace Snap.Data.Mapper.Model.Achievement;
 public class TriggerConfig : DataModel
 {
 
     [JsonPropertyName("triggerType")]
-    public string TriggerType { get; set; } = default!;
+    public string TriggerType { get; set; } = string.Empty;
 
     //TODO: trigger converters
     [JsonPropertyName("paramList")]
+    [DataArray(Length = 4)]
     public IList<string> ParamList { get; set; } = default!;
 }
 
@@ -19,13 +20,13 @@ public class AchievementExcelConfigData : DataModel
     public int OrderId { get; set; }
 
     [JsonPropertyName("titleTextMapHash")]
-    public TextMapHash TitleTextMapHash { get; set; }
+    public MappedText TitleTextMapHash { get; set; }
 
     [JsonPropertyName("descTextMapHash")]
-    public TextMapHash DescTextMapHash { get; set; }
+    public MappedText DescTextMapHash { get; set; }
 
     [JsonPropertyName("ps5TitleTextMapHash")]
-    public TextMapHash Ps5TitleTextMapHash { get; set; }
+    public MappedText Ps5TitleTextMapHash { get; set; }
 
     /// <summary>
     /// string.Empty
@@ -34,20 +35,21 @@ public class AchievementExcelConfigData : DataModel
     /// 金
     /// </summary>
     [JsonPropertyName("ttype")]
-    public string Ttype { get; set; } = default!;
+    public string Ttype { get; set; } = string.Empty;
 
     [JsonPropertyName("psTrophyId")]
-    public string PsTrophyId { get; set; } = default!;
+    public string PsTrophyId { get; set; } = string.Empty;
 
     [JsonPropertyName("ps4TrophyId")]
-    public string Ps4TrophyId { get; set; } = default!;
+    public string Ps4TrophyId { get; set; } = string.Empty;
 
     [JsonPropertyName("ps5TrophyId")]
-    public string Ps5TrophyId { get; set; } = default!;
+    public string Ps5TrophyId { get; set; } = string.Empty;
 
     [JsonPropertyName("icon")]
     public string Icon { get; set; } = default!;
 
+    //TODO: link up reward
     [JsonPropertyName("finishRewardId")]
     public int FinishRewardId { get; set; }
 

@@ -1,10 +1,10 @@
-﻿namespace Snap.Data.Mapper.Model;
+﻿namespace Snap.Data.Mapper.Model.Ability;
 
 public class AbilityPropExcelConfigData : DataModel
 {
 
     [JsonPropertyName("propName")]
-    public string PropName { get; set; } = default!;
+    public string PropName { get; set; } = string.Empty;
 
     [JsonPropertyName("overallMin")]
     public double OverallMin { get; set; }

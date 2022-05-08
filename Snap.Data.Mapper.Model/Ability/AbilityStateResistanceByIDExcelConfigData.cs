@@ -1,8 +1,9 @@
-﻿namespace Snap.Data.Mapper.Model;
+﻿namespace Snap.Data.Mapper.Model.Ability;
 
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum AbilityState
 {
+    None = 0,
     ElementFreeze,
     ElementBurning,
     ElementWet,
@@ -17,7 +18,6 @@ public enum AbilityState
     DefenseDown,
     SpeedDown,
     MuteTaunt,
-    None,
     ElementDeadTime,
     ElementRock,
 }
@@ -29,5 +29,6 @@ public class AbilityStateResistanceByIDExcelConfigData : DataModel
     public int Id { get; set; }
 
     [JsonPropertyName("abilityStates")]
+    [DataArray(Length = 10)]
     public IList<AbilityState> AbilityStates { get; set; } = default!;
 }
