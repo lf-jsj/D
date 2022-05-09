@@ -1,9 +1,9 @@
 ﻿using Snap.Data.Mapper.Abstraction;
-using Snap.Data.Visualizer.Binary.ExcelBinOutput.Ability;
-using Snap.Data.Visualizer.Binary.ExcelBinOutput.Achievement;
-using Snap.Data.Visualizer.Binary.ExcelBinOutput.Activity;
-using Snap.Data.Visualizer.Binary.ExcelBinOutput.Activity.ArenaChallenge;
-using Snap.Data.Visualizer.Binary.ExcelBinOutput.Activity.Chess;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Ability;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Achievement;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.ArenaChallenge;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
 using Snap.Data.Visualizer.Core.ComponentModel;
 using System;
 using System.Collections.Generic;
@@ -18,18 +18,23 @@ internal class ExcelBin
 
         return new List<NamedValue<Lazy<IOutputHandler>>>
         {
-            AsTyped<AbilityOverrideExcelConfigDataHandler>(targetFolder),
-            AsTyped<AbilityPropExcelConfigDataHandler>(targetFolder),
-            AsTyped<AbilityStateResistanceByIDExcelConfigDataHandler>(targetFolder),
-            AsTyped<AchievementExcelConfigDataHandler>(targetFolder),
-            AsTyped<AchievementGoalExcelConfigDataHandler>(targetFolder),
-            AsTyped<ActivityAbilityGroupExcelConfigDataHandler>(targetFolder),
-            AsTyped<ActivityArenaChallengeExcelConfigDataHandler>(targetFolder),
-            AsTyped<ActivityArenaChallengeLevelInfoExcelConfigDataHandler>(targetFolder),
-            AsTyped<ActivityArenaChallengePreviewExcelConfigDataHandler>(targetFolder),
-            AsTyped<ActivityBannerExcelConfigDataHandler>(targetFolder),
-            AsTyped<ActivityChessAffixExcelConfigDataHandler>(targetFolder),
-            AsTyped<ActivityChessCardExcelConfigDataHandler>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<AbilityOverrideExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<AbilityPropExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<AbilityStateResistanceByIDExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<AchievementExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<AchievementGoalExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityAbilityGroupExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityArenaChallengeExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityArenaChallengeLevelInfoExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityArenaChallengePreviewExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityBannerExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityChessAffixExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityChessCardExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityChessGearExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityChessLevelExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityChessMapExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityChessPreviewExcelConfigData>>(targetFolder),
+            AsTyped<TypedExcelBinOutputHandler<ActivityChessScheduleExcelConfigData>>(targetFolder),
         };
     }
 
@@ -37,7 +42,7 @@ internal class ExcelBin
         where T : IExcelBinOutputHandler
     {
         return new(
-            typeof(T).Name.Replace("Handler", string.Empty),
-            new(() => (T)Activator.CreateInstance(typeof(T),targetFolder)!));
+            typeof(T).GenericTypeArguments[0].Name,
+            new(() => (T)Activator.CreateInstance(typeof(T), targetFolder)!));
     }
 }

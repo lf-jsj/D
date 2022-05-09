@@ -3,7 +3,6 @@
 namespace Snap.Data.Mapper.Model.ObjectModel.Annotation;
 
 [AttributeUsage(AttributeTargets.Property)]
-internal class DataArrayAttribute : Attribute
+internal class PrimaryKeyAttribute : Attribute
 {
-    public int Length { get; set; }
 }

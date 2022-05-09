@@ -20,8 +20,4 @@
     <ProjectReference Include="..\Snap.Data.Mapper.Model\Snap.Data.Mapper.Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Binary\BinOutput\" />
-  </ItemGroup>
-
 </Project>
