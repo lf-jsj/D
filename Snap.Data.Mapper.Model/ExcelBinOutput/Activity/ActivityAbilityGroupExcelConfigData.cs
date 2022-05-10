@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
+﻿using Snap.Data.Mapper.Converter.ObjectModel;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
 
 public class ActivityAbilityGroupExcelConfigData : DataObject
 {
@@ -16,7 +18,7 @@ public class ActivityAbilityGroupExcelConfigData : DataObject
     public int AvatarId { get; set; }
 
     [JsonPropertyName("nameTextMapHash")]
-    public MappedText NameTextMapHash { get; set; }
+    public Text NameTextMapHash { get; set; }
 
     //TODO: link up weapon id
     [JsonPropertyName("weaponId")]

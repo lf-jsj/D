@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
+﻿using Snap.Data.Mapper.Converter.ObjectModel;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
 
 public class ActivityBannerExcelConfigData : DataObject
 {
@@ -23,7 +25,7 @@ public class ActivityBannerExcelConfigData : DataObject
     public string PrefabPath { get; set; } = string.Empty;
 
     [JsonPropertyName("descTextMapHash")]
-    public MappedText DescTextMapHash { get; set; }
+    public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("GHKPAHOPGNM")]
     public bool? GHKPAHOPGNM { get; set; }

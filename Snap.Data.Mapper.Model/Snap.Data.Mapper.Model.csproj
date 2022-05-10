@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Snap.Data.Mapper.Converter\Snap.Data.Mapper.Converter.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ExcelBinOutput\Activity\CrystalLink\" />
-  </ItemGroup>
-
 </Project>

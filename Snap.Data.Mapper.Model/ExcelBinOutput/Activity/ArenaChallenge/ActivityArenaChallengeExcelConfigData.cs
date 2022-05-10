@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.ArenaChallenge;
+﻿using Snap.Data.Mapper.Converter.ObjectModel;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.ArenaChallenge;
 
 public class ActivityArenaChallengeExcelConfigData : DataObject
 {
@@ -23,15 +25,15 @@ public class ActivityArenaChallengeExcelConfigData : DataObject
 
     //TODO: handle wierd hash result
     [JsonPropertyName("challengeTargetTextMapHash")]
-    public MappedText ChallengeTargetTextMapHash { get; set; }
+    public Text ChallengeTargetTextMapHash { get; set; }
 
     //TODO: handle wierd hash result
     [JsonPropertyName("challengeTarget1TextMapHash")]
-    public MappedText ChallengeTarget1TextMapHash { get; set; }
+    public Text ChallengeTarget1TextMapHash { get; set; }
 
     //TODO: handle wierd hash result
     [JsonPropertyName("challengeTarget2TextMapHash")]
-    public MappedText ChallengeTarget2TextMapHash { get; set; }
+    public Text ChallengeTarget2TextMapHash { get; set; }
 
     [JsonPropertyName("ILEDPNFPAAK")]
     public bool? ILEDPNFPAAK { get; set; }

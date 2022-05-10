@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
+﻿using Snap.Data.Mapper.Converter.ObjectModel;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
 
 public class ActivityChessMapExcelConfigData : DataObject
 {
@@ -6,13 +8,13 @@ public class ActivityChessMapExcelConfigData : DataObject
     public int PMGIABAMPCN { get; set; }
 
     [JsonPropertyName("mapNameTextMapHash")]
-    public MappedText MapNameTextMapHash { get; set; }
+    public Text MapNameTextMapHash { get; set; }
 
     [JsonPropertyName("descTextMapHash")]
-    public MappedText DescTextMapHash { get; set; }
+    public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("unlockTipsTextMapHash")]
-    public MappedText UnlockTipsTextMapHash { get; set; }
+    public Text UnlockTipsTextMapHash { get; set; }
 
     [JsonPropertyName("mapIconPath")]
     public string MapIconPath { get; set; } = default!;

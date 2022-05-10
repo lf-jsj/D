@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Achievement;
+﻿using Snap.Data.Mapper.Converter.ObjectModel;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Achievement;
 public class TriggerConfig : DataObject
 {
     [JsonPropertyName("triggerType")]
@@ -21,13 +23,13 @@ public class AchievementExcelConfigData : DataObject
     public int OrderId { get; set; }
 
     [JsonPropertyName("titleTextMapHash")]
-    public MappedText TitleTextMapHash { get; set; }
+    public Text TitleTextMapHash { get; set; }
 
     [JsonPropertyName("descTextMapHash")]
-    public MappedText DescTextMapHash { get; set; }
+    public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("ps5TitleTextMapHash")]
-    public MappedText Ps5TitleTextMapHash { get; set; }
+    public Text Ps5TitleTextMapHash { get; set; }
 
     /// <summary>
     /// string.Empty

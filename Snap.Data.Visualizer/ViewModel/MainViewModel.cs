@@ -93,6 +93,8 @@ internal class MainViewModel : ObservableObject
     private void AddJsonConverters(IList<JsonConverter> converters, ITextMap value)
     {
         converters.Add(new TextMapHashConverter(value));
+        converters.Add(new HashPreConverter());
+        converters.Add(new HashSuffixConverter());
     }
 
     private void SelectDataFolder()

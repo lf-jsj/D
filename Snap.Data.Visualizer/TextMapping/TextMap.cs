@@ -12,12 +12,14 @@ namespace Snap.Data.Visualizer.TextMapping;
 
 /// <summary>
 /// 默认的文本映射实现
+///             Min: 640
+///             Max: 4294966372
+/// UInt32.MaxValue: 4294967295
 /// </summary>
 internal class TextMap : ITextMap
 {
     private readonly Lazy<IDictionary<string, string>> textMapping;
     private readonly string language;
-
     /// <summary>
     /// 构造一个新的文本映射的默认实现
     /// </summary>

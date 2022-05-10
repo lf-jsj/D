@@ -1,8 +1,9 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
+﻿using Snap.Data.Mapper.Converter.ObjectModel;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
 
 public class NFOAKLIOPMH : DataObject
 {
-
     [JsonPropertyName("targetType")]
     public string TargetType { get; set; } = string.Empty;
 
@@ -63,17 +64,6 @@ public class ActivityChessCardExcelConfigData : DataObject
     [JsonPropertyName("PMIHFKKMOML")]
     public int PMIHFKKMOML { get; set; }
 
-    /// <summary>
-    /// CARD_TAG_WATER
-    /// CARD_TAG_FIRE
-    /// CARD_TAG_ICE
-    /// CARD_TAG_WIND
-    /// CARD_TAG_ELECTRIC
-    /// CARD_TAG_PHYSICS
-    /// CARD_TAG_HELP
-    /// CARD_TAG_OTHER
-    /// string.Empty
-    /// </summary>
     [JsonPropertyName("IOHHOMNCMBJ")]
     public string IOHHOMNCMBJ { get; set; } = string.Empty;
 
@@ -81,16 +71,16 @@ public class ActivityChessCardExcelConfigData : DataObject
     public int PGLJHNFKFNG { get; set; }
 
     [JsonPropertyName("BCGMNJBANBL")]
-    public MappedText BCGMNJBANBL { get; set; }
+    public Text BCGMNJBANBL { get; set; }
 
     [JsonPropertyName("descTextMapHash")]
-    public MappedText DescTextMapHash { get; set; }
+    public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("ABNJNLOOJMJ")]
-    public MappedText ABNJNLOOJMJ { get; set; }
+    public Text ABNJNLOOJMJ { get; set; }
 
     [JsonPropertyName("PLEFEGJCJOO")]
-    public MappedText PLEFEGJCJOO { get; set; }
+    public Text PLEFEGJCJOO { get; set; }
 
     [JsonPropertyName("descParamList")]
     [DataArray(Length = 3)]
@@ -100,21 +90,9 @@ public class ActivityChessCardExcelConfigData : DataObject
     [DataArray(Length = 3)]
     public IList<bool> PBLMHJIPEHN { get; set; } = default!;
 
-    /// <summary>
-    /// CARD_NUMERICAL_ATTACK
-    /// CARD_NUMERICAL_MASTERY
-    /// CARD_NUMERICAL_ATTACK_INTERVAL
-    /// CARD_NUMERICAL_ATTACK_RANGE
-    /// string.Empty
-    /// </summary>
     [JsonPropertyName("JNFDJJCLCBA")]
     public string JNFDJJCLCBA { get; set; } = string.Empty;
 
-    /// <summary>
-    /// CARD_NUMERICAL_BASE
-    /// CARD_NUMERICAL_PERCENTAGE
-    /// string.Empty
-    /// </summary>
     [JsonPropertyName("GMHNKGFHLMC")]
     public string GMHNKGFHLMC { get; set; } = string.Empty;
 
