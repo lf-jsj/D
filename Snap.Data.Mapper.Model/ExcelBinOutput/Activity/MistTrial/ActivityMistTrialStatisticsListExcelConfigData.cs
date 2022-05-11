@@ -9,7 +9,7 @@ public class ActivityMistTrialStatisticsListExcelConfigData : DataObject
     public int ScheduleId { get; set; }
 
     [JsonPropertyName("statName")]
-    public string StatName { get; set; } = string.Empty;
+    public string StatName { get; set; } = default!;
 
     [JsonPropertyName("param")]
     public IList<string> Param { get; set; } = default!;

@@ -3,7 +3,7 @@
 public class JLJPHIAFGOJ : DataObject
 {
     [JsonPropertyName("ELPCOOLNPFF")]
-    public string ELPCOOLNPFF { get; set; } = string.Empty;
+    public string ELPCOOLNPFF { get; set; } = default!;
 
     [JsonPropertyName("LNJAEIIDNAO")]
     public double? LNJAEIIDNAO { get; set; }
@@ -17,7 +17,7 @@ public class AbilityOverrideExcelConfigData : DataObject
 
     [JsonPropertyName("abilityName")]
     [PrimaryName]
-    public string AbilityName { get; set; } = string.Empty;
+    public string AbilityName { get; set; } = default!;
 
     [JsonPropertyName("JLJPHIAFGOJ")]
     [DataArray(Length = 5)]

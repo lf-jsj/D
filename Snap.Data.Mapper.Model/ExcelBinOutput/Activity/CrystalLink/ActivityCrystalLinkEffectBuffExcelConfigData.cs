@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.CrystalLink;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.CrystalLink;
 
 public class ActivityCrystalLinkEffectBuffExcelConfigData : DataObject
 {
@@ -8,10 +6,10 @@ public class ActivityCrystalLinkEffectBuffExcelConfigData : DataObject
     public int BuffId { get; set; }
 
     [JsonPropertyName("FGJONOJPIBD")]
-    public string FGJONOJPIBD { get; set; } = string.Empty;
+    public string FGJONOJPIBD { get; set; } = default!;
 
     [JsonPropertyName("abilityName")]
-    public string AbilityName { get; set; } = string.Empty;
+    public string AbilityName { get; set; } = default!;
 
     [JsonPropertyName("OAJMBKJALAN")]
     public Text OAJMBKJALAN { get; set; }

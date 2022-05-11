@@ -12,7 +12,7 @@ public class ActivityMistTrialWatcherListDataExcelConfigData : DataObject
     public int ChallengeWatcherId { get; set; }
 
     [JsonPropertyName("dungeonShowContentType")]
-    public string DungeonShowContentType { get; set; } = string.Empty;
+    public string DungeonShowContentType { get; set; } = default!;
 
     [JsonPropertyName("showParam")]
     public IList<string> ShowParam { get; set; } = default!;

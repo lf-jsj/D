@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
 
 public class ActivityChessLevelExcelConfigData : DataObject
 {

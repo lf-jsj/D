@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.CrystalLink;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.CrystalLink;
 
 public class ActivityCrystalLinkDifficultyExcelConfigData : DataObject
 {
@@ -20,6 +18,6 @@ public class ActivityCrystalLinkDifficultyExcelConfigData : DataObject
     public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("difficulty")]
-    public string Difficulty { get; set; } = string.Empty;
+    public string Difficulty { get; set; } = default!;
 }
 

@@ -5,7 +5,7 @@ public class AbilityPropExcelConfigData : DataObject
 
     [JsonPropertyName("propName")]
     [PrimaryName]
-    public string PropName { get; set; } = string.Empty;
+    public string PropName { get; set; } = default!;
 
     [JsonPropertyName("overallMin")]
     public double OverallMin { get; set; }

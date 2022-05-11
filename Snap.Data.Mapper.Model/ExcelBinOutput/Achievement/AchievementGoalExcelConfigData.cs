@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Achievement;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Achievement;
 public class AchievementGoalExcelConfigData : DataObject
 {
     [JsonPropertyName("orderId")]
@@ -10,7 +8,7 @@ public class AchievementGoalExcelConfigData : DataObject
     public Text NameTextMapHash { get; set; }
 
     [JsonPropertyName("iconPath")]
-    public string IconPath { get; set; } = string.Empty;
+    public string IconPath { get; set; } = default!;
 
     [JsonPropertyName("id")]
     [PrimaryKey]

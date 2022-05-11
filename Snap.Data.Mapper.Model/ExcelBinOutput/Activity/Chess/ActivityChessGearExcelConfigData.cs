@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
 
 public class ActivityChessGearExcelConfigData : DataObject
 {
@@ -17,10 +15,10 @@ public class ActivityChessGearExcelConfigData : DataObject
     public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("gearIconPath")]
-    public string GearIconPath { get; set; } = string.Empty;
+    public string GearIconPath { get; set; } = default!;
 
     [JsonPropertyName("GCHFGPIHLEP")]
-    public string GCHFGPIHLEP { get; set; } = string.Empty;
+    public string GCHFGPIHLEP { get; set; } = default!;
 
     [JsonPropertyName("attack")]
     public int Attack { get; set; }

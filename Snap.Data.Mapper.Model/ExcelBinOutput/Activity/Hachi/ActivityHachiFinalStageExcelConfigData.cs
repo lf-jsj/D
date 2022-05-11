@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Hachi;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Hachi;
 public class ActivityHachiFinalStageExcelConfigData : DataObject
 {
     [JsonPropertyName("Id")]

@@ -9,6 +9,16 @@ using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Delivery;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Hachi;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.HideAndSeek;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.MistTrial;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Photograph;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.PlantFlower;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Potion;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Salesman;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Spice;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.SteepleChase;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.SummerTime;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Sumo;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Tanuki;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Animal;
 using Snap.Data.Visualizer.Core.ComponentModel;
 using System;
 using System.Collections.Generic;
@@ -48,6 +58,7 @@ internal class ExcelBin
             Register<ActivityDeliveryExcelConfigData>(targetFolder),
             Register<ActivityDeliveryWatcherDataConfigData>(targetFolder),
             Register<ActivityExcelConfigData>(targetFolder),
+            Register<ActivityGroupLinksExcelConfigData>(targetFolder),
             Register<ActivityHachiFinalStageExcelConfigData>(targetFolder),
             Register<ActivityHachiStageExcelConfigData>(targetFolder),
             Register<ActivityHideAndSeekBasicConfigData>(targetFolder),
@@ -56,6 +67,41 @@ internal class ExcelBin
             Register<ActivityMistTrialLevelFactorExcelConfigData>(targetFolder),
             Register<ActivityMistTrialStatisticsListExcelConfigData>(targetFolder),
             Register<ActivityMistTrialWatcherListDataExcelConfigData>(targetFolder),
+            Register<ActivityPhotographExcelConfigData>(targetFolder),
+            Register<ActivityPhotographPosExcelConfigData>(targetFolder),
+            Register<ActivityPlantFlowerDailyExcelConfigData>(targetFolder),
+            Register<ActivityPlantFlowerMainExcelConfigData>(targetFolder),
+            Register<ActivityPotionBuffExcelConfigData>(targetFolder),
+            Register<ActivityPotionDifficultyExcelConfigData>(targetFolder),
+            Register<ActivityPotionLevelExcelConfigData>(targetFolder),
+            Register<ActivityPotionModeChoiceExcelConfigData>(targetFolder),
+            Register<ActivityPotionOverallExcelConfigData>(targetFolder),
+            Register<ActivityPotionStageExcelConfigData>(targetFolder),
+            Register<ActivitySalesmanDailyExcelConfigData>(targetFolder),
+            Register<ActivitySalesmanExcelConfigData>(targetFolder),
+            Register<ActivitySalesmanRewardMatchConfigData>(targetFolder),
+            Register<ActivityShopOverallExcelConfigData>(targetFolder),
+            Register<ActivityShopSheetExcelConfigData>(targetFolder),
+            Register<ActivitySkillExcelConfigData>(targetFolder),
+            Register<ActivitySpiceExcelConfigData>(targetFolder),
+            Register<ActivitySpiceFoodExcelConfigData>(targetFolder),
+            Register<ActivitySpiceGivingExcelConfigData>(targetFolder),
+            Register<ActivitySpiceStageDataExcelConfigData>(targetFolder),
+            Register<ActivitySteepleChaseConfigData>(targetFolder),
+            Register<ActivitySummerTimeExcelConfigData>(targetFolder),
+            Register<ActivitySummerTimeFloatSignalExcelConfigData>(targetFolder),
+            Register<ActivitySummerTimeRaceExcelConfigData>(targetFolder),
+            Register<ActivitySummerTimeRacePreviewExcelConfigData>(targetFolder),
+            Register<ActivitySummerTimeStageExcelConfigData>(targetFolder),
+            Register<ActivitySumoDifficultyExcelConfigData>(targetFolder),
+            Register<ActivitySumoOverallConfigData>(targetFolder),
+            Register<ActivitySumoStageExcelConfigData>(targetFolder),
+            Register<ActivitySumoSwitchSkillExcelConfigData>(targetFolder),
+            Register<ActivityTanukiTravelDataExcelConfigData>(targetFolder),
+            Register<ActivityTanukiTravelRouteDataExcelConfigData>(targetFolder),
+            Register<ActivityWatcherConfigData>(targetFolder),
+            Register<AnimalCodexExcelConfigData>(targetFolder),
+            Register<AnimalDescribeExcelConfigData>(targetFolder),
         };
     }
 

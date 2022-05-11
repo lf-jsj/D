@@ -12,7 +12,7 @@ public class ActivityExcelConfigData : DataObject
     public int ActivityId { get; set; }
 
     [JsonPropertyName("Type")]
-    public string Type { get; set; } = string.Empty;
+    public string Type { get; set; } = default!;
 
     [JsonPropertyName("DestroyItem")]
     public IList<DestroyItem> DestroyItem { get; set; } = default!;
@@ -21,7 +21,7 @@ public class ActivityExcelConfigData : DataObject
     public long NameTextMapHash { get; set; }
 
     [JsonPropertyName("ActivitySceneTag")]
-    public string ActivitySceneTag { get; set; } = string.Empty;
+    public string ActivitySceneTag { get; set; } = default!;
 
     [JsonPropertyName("IsLoadTerrain")]
     public bool IsLoadTerrain { get; set; }

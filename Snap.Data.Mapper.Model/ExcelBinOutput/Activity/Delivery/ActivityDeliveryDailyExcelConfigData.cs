@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Delivery;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Delivery;
 
 public class DeliveryQuestConfig : DataObject
 {

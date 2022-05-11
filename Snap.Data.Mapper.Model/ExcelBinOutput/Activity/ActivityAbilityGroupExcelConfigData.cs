@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
 
 public class ActivityAbilityGroupExcelConfigData : DataObject
 {

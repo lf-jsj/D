@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.HideAndSeek;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.HideAndSeek;
 
 public class ActivityHideAndSeekBasicConfigData : DataObject
 {

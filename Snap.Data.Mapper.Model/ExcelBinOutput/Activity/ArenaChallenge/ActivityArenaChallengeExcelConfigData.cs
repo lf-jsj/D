@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.ArenaChallenge;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.ArenaChallenge;
 
 public class ActivityArenaChallengeExcelConfigData : DataObject
 {

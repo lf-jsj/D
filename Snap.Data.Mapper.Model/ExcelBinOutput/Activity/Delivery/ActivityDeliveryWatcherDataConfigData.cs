@@ -3,7 +3,7 @@
 public class TriggerConfig : DataObject
 {
     [JsonPropertyName("triggerType")]
-    public string TriggerType { get; set; } = string.Empty;
+    public string TriggerType { get; set; } = default!;
 
     [JsonPropertyName("paramList")]
     public IList<string> ParamList { get; set; } = default!;

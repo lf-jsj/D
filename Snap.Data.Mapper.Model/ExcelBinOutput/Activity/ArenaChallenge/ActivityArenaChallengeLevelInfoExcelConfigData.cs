@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.ArenaChallenge;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.ArenaChallenge;
 
 public class ActivityArenaChallengeLevelInfoExcelConfigData : DataObject
 {
@@ -27,13 +25,13 @@ public class ActivityArenaChallengeLevelInfoExcelConfigData : DataObject
     //TODO: link up monster
     [JsonPropertyName("monsterConfig")]
     [ForeignKey]
-    public string MonsterConfig { get; set; } = string.Empty;
+    public string MonsterConfig { get; set; } = default!;
 
     [JsonPropertyName("levelDescTextMapHash")]
     public Text LevelDescTextMapHash { get; set; }
 
     [JsonPropertyName("KICEBBCKKPI")]
-    public string KICEBBCKKPI { get; set; } = string.Empty;
+    public string KICEBBCKKPI { get; set; } = default!;
 
     [JsonPropertyName("CCEPHHIHMKI")]
     [ForeignKey]
@@ -41,13 +39,13 @@ public class ActivityArenaChallengeLevelInfoExcelConfigData : DataObject
 
     [JsonPropertyName("MDFFPBEGJOH")]
     [ForeignKey]
-    public string MDFFPBEGJOH { get; set; } = string.Empty;
+    public string MDFFPBEGJOH { get; set; } = default!;
 
     [JsonPropertyName("CAMDGAAIKAA")]
     public Text CAMDGAAIKAA { get; set; }
 
     [JsonPropertyName("MPPHKDDAAPG")]
-    public string MPPHKDDAAPG { get; set; } = string.Empty;
+    public string MPPHKDDAAPG { get; set; } = default!;
 
     [JsonPropertyName("levelDetailDescTextMapHash")]
     public Text LevelDetailDescTextMapHash { get; set; }

@@ -1,20 +1,18 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
 
 public class NFOAKLIOPMH : DataObject
 {
     [JsonPropertyName("targetType")]
-    public string TargetType { get; set; } = string.Empty;
+    public string TargetType { get; set; } = default!;
 
     [JsonPropertyName("targetParamList")]
     public IList<int> TargetParamList { get; set; } = default!;
 
     [JsonPropertyName("effectType")]
-    public string EffectType { get; set; } = string.Empty;
+    public string EffectType { get; set; } = default!;
 
     [JsonPropertyName("effectStrParam")]
-    public string EffectStrParam { get; set; } = string.Empty;
+    public string EffectStrParam { get; set; } = default!;
 
     [JsonPropertyName("effectParam1")]
     public int EffectParam1 { get; set; }
@@ -38,10 +36,10 @@ public class PLDAMHDHOLO : DataObject
     public IList<object> TargetParamList { get; set; } = default!;
 
     [JsonPropertyName("effectStrParam")]
-    public string EffectStrParam { get; set; } = string.Empty;
+    public string EffectStrParam { get; set; } = default!;
 
     [JsonPropertyName("effectType")]
-    public string EffectType { get; set; } = string.Empty;
+    public string EffectType { get; set; } = default!;
 
     [JsonPropertyName("effectParam1")]
     public int? EffectParam1 { get; set; }
@@ -65,7 +63,7 @@ public class ActivityChessCardExcelConfigData : DataObject
     public int PMIHFKKMOML { get; set; }
 
     [JsonPropertyName("IOHHOMNCMBJ")]
-    public string IOHHOMNCMBJ { get; set; } = string.Empty;
+    public string IOHHOMNCMBJ { get; set; } = default!;
 
     [JsonPropertyName("PGLJHNFKFNG")]
     public int PGLJHNFKFNG { get; set; }
@@ -91,10 +89,10 @@ public class ActivityChessCardExcelConfigData : DataObject
     public IList<bool> PBLMHJIPEHN { get; set; } = default!;
 
     [JsonPropertyName("JNFDJJCLCBA")]
-    public string JNFDJJCLCBA { get; set; } = string.Empty;
+    public string JNFDJJCLCBA { get; set; } = default!;
 
     [JsonPropertyName("GMHNKGFHLMC")]
-    public string GMHNKGFHLMC { get; set; } = string.Empty;
+    public string GMHNKGFHLMC { get; set; } = default!;
 
     [JsonPropertyName("ADCOECLELMG")]
     public double ADCOECLELMG { get; set; }
@@ -103,7 +101,7 @@ public class ActivityChessCardExcelConfigData : DataObject
     public int CostPoints { get; set; }
 
     [JsonPropertyName("cardType")]
-    public string CardType { get; set; } = string.Empty;
+    public string CardType { get; set; } = default!;
 
     [JsonPropertyName("EMOKONNNHCA")]
     public int EMOKONNNHCA { get; set; }
@@ -127,5 +125,5 @@ public class ActivityChessCardExcelConfigData : DataObject
     public bool? KEIHCOBHONL { get; set; }
 
     [JsonPropertyName("OPPLAFJOCAM")]
-    public string OPPLAFJOCAM { get; set; } = string.Empty;
+    public string OPPLAFJOCAM { get; set; } = default!;
 }

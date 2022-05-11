@@ -1,6 +1,4 @@
-﻿using Snap.Data.Mapper.Converter.ObjectModel;
-
-namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Hachi;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Hachi;
 
 public class ActivityHachiStageExcelConfigData : DataObject
 {
@@ -33,10 +31,10 @@ public class ActivityHachiStageExcelConfigData : DataObject
     public int GDFBOANLICN { get; set; }
 
     [JsonPropertyName("LALFCEJPLJG")]
-    public string LALFCEJPLJG { get; set; } = string.Empty;
+    public string LALFCEJPLJG { get; set; } = default!;
 
     [JsonPropertyName("EHGMMIGBJCD")]
-    public string EHGMMIGBJCD { get; set; } = string.Empty;
+    public string EHGMMIGBJCD { get; set; } = default!;
 
     [JsonPropertyName("DFGPAANEDBB")]
     public int DFGPAANEDBB { get; set; }
