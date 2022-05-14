@@ -2,7 +2,6 @@
 
 public class ActivitySummerTimeRacePreviewExcelConfigData : DataObject
 {
-
     [JsonPropertyName("Id")]
     public int Id { get; set; }
 

@@ -2,7 +2,6 @@
 
 public class ActivityTanukiTravelDataExcelConfigData : DataObject
 {
-
     [JsonPropertyName("Id")]
     public int Id { get; set; }
 

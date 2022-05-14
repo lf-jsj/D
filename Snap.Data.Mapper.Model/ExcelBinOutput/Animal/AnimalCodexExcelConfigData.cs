@@ -6,7 +6,7 @@ public class AnimalCodexExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("type")]
-    public string Type { get; set; } = default!;
+    public string? Type { get; set; }
 
     [JsonPropertyName("describeId")]
     public int DescribeId { get; set; }
@@ -15,19 +15,19 @@ public class AnimalCodexExcelConfigData : DataObject
     public int SortOrder { get; set; }
 
     [JsonPropertyName("BAINKHIIMJE")]
-    public string BAINKHIIMJE { get; set; } = default!;
+    public string? BAINKHIIMJE { get; set; }
 
     [JsonPropertyName("descTextMapHash")]
     public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("modelPath")]
-    public string ModelPath { get; set; } = default!;
+    public string ModelPath { get; set; } = string.Empty;
 
     [JsonPropertyName("pushTipsCodexId")]
     public int? PushTipsCodexId { get; set; }
 
     [JsonPropertyName("subType")]
-    public string SubType { get; set; } = default!;
+    public string? SubType { get; set; }
 
     [JsonPropertyName("isDisuse")]
     public bool? IsDisuse { get; set; }

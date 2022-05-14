@@ -1,17 +1,7 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Sumo;
-public class EFIMENECJNP : DataObject
-{
-
-    [JsonPropertyName("HPGLJGCCMFF")]
-    public string HPGLJGCCMFF { get; set; } = default!;
-
-    [JsonPropertyName("LGFBKELLAEI")]
-    public string LGFBKELLAEI { get; set; } = default!;
-}
 
 public class ActivitySumoStageExcelConfigData : DataObject
 {
-
     [JsonPropertyName("Id")]
     public int Id { get; set; }
 
@@ -61,5 +51,5 @@ public class ActivitySumoStageExcelConfigData : DataObject
     public IList<int> HEPMJDDFLCA { get; set; } = default!;
 
     [JsonPropertyName("PBKCPAHJONA")]
-    public string PBKCPAHJONA { get; set; } = default!;
+    public string? PBKCPAHJONA { get; set; }
 }

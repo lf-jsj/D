@@ -1,7 +1,6 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Spice;
 public class ActivitySpiceExcelConfigData : DataObject
 {
-
     [JsonPropertyName("id")]
     public int Id { get; set; }
 

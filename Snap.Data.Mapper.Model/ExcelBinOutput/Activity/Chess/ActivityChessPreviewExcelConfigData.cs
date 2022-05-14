@@ -2,7 +2,6 @@
 
 public class ActivityChessPreviewExcelConfigData : DataObject
 {
-
     [JsonPropertyName("activityID")]
     public int ActivityID { get; set; }
 

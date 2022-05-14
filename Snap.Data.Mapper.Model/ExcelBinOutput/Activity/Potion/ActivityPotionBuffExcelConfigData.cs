@@ -2,7 +2,6 @@
 
 public class ActivityPotionBuffExcelConfigData : DataObject
 {
-
     [JsonPropertyName("buffId")]
     public int BuffId { get; set; }
 

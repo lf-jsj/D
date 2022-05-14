@@ -51,7 +51,7 @@ public class ActivityMistTrialLevelDataExcelConfigData : DataObject
     public IList<int> GJJFOBDBGBG { get; set; } = default!;
 
     [JsonPropertyName("MFHOKIBKJFP")]
-    public string MFHOKIBKJFP { get; set; } = default!;
+    public string MFHOKIBKJFP { get; set; } = string.Empty;
 
     [JsonPropertyName("NEEPLANMAJO")]
     public IList<int> NEEPLANMAJO { get; set; } = default!;

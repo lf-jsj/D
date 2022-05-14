@@ -2,7 +2,6 @@
 
 public class ActivityHachiStageExcelConfigData : DataObject
 {
-
     [JsonPropertyName("Id")]
     public int Id { get; set; }
 
@@ -31,10 +30,10 @@ public class ActivityHachiStageExcelConfigData : DataObject
     public int GDFBOANLICN { get; set; }
 
     [JsonPropertyName("LALFCEJPLJG")]
-    public string LALFCEJPLJG { get; set; } = default!;
+    public string LALFCEJPLJG { get; set; } = string.Empty;
 
     [JsonPropertyName("EHGMMIGBJCD")]
-    public string EHGMMIGBJCD { get; set; } = default!;
+    public string EHGMMIGBJCD { get; set; } = string.Empty;
 
     [JsonPropertyName("DFGPAANEDBB")]
     public int DFGPAANEDBB { get; set; }

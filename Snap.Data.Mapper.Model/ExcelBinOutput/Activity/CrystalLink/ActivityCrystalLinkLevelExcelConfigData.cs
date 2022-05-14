@@ -1,23 +1,5 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.CrystalLink;
 
-public class LCBFCIBGDNM : DataObject
-{
-    [JsonPropertyName("HPGLJGCCMFF")]
-    public IList<string> HPGLJGCCMFF { get; set; } = default!;
-
-    [JsonPropertyName("ODJBMAKLICP")]
-    public IList<string> ODJBMAKLICP { get; set; } = default!;
-}
-
-public class MENBLJCNMBK : DataObject
-{
-    [JsonPropertyName("HPGLJGCCMFF")]
-    public IList<int> HPGLJGCCMFF { get; set; } = default!;
-
-    [JsonPropertyName("ODJBMAKLICP")]
-    public IList<int> ODJBMAKLICP { get; set; } = default!;
-}
-
 public class ActivityCrystalLinkLevelExcelConfigData : DataObject
 {
     [JsonPropertyName("levelId")]
@@ -51,10 +33,10 @@ public class ActivityCrystalLinkLevelExcelConfigData : DataObject
     public Text LevelDescTextMapHash { get; set; }
 
     [JsonPropertyName("LCBFCIBGDNM")]
-    public IList<LCBFCIBGDNM> LCBFCIBGDNM { get; set; } = default!;
+    public IList<HPGLJGCCMFFODJBMAKLICP<string>> LCBFCIBGDNM { get; set; } = default!;
 
     [JsonPropertyName("MENBLJCNMBK")]
-    public IList<MENBLJCNMBK> MENBLJCNMBK { get; set; } = default!;
+    public IList<HPGLJGCCMFFODJBMAKLICP<int>> MENBLJCNMBK { get; set; } = default!;
 
     [JsonPropertyName("scoreLevelList")]
     public IList<int> ScoreLevelList { get; set; } = default!;

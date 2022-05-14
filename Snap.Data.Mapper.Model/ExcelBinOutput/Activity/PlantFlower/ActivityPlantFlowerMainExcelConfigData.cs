@@ -2,7 +2,6 @@
 
 public class ActivityPlantFlowerMainExcelConfigData : DataObject
 {
-
     [JsonPropertyName("scheduleId")]
     public int ScheduleId { get; set; }
 

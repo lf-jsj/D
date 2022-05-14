@@ -2,12 +2,11 @@
 
 public class ActivitySkillExcelConfigData : DataObject
 {
-
     [JsonPropertyName("id")]
     public int Id { get; set; }
 
     [JsonPropertyName("skillTarget")]
-    public string SkillTarget { get; set; } = default!;
+    public string? SkillTarget { get; set; }
 
     [JsonPropertyName("abilityName")]
     public string AbilityName { get; set; } = default!;
@@ -34,7 +33,7 @@ public class ActivitySkillExcelConfigData : DataObject
     public IList<string> GuideKey { get; set; } = default!;
 
     [JsonPropertyName("guideOpenState")]
-    public string GuideOpenState { get; set; } = default!;
+    public string? GuideOpenState { get; set; }
 
     [JsonPropertyName("unableTextTextMapHash")]
     public Text UnableTextTextMapHash { get; set; }

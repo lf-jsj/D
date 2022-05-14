@@ -2,7 +2,6 @@
 
 public class ActivityPotionDifficultyExcelConfigData : DataObject
 {
-
     [JsonPropertyName("DGBDHOLGDHD")]
     public int DGBDHOLGDHD { get; set; }
 

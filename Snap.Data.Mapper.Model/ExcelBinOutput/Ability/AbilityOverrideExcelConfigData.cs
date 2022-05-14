@@ -1,14 +1,5 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Ability;
 
-public class JLJPHIAFGOJ : DataObject
-{
-    [JsonPropertyName("ELPCOOLNPFF")]
-    public string ELPCOOLNPFF { get; set; } = default!;
-
-    [JsonPropertyName("LNJAEIIDNAO")]
-    public double? LNJAEIIDNAO { get; set; }
-}
-
 public class AbilityOverrideExcelConfigData : DataObject
 {
     [JsonPropertyName("id")]

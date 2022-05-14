@@ -2,7 +2,6 @@
 
 public class ActivitySummerTimeFloatSignalExcelConfigData : DataObject
 {
-
     [JsonPropertyName("Id")]
     public int Id { get; set; }
 

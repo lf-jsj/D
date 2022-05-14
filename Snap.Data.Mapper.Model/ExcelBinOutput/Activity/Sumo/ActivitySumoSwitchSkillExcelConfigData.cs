@@ -2,7 +2,6 @@
 
 public class ActivitySumoSwitchSkillExcelConfigData : DataObject
 {
-
     [JsonPropertyName("Id")]
     public int Id { get; set; }
 

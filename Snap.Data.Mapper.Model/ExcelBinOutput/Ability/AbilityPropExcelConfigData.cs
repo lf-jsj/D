@@ -2,7 +2,6 @@
 
 public class AbilityPropExcelConfigData : DataObject
 {
-
     [JsonPropertyName("propName")]
     [PrimaryName]
     public string PropName { get; set; } = default!;

@@ -6,7 +6,7 @@ public class ActivitySalesmanRewardMatchConfigData : DataObject
     public int RewardID { get; set; }
 
     [JsonPropertyName("ReoureceType")]
-    public string ReoureceType { get; set; } = default!;
+    public string? ReoureceType { get; set; }
 
     [JsonPropertyName("boxNameTextMapHash")]
     public Text BoxNameTextMapHash { get; set; }

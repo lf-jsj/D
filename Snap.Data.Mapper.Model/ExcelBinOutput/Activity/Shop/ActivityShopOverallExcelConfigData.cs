@@ -1,8 +1,7 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Shop;
 
 public class ActivityShopOverallExcelConfigData : DataObject
 {
-
     [JsonPropertyName("scheduleId")]
     public int ScheduleId { get; set; }
 

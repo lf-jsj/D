@@ -2,18 +2,17 @@
 
 public class ActivitySummerTimeRaceExcelConfigData : DataObject
 {
-
     [JsonPropertyName("Id")]
     public int Id { get; set; }
 
     [JsonPropertyName("HGOBIMGIBNF")]
-    public IList<int> HGOBIMGIBNF { get; set; }
+    public IList<int> HGOBIMGIBNF { get; set; } = default!;
 
     [JsonPropertyName("FCDBNBNJECE")]
-    public IList<double> FCDBNBNJECE { get; set; }
+    public IList<double> FCDBNBNJECE { get; set; } = default!;
 
     [JsonPropertyName("JNGIPFOIHCM")]
-    public IList<int> JNGIPFOIHCM { get; set; }
+    public IList<int> JNGIPFOIHCM { get; set; } = default!;
 
     [JsonPropertyName("levelTitleTextMapHash")]
     public Text LevelTitleTextMapHash { get; set; }

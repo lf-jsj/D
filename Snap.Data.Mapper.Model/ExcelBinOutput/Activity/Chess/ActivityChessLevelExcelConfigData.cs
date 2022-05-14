@@ -36,5 +36,5 @@ public class ActivityChessLevelExcelConfigData : DataObject
     public bool KGFDFCPCHPI { get; set; }
 
     [JsonPropertyName("DECBLNAJEOP")]
-    public string DECBLNAJEOP { get; set; } = default!;
+    public string? DECBLNAJEOP { get; set; }
 }

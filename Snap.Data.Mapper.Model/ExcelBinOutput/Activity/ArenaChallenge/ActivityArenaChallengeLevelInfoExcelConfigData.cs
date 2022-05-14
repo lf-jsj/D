@@ -31,7 +31,7 @@ public class ActivityArenaChallengeLevelInfoExcelConfigData : DataObject
     public Text LevelDescTextMapHash { get; set; }
 
     [JsonPropertyName("KICEBBCKKPI")]
-    public string KICEBBCKKPI { get; set; } = default!;
+    public string KICEBBCKKPI { get; set; } = string.Empty;
 
     [JsonPropertyName("CCEPHHIHMKI")]
     [ForeignKey]
@@ -45,7 +45,7 @@ public class ActivityArenaChallengeLevelInfoExcelConfigData : DataObject
     public Text CAMDGAAIKAA { get; set; }
 
     [JsonPropertyName("MPPHKDDAAPG")]
-    public string MPPHKDDAAPG { get; set; } = default!;
+    public string MPPHKDDAAPG { get; set; } = string.Empty;
 
     [JsonPropertyName("levelDetailDescTextMapHash")]
     public Text LevelDetailDescTextMapHash { get; set; }

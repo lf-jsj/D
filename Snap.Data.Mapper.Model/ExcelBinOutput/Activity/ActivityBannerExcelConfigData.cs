@@ -6,7 +6,7 @@ public class ActivityBannerExcelConfigData : DataObject
     public int ActivityId { get; set; }
 
     [JsonPropertyName("LOHDLJEHAHA")]
-    public string LOHDLJEHAHA { get; set; } = default!;
+    public string? LOHDLJEHAHA { get; set; }
 
     //TODO: link up id
     [JsonPropertyName("rewardPreviewId")]

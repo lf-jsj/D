@@ -1,15 +1,4 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Achievement;
-public class TriggerConfig : DataObject
-{
-    [JsonPropertyName("triggerType")]
-    [PrimaryName]
-    public string TriggerType { get; set; } = default!;
-
-    //TODO: trigger converters
-    [JsonPropertyName("paramList")]
-    [DataArray(Length = 4)]
-    public IList<string> ParamList { get; set; } = default!;
-}
 
 public class AchievementExcelConfigData : DataObject
 {
@@ -30,19 +19,19 @@ public class AchievementExcelConfigData : DataObject
     public Text Ps5TitleTextMapHash { get; set; }
 
     [JsonPropertyName("ttype")]
-    public string Ttype { get; set; } = default!;
+    public string Ttype { get; set; } = string.Empty;
 
     [JsonPropertyName("psTrophyId")]
-    public string PsTrophyId { get; set; } = default!;
+    public string PsTrophyId { get; set; } = string.Empty;
 
     [JsonPropertyName("ps4TrophyId")]
-    public string Ps4TrophyId { get; set; } = default!;
+    public string Ps4TrophyId { get; set; } = string.Empty;
 
     [JsonPropertyName("ps5TrophyId")]
-    public string Ps5TrophyId { get; set; } = default!;
+    public string Ps5TrophyId { get; set; } = string.Empty;
 
     [JsonPropertyName("icon")]
-    public string Icon { get; set; } = default!;
+    public string Icon { get; set; } = string.Empty;
 
     //TODO: link up reward
     [JsonPropertyName("finishRewardId")]
@@ -56,7 +45,7 @@ public class AchievementExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("triggerConfig")]
-    public TriggerConfig TriggerConfig { get; set; } = default!;
+    public ParamListTriggerConfig TriggerConfig { get; set; } = default!;
 
     [JsonPropertyName("progress")]
     public int Progress { get; set; }
@@ -71,11 +60,11 @@ public class AchievementExcelConfigData : DataObject
     public int? PreStageAchievementId { get; set; }
 
     [JsonPropertyName("isShow")]
-    public string IsShow { get; set; } = default!;
+    public string? IsShow { get; set; }
 
     [JsonPropertyName("isDisuse")]
     public bool? IsDisuse { get; set; }
 
     [JsonPropertyName("progressShowType")]
-    public string ProgressShowType { get; set; } = default!;
+    public string? ProgressShowType { get; set; }
 }

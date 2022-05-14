@@ -2,7 +2,6 @@
 
 public class ActivitySpiceGivingExcelConfigData : DataObject
 {
-
     [JsonPropertyName("FFIANJKHOED")]
     public int FFIANJKHOED { get; set; }
 

@@ -1,15 +1,5 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
 
-public class TriggerConfig : DataObject
-{
-
-    [JsonPropertyName("TriggerType")]
-    public string TriggerType { get; set; } = default!;
-
-    [JsonPropertyName("Param")]
-    public IList<string> Param { get; set; } = default!;
-}
-
 public class ActivityWatcherConfigData : DataObject
 {
 
@@ -29,9 +19,8 @@ public class ActivityWatcherConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("TriggerConfig")]
-    public TriggerConfig TriggerConfig { get; set; } = default!;
+    public ParamTriggerConfig TriggerConfig { get; set; } = default!;
 
     [JsonPropertyName("Progress")]
     public int Progress { get; set; }
 }
-

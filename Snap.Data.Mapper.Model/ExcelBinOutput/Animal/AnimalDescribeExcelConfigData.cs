@@ -2,7 +2,6 @@
 
 public class AnimalDescribeExcelConfigData : DataObject
 {
-
     [JsonPropertyName("id")]
     public int Id { get; set; }
 

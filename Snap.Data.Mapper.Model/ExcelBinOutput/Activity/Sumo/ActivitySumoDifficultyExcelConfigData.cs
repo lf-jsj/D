@@ -18,5 +18,5 @@ public class ActivitySumoDifficultyExcelConfigData : DataObject
     public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("difficulty")]
-    public string Difficulty { get; set; } = default!;
+    public string? Difficulty { get; set; }
 }

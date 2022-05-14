@@ -13,12 +13,16 @@ using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Photograph;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.PlantFlower;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Potion;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Salesman;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Shop;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Spice;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.SteepleChase;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.SummerTime;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Sumo;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Tanuki;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Animal;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Aster;
+using Snap.Data.Mapper.Model.ExcelBinOutput.AttackAttenuation;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
 using Snap.Data.Visualizer.Core.ComponentModel;
 using System;
 using System.Collections.Generic;
@@ -102,6 +106,28 @@ internal class ExcelBin
             Register<ActivityWatcherConfigData>(targetFolder),
             Register<AnimalCodexExcelConfigData>(targetFolder),
             Register<AnimalDescribeExcelConfigData>(targetFolder),
+            Register<AsterActivityPerviewExcelConfigData>(targetFolder),
+            Register<AsterAvatarUpExcelConfigData>(targetFolder),
+            Register<AsterLittleExcelConfigData>(targetFolder),
+            Register<AsterMidDifficultyExcelConfigData>(targetFolder),
+            Register<AsterMidExcelConfigData>(targetFolder),
+            Register<AsterMidGroupsExcelConfigData>(targetFolder),
+            Register<AsterMissionExcelConfigData>(targetFolder),
+            Register<AsterStageExcelConfigData>(targetFolder),
+            Register<AsterTeamBuffExcelConfigData>(targetFolder),
+            Register<AttackAttenuationExcelConfigData>(targetFolder),
+            Register<AvatarCodexExcelConfigData>(targetFolder),
+            Register<AvatarCostumeExcelConfigData>(targetFolder),
+            Register<AvatarCurveExcelConfigData>(targetFolder),
+            Register<AvatarExcelConfigData>(targetFolder),
+            Register<AvatarFettersLevelExcelConfigData>(targetFolder),
+            Register<AvatarFlycloakExcelConfigData>(targetFolder),
+            Register<AvatarHeroEntityExcelConfigData>(targetFolder),
+            Register<AvatarLevelExcelConfigData>(targetFolder),
+            Register<AvatarPromoteExcelConfigData>(targetFolder),
+            Register<AvatarSkillDepotExcelConfigData>(targetFolder),
+            Register<AvatarSkillExcelConfigData>(targetFolder),
+            Register<AvatarTalentExcelConfigData>(targetFolder),
         };
     }
 
