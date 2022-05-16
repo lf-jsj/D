@@ -12,35 +12,8 @@
 
   <ItemGroup>
     <Folder Include="BinOutput\Ability\" />
-    <Folder Include="ExcelBinOutput\Activity\Effigy\" />
-    <Folder Include="ExcelBinOutput\Element\" />
-    <Folder Include="ExcelBinOutput\Emoji\" />
-    <Folder Include="ExcelBinOutput\EnvAnimal\" />
-    <Folder Include="ExcelBinOutput\Exhibition\" />
-    <Folder Include="ExcelBinOutput\Expedition\" />
-    <Folder Include="ExcelBinOutput\Explore\" />
-    <Folder Include="ExcelBinOutput\FeatureTag\" />
-    <Folder Include="ExcelBinOutput\Fetter\" />
-    <Folder Include="ExcelBinOutput\FindHilichurl\" />
-    <Folder Include="ExcelBinOutput\Firework\" />
-    <Folder Include="ExcelBinOutput\Fish\" />
-    <Folder Include="ExcelBinOutput\FleurFair\" />
-    <Folder Include="ExcelBinOutput\FlightActivity\" />
-    <Folder Include="ExcelBinOutput\Forge\" />
-    <Folder Include="ExcelBinOutput\Furniture\" />
-    <Folder Include="ExcelBinOutput\Gadget\" />
-    <Folder Include="ExcelBinOutput\Gather\" />
-    <Folder Include="ExcelBinOutput\Giving\" />
-    <Folder Include="ExcelBinOutput\Group\" />
-    <Folder Include="ExcelBinOutput\Guide\" />
-    <Folder Include="ExcelBinOutput\H5Activity\" />
-    <Folder Include="ExcelBinOutput\HideAndSeek\" />
-    <Folder Include="ExcelBinOutput\Homeworld\" />
     <Folder Include="ExcelBinOutput\Hunting\" />
     <Folder Include="ExcelBinOutput\Investigation\" />
-    <Folder Include="ExcelBinOutput\Irodori\" />
-    <Folder Include="ExcelBinOutput\Lamp\" />
-    <Folder Include="ExcelBinOutput\LanV2\" />
   </ItemGroup>
 
 </Project>

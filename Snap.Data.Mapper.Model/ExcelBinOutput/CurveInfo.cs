@@ -1,4 +1,4 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput;
 
 public class CurveInfo : DataObject
 {
