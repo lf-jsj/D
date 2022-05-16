@@ -6,7 +6,7 @@ public class ActivitySalesmanDailyExcelConfigData : DataObject
     public int DailyConfigId { get; set; }
 
     [JsonPropertyName("costItemList")]
-    public IList<CostItem> CostItemList { get; set; } = default!;
+    public IList<CountableItem> CostItemList { get; set; } = default!;
 
     [JsonPropertyName("clusPosTextMapHash")]
     public Text ClusPosTextMapHash { get; set; }

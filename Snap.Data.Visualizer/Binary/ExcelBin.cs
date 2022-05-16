@@ -1,8 +1,10 @@
 ﻿using Snap.Data.Mapper.Abstraction;
+using Snap.Data.Mapper.Model.ExcelBinOutput;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Ability;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Achievement;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.ArenaChallenge;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Bartender;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Chess;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.CrystalLink;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Delivery;
@@ -23,6 +25,8 @@ using Snap.Data.Mapper.Model.ExcelBinOutput.Animal;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Aster;
 using Snap.Data.Mapper.Model.ExcelBinOutput.AttackAttenuation;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Bargain;
+using Snap.Data.Mapper.Model.ExcelBinOutput.BattlePass;
 using Snap.Data.Visualizer.Core.ComponentModel;
 using System;
 using System.Collections.Generic;
@@ -128,20 +132,36 @@ internal class ExcelBin
             Register<AvatarSkillDepotExcelConfigData>(targetFolder),
             Register<AvatarSkillExcelConfigData>(targetFolder),
             Register<AvatarTalentExcelConfigData>(targetFolder),
+            Register<BargainExcelConfigData>(targetFolder),
+            Register<BartenderAffixExcelConfigData>(targetFolder),
+            Register<BartenderEventExcelConfigData>(targetFolder),
+            Register<BartenderFormulaExcelConfigData>(targetFolder),
+            Register<BartenderFormulaTypeConfigData>(targetFolder),
+            Register<BartenderLevelExcelConfigData>(targetFolder),
+            Register<BartenderMaterialUnlockConfigData>(targetFolder),
+            Register<BartenderOrderExcelConfigData>(targetFolder),
+            Register<BartenderTaskExcelConfigData>(targetFolder),
+            Register<BartenderTaskOrderExcelConfigData>(targetFolder),
+            Register<BattlePassLevelExcelConfigData>(targetFolder),
+            Register<BattlePassMissionExcelConfigData>(targetFolder),
+            Register<BattlePassRewardExcelConfigData>(targetFolder),
+            Register<BattlePassScheduleExcelConfigData>(targetFolder),
+            Register<BattlePassStoryExcelConfigData>(targetFolder),
+            Register<BirthdayMailExcelConfigData>(targetFolder),
         };
     }
 
-    private static NamedValue<Lazy<IOutputHandler>> Register<T>(string targetFolder)
+    private static NamedValue<Lazy<IOutputHandler>> Register<T>(string targetFolder, string? name = default)
         where T : class
     {
-        return AsTyped<TypedExcelBinOutputHandler<T>>(targetFolder);
+        return AsTyped<TypedExcelBinOutputHandler<T>>(targetFolder, name);
     }
 
-    private static NamedValue<Lazy<IOutputHandler>> AsTyped<T>(string targetFolder)
+    private static NamedValue<Lazy<IOutputHandler>> AsTyped<T>(string targetFolder, string? name)
         where T : IExcelBinOutputHandler
     {
         return new(
-            typeof(T).GenericTypeArguments[0].Name,
+            name ?? typeof(T).GenericTypeArguments[0].Name,
             new(() => (T)Activator.CreateInstance(typeof(T), targetFolder)!));
     }
 }

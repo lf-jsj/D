@@ -12,32 +12,7 @@
 
   <ItemGroup>
     <Folder Include="BinOutput\Ability\" />
-    <Folder Include="ExcelBinOutput\Bartender\" />
-    <Folder Include="ExcelBinOutput\BattlePass\" />
-    <Folder Include="ExcelBinOutput\BlessingScan\" />
-    <Folder Include="ExcelBinOutput\BlitzRush\" />
-    <Folder Include="ExcelBinOutput\Blossom\" />
-    <Folder Include="ExcelBinOutput\BonusActivity\" />
-    <Folder Include="ExcelBinOutput\BonusTreasure\" />
-    <Folder Include="ExcelBinOutput\Bored\" />
-    <Folder Include="ExcelBinOutput\BounceConjuring\" />
-    <Folder Include="ExcelBinOutput\Buff\" />
-    <Folder Include="ExcelBinOutput\BuoyantCombat\" />
-    <Folder Include="ExcelBinOutput\Capture\" />
-    <Folder Include="ExcelBinOutput\ChannellerSlab\" />
-    <Folder Include="ExcelBinOutput\City\" />
-    <Folder Include="ExcelBinOutput\Cook\" />
-    <Folder Include="ExcelBinOutput\Coop\" />
-    <Folder Include="ExcelBinOutput\CustomGadget\" />
-    <Folder Include="ExcelBinOutput\CustomLevel\" />
-    <Folder Include="ExcelBinOutput\Daily\" />
-    <Folder Include="ExcelBinOutput\Dialog\" />
-    <Folder Include="ExcelBinOutput\Dig\" />
-    <Folder Include="ExcelBinOutput\Draft\" />
-    <Folder Include="ExcelBinOutput\DragonSpine\" />
-    <Folder Include="ExcelBinOutput\Dungeon\" />
-    <Folder Include="ExcelBinOutput\EchoShell\" />
-    <Folder Include="ExcelBinOutput\Effigy\" />
+    <Folder Include="ExcelBinOutput\Activity\Effigy\" />
     <Folder Include="ExcelBinOutput\Element\" />
     <Folder Include="ExcelBinOutput\Emoji\" />
     <Folder Include="ExcelBinOutput\EnvAnimal\" />
@@ -45,7 +20,6 @@
     <Folder Include="ExcelBinOutput\Expedition\" />
     <Folder Include="ExcelBinOutput\Explore\" />
     <Folder Include="ExcelBinOutput\FeatureTag\" />
-    <Folder Include="ExcelBinOutput\Book\" />
     <Folder Include="ExcelBinOutput\Fetter\" />
     <Folder Include="ExcelBinOutput\FindHilichurl\" />
     <Folder Include="ExcelBinOutput\Firework\" />

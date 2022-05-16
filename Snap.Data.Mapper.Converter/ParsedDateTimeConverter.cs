@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Globalization;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Snap.Data.Mapper.Converter;
@@ -16,7 +17,7 @@ public class ParsedDateTimeConverter : JsonConverter<DateTime>
     {
         if (reader.GetString() is string dataTimeString)
         {
-            return DateTime.Parse(dataTimeString);
+            return DateTime.ParseExact(dataTimeString,Format, CultureInfo.InvariantCulture);
         }
 
         return default;

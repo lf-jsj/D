@@ -1,7 +1,6 @@
 ﻿using System.IO;
 using System.Text.Encodings.Web;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Snap.Data.Visualizer.Core;
 internal static class JsonContext
@@ -12,7 +11,6 @@ internal static class JsonContext
     {
         return new()
         {
-            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
             PropertyNameCaseInsensitive = true,
             WriteIndented = true,
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,

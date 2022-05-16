@@ -9,7 +9,7 @@ public class AvatarPromoteExcelConfigData : DataObject
     public string PromoteAudio { get; set; } = string.Empty;
 
     [JsonPropertyName("costItems")]
-    public IList<CostItem> CostItems { get; set; } = default!;
+    public IList<CountableItem> CostItems { get; set; } = default!;
 
     [JsonPropertyName("unlockMaxLevel")]
     public int UnlockMaxLevel { get; set; }

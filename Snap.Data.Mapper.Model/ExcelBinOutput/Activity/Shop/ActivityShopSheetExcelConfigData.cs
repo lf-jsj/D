@@ -12,7 +12,7 @@ public class ActivityShopSheetExcelConfigData : DataObject
     public Text SheetNameTextMapHash { get; set; }
 
     [JsonPropertyName("cond")]
-    public IList<Cond> Cond { get; set; } = default!;
+    public IList<ParamCond> Cond { get; set; } = default!;
 
     [JsonPropertyName("sortLevel")]
     public IList<object> SortLevel { get; set; } = default!;

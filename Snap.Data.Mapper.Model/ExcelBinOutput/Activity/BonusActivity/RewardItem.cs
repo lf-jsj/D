@@ -1,6 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.BonusActivity;
 
-public class CostItem : DataObject
+public class RewardItem : DataObject
 {
     [JsonPropertyName("id")]
     public int Id { get; set; }
