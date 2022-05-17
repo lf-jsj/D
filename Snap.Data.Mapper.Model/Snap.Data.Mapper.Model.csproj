@@ -12,8 +12,6 @@
 
   <ItemGroup>
     <Folder Include="BinOutput\Ability\" />
-    <Folder Include="ExcelBinOutput\Hunting\" />
-    <Folder Include="ExcelBinOutput\Investigation\" />
   </ItemGroup>
 
 </Project>
