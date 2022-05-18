@@ -48,5 +48,5 @@ public class HideAndSeekMatchExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("cond")]
-    public IList<ParamCond> Cond { get; set; } = default!;
+    public IList<ParamType> Cond { get; set; } = default!;
 }

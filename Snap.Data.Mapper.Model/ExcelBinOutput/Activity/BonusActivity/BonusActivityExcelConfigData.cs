@@ -6,7 +6,7 @@ public class BonusActivityExcelConfigData : DataObject
     public int BonusActivityId { get; set; }
 
     [JsonPropertyName("condList")]
-    public IList<ParamListCond> CondList { get; set; } = default!;
+    public IList<ParamListType> CondList { get; set; } = default!;
 
     [JsonPropertyName("watcherId")]
     public int WatcherId { get; set; }

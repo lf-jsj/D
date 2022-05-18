@@ -1,6 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.BonusActivity;
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput;
 
-public class ParamListCond : DataObject
+public class ParamListType : DataObject
 {
     [JsonPropertyName("type")]
     public string Type { get; set; } = default!;

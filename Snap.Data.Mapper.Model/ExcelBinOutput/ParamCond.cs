@@ -1,6 +1,6 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput;
 
-public class ParamCond : DataObject
+public class ParamType : DataObject
 {
     [JsonPropertyName("param")]
     public IList<int> Param { get; set; } = default!;

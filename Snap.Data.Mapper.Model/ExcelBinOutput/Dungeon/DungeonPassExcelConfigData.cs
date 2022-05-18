@@ -6,7 +6,7 @@ public class DungeonPassExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("conds")]
-    public IList<ParamCond> Conds { get; set; } = default!;
+    public IList<ParamType> Conds { get; set; } = default!;
 
     [JsonPropertyName("logicType")]
     public string LogicType { get; set; } = default!;

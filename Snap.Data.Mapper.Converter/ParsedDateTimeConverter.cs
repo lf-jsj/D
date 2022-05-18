@@ -15,7 +15,8 @@ public class ParsedDateTimeConverter : JsonConverter<DateTime>
     /// <inheritdoc/>
     public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
-        if (reader.GetString() is string dataTimeString)
+        string? dataTimeString = reader.GetString();
+        if (!string.IsNullOrEmpty(dataTimeString))
         {
             return DateTime.ParseExact(dataTimeString,Format, CultureInfo.InvariantCulture);
         }
