@@ -2,7 +2,6 @@
 
 public class ActivityWatcherConfigData : DataObject
 {
-
     [JsonPropertyName("RewardId")]
     public int RewardId { get; set; }
 

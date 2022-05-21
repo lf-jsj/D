@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reunion;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reunion;
 
 public class ReunionPrivilegeExcelConfigData : DataObject
 {
@@ -12,5 +14,5 @@ public class ReunionPrivilegeExcelConfigData : DataObject
     public int JOPNDDGLFFL { get; set; }
 
     [JsonPropertyName("privilegeType")]
-    public IList<PrivilegeType> PrivilegeType { get; set; } = default!;
+    public IList<TypeSubType> PrivilegeType { get; set; } = default!;
 }

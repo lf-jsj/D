@@ -30,7 +30,7 @@ public class GatherExcelConfigData : DataObject
     public int RefreshId { get; set; }
 
     [JsonPropertyName("blockLimits")]
-    public IList<BlockLimit> BlockLimits { get; set; } = default!;
+    public IList<BlockIdCount> BlockLimits { get; set; } = default!;
 
     [JsonPropertyName("initDisableInteract")]
     public bool InitDisableInteract { get; set; }

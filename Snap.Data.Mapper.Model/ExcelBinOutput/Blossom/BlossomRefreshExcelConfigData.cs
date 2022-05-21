@@ -1,5 +1,8 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Blossom;
 
+using Snap.Data.Mapper.Model.Common;
+using Snap.Data.Mapper.Model.Common.Param;
+
 public class BlossomRefreshExcelConfigData : DataObject
 {
     [JsonPropertyName("id")]
@@ -28,7 +31,7 @@ public class BlossomRefreshExcelConfigData : DataObject
     public TimeOnly RefreshTime { get; set; }
 
     [JsonPropertyName("refreshCondVec")]
-    public IList<RefreshCondVec> RefreshCondVec { get; set; } = default!;
+    public IList<TypeParam<int>> RefreshCondVec { get; set; } = default!;
 
     [JsonPropertyName("reviseLevel")]
     public int ReviseLevel { get; set; }
@@ -40,7 +43,7 @@ public class BlossomRefreshExcelConfigData : DataObject
     public int CampUpdateNeedCount { get; set; }
 
     [JsonPropertyName("dropVec")]
-    public IList<DropVec> DropVec { get; set; } = default!;
+    public IList<DropIdPreviewReward> DropVec { get; set; } = default!;
 
     [JsonPropertyName("clientShowType")]
     public string ClientShowType { get; set; } = default!;

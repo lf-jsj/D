@@ -18,7 +18,7 @@ public class IrodoriPoetryExcelConfigData : DataObject
     public string EntityType { get; set; } = default!;
 
     [JsonPropertyName("BCJEKDFOFNH")]
-    public IList<BCJEKDFOFNH> BCJEKDFOFNH { get; set; } = default!;
+    public IList<MFHDNKFLPAJCADPACNCDBL> BCJEKDFOFNH { get; set; } = default!;
 
     [JsonPropertyName("MOIKHOIHHBA")]
     public int MOIKHOIHHBA { get; set; }

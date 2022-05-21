@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Scene;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Scene;
 
 public class SceneTagConfigData : DataObject
 {
@@ -15,7 +17,7 @@ public class SceneTagConfigData : DataObject
     public bool DICMHHHOHPE { get; set; }
 
     [JsonPropertyName("cond")]
-    public IList<Param2CondType> Cond { get; set; } = default!;
+    public IList<CondTypeParamParam2> Cond { get; set; } = default!;
 
     [JsonPropertyName("isDefaultValid")]
     public bool? IsDefaultValid { get; set; }

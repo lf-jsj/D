@@ -5,10 +5,18 @@
 /// </summary>
 public struct Text
 {
-    public Text(string value)
+    public Text(ulong hash,string value)
     {
+        Hash = hash;
         Value = value;
     }
 
-    public string Value { get; set; }
+    public ulong Hash { get; }
+
+    public string Value { get; }
+
+    public override string ToString()
+    {
+        return Value;
+    }
 }

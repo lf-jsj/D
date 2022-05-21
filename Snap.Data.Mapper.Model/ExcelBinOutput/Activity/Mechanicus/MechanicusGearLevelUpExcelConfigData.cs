@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Mechanicus;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Mechanicus;
 
 public class MechanicusGearLevelUpExcelConfigData : DataObject
 {
@@ -39,7 +41,7 @@ public class MechanicusGearLevelUpExcelConfigData : DataObject
     public int DemolitionRefund { get; set; }
 
     [JsonPropertyName("globalValueParam")]
-    public IList<GlobalValueParam> GlobalValueParam { get; set; } = default!;
+    public IList<KeyValue> GlobalValueParam { get; set; } = default!;
 
     [JsonPropertyName("effectList")]
     public IList<int> EffectList { get; set; } = default!;

@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
+﻿using Snap.Data.Mapper.Model.Common.Curve;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
 
 public class AvatarExcelConfigData : DataObject
 {
@@ -114,7 +116,7 @@ public class AvatarExcelConfigData : DataObject
     public double CriticalHurt { get; set; }
 
     [JsonPropertyName("propGrowCurves")]
-    public IList<PropGrowCurve> PropGrowCurves { get; set; } = default!;
+    public IList<TypeGrowCurve> PropGrowCurves { get; set; } = default!;
 
     [JsonPropertyName("prefabPathRagdollHashSuffix")]
     public HashSuffix PrefabPathRagdollHashSuffix { get; set; }

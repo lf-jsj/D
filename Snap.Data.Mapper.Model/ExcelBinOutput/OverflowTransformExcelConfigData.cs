@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput;
 
 public class OverflowTransformExcelConfigData : DataObject
 {
@@ -12,7 +14,7 @@ public class OverflowTransformExcelConfigData : DataObject
     public int TransformBaseCount { get; set; }
 
     [JsonPropertyName("transformResults")]
-    public IList<TransformResult> TransformResults { get; set; } = default!;
+    public IList<IdCount<int>> TransformResults { get; set; } = default!;
 
     [JsonPropertyName("transformItemLimitType")]
     public string TransformItemLimitType { get; set; } = default!;

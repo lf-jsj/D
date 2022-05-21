@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput;
 
 public class ProudSkillExcelConfigData : DataObject
 {
@@ -27,7 +29,7 @@ public class ProudSkillExcelConfigData : DataObject
     public string Icon { get; set; } = default!;
 
     [JsonPropertyName("costItems")]
-    public IList<CountableItem> CostItems { get; set; } = default!;
+    public IList<IdCount<int>> CostItems { get; set; } = default!;
 
     [JsonPropertyName("filterConds")]
     public IList<string> FilterConds { get; set; } = default!;
@@ -45,7 +47,7 @@ public class ProudSkillExcelConfigData : DataObject
     public string OpenConfig { get; set; } = default!;
 
     [JsonPropertyName("addProps")]
-    public IList<AddProp> AddProps { get; set; } = default!;
+    public IList<PropTypeValue> AddProps { get; set; } = default!;
 
     [JsonPropertyName("paramList")]
     public IList<double> ParamList { get; set; } = default!;

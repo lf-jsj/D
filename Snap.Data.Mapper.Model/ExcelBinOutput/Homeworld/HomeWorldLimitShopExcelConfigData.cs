@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Homeworld;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Homeworld;
 
 public class HomeWorldLimitShopExcelConfigData : DataObject
 {
@@ -18,7 +20,7 @@ public class HomeWorldLimitShopExcelConfigData : DataObject
     public int BuyLimit { get; set; }
 
     [JsonPropertyName("costItems")]
-    public IList<CountableItem> CostItems { get; set; } = default!;
+    public IList<IdCount<int>> CostItems { get; set; } = default!;
 
     [JsonPropertyName("weight")]
     public int Weight { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.EnvAnimal;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.EnvAnimal;
 
 public class EnvAnimalGatherExcelConfigData : DataObject
 {
@@ -9,7 +11,7 @@ public class EnvAnimalGatherExcelConfigData : DataObject
     public string EntityType { get; set; } = default!;
 
     [JsonPropertyName("gatherItemId")]
-    public IList<CountableItem> GatherItemId { get; set; } = default!;
+    public IList<IdCount<int>> GatherItemId { get; set; } = default!;
 
     [JsonPropertyName("escapeRadius")]
     public int EscapeRadius { get; set; }

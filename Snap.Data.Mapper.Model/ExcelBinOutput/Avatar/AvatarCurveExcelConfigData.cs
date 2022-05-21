@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
 
 public class AvatarCurveExcelConfigData : DataObject
 {
@@ -6,5 +8,5 @@ public class AvatarCurveExcelConfigData : DataObject
     public int Level { get; set; }
 
     [JsonPropertyName("curveInfos")]
-    public IList<CurveInfo> CurveInfos { get; set; } = default!;
+    public IList<TypeArithValue> CurveInfos { get; set; } = default!;
 }

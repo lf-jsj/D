@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Gadget;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Gadget;
 
 public class GadgetCurveExcelConfigData : DataObject
 {
@@ -6,5 +8,5 @@ public class GadgetCurveExcelConfigData : DataObject
     public int Level { get; set; }
 
     [JsonPropertyName("curveInfos")]
-    public IList<CurveInfo> CurveInfos { get; set; }
+    public IList<TypeArithValue> CurveInfos { get; set; }
 }

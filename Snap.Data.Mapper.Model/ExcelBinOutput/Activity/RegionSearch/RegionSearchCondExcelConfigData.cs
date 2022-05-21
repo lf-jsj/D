@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.RegionSearch;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.RegionSearch;
 
 public class RegionSearchCondExcelConfigData : DataObject
 {
@@ -21,7 +23,7 @@ public class RegionSearchCondExcelConfigData : DataObject
     public string LogicType { get; set; } = default!;
 
     [JsonPropertyName("cond")]
-    public IList<ParamType> Cond { get; set; } = default!;
+    public IList<TypeParam<int>> Cond { get; set; } = default!;
 
     [JsonPropertyName("regionList")]
     public IList<int> RegionList { get; set; } = default!;

@@ -1,4 +1,7 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.BonusActivity;
+﻿using Snap.Data.Mapper.Model.Common;
+using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.BonusActivity;
 
 public class BonusActivityExcelConfigData : DataObject
 {
@@ -6,13 +9,13 @@ public class BonusActivityExcelConfigData : DataObject
     public int BonusActivityId { get; set; }
 
     [JsonPropertyName("condList")]
-    public IList<ParamListType> CondList { get; set; } = default!;
+    public IList<TypeParamList> CondList { get; set; } = default!;
 
     [JsonPropertyName("watcherId")]
     public int WatcherId { get; set; }
 
     [JsonPropertyName("rewardItemList")]
-    public IList<RewardItem> RewardItemList { get; set; } = default!;
+    public IList<IdCount<int>> RewardItemList { get; set; } = default!;
 
     [JsonPropertyName("id")]
     public int Id { get; set; }

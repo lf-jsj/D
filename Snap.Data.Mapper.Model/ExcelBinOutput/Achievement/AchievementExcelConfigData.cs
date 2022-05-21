@@ -33,8 +33,8 @@ public class AchievementExcelConfigData : DataObject
     [JsonPropertyName("icon")]
     public string Icon { get; set; } = string.Empty;
 
-    //TODO: link up reward
     [JsonPropertyName("finishRewardId")]
+    [ForeignKey]
     public int FinishRewardId { get; set; }
 
     [JsonPropertyName("isDeleteWatcherAfterFinish")]
@@ -47,6 +47,9 @@ public class AchievementExcelConfigData : DataObject
     [JsonPropertyName("triggerConfig")]
     public ParamListTriggerConfig TriggerConfig { get; set; } = default!;
 
+    /// <summary>
+    /// <see cref="TriggerConfig"/> 中可能用到的进度
+    /// </summary>
     [JsonPropertyName("progress")]
     public int Progress { get; set; }
 

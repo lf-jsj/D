@@ -1,4 +1,7 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Gadget;
+﻿using Snap.Data.Mapper.Model.Common;
+using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Gadget;
 
 public class GadgetInteractExcelConfigData : DataObject
 {
@@ -12,10 +15,10 @@ public class GadgetInteractExcelConfigData : DataObject
     public int Param1 { get; set; }
 
     [JsonPropertyName("IAOBLJPMBFJ")]
-    public IList<IAOBLJPMBFJ> IAOBLJPMBFJ { get; set; } = default!;
+    public IList<ActionTypeParam<IList<int>>> IAOBLJPMBFJ { get; set; } = default!;
 
     [JsonPropertyName("costItems")]
-    public IList<CountableItem> CostItems { get; set; } = default!;
+    public IList<IdCount<int>> CostItems { get; set; } = default!;
 
     [JsonPropertyName("uiTitleTextMapHash")]
     public Text UiTitleTextMapHash { get; set; }
@@ -24,7 +27,7 @@ public class GadgetInteractExcelConfigData : DataObject
     public Text UiDescTextMapHash { get; set; }
 
     [JsonPropertyName("condList")]
-    public IList<ParamCondType> CondList { get; set; } = default!;
+    public IList<CondTypeParam> CondList { get; set; } = default!;
 
     [JsonPropertyName("consumeItemNum")]
     public bool ConsumeItemNum { get; set; }

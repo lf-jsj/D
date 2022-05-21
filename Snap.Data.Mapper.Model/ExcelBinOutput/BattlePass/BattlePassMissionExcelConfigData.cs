@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.BattlePass;
+﻿using Snap.Data.Mapper.Model.Common.Wrapper;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.BattlePass;
 
 public class BattlePassMissionExcelConfigData : DataObject
 {
@@ -9,7 +11,7 @@ public class BattlePassMissionExcelConfigData : DataObject
     public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("guide")]
-    public Guide Guide { get; set; } = default!;
+    public ParamWrapper<string> Guide { get; set; } = default!;
 
     [JsonPropertyName("id")]
     public int Id { get; set; }

@@ -1,4 +1,5 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.DragonSpine;
+using Snap.Data.Mapper.Model.Common.Param;
 
 public class DragonSpineMissionExcelConfigData : DataObject
 {
@@ -12,5 +13,5 @@ public class DragonSpineMissionExcelConfigData : DataObject
     public int WatcherId { get; set; }
 
     [JsonPropertyName("finishExec")]
-    public IList<FinishExec> FinishExec { get; set; } = default!;
+    public IList<TypeParam<string>> FinishExec { get; set; } = default!;
 }

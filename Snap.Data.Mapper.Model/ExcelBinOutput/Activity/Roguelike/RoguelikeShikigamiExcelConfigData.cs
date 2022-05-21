@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Roguelike;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Roguelike;
 
 public class RoguelikeShikigamiExcelConfigData : DataObject
 {
@@ -9,7 +11,7 @@ public class RoguelikeShikigamiExcelConfigData : DataObject
     public int GroupId { get; set; }
 
     [JsonPropertyName("unlockCond")]
-    public IList<ParamType> UnlockCond { get; set; } = default!;
+    public IList<TypeParam<int>> UnlockCond { get; set; } = default!;
 
     [JsonPropertyName("LKKFNMPFBEH")]
     public Text LKKFNMPFBEH { get; set; }

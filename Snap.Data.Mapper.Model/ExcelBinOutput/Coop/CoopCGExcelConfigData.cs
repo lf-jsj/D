@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Coop;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Coop;
 
 public class CoopCGExcelConfigData : DataObject
 {
@@ -15,7 +17,7 @@ public class CoopCGExcelConfigData : DataObject
     public string CgType { get; set; } = default!;
 
     [JsonPropertyName("unlockCond")]
-    public IList<ArgsCond> UnlockCond { get; set; } = default!;
+    public IList<CondTypeArgs> UnlockCond { get; set; } = default!;
 
     [JsonPropertyName("showImageHashSuffix")]
     public HashSuffix ShowImageHashSuffix { get; set; }

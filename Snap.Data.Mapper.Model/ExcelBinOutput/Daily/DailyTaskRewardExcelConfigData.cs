@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Daily;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Daily;
 
 public class DailyTaskRewardExcelConfigData : DataObject
 {
@@ -6,5 +8,5 @@ public class DailyTaskRewardExcelConfigData : DataObject
     public int ID { get; set; }
 
     [JsonPropertyName("dropVec")]
-    public IList<DropVec> DropVec { get; set; } = default!;
+    public IList<DropIdPreviewRewardId> DropVec { get; set; } = default!;
 }

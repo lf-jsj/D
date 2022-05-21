@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Coop;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Coop;
 
 public class CoopRewardExcelConfigData : DataObject
 {
@@ -6,7 +8,7 @@ public class CoopRewardExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("rewardCond")]
-    public IList<ArgsCond> RewardCond { get; set; } = default!;
+    public IList<CondTypeArgs> RewardCond { get; set; } = default!;
 
     [JsonPropertyName("chapterId")]
     public int ChapterId { get; set; }

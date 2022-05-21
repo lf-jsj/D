@@ -2,9 +2,8 @@
 using CommunityToolkit.Mvvm.Input;
 using Snap.Data.Mapper.Abstraction;
 using Snap.Data.Mapper.Converter;
-using Snap.Data.Visualizer.Binary;
-using Snap.Data.Visualizer.Core;
-using Snap.Data.Visualizer.Core.ComponentModel;
+using Snap.Data.Mapper.Model.ObjectModel;
+using Snap.Data.Mapper.Model.ObjectModel.Converter;
 using Snap.Data.Visualizer.TextMapping;
 using System;
 using System.Collections.Generic;
@@ -18,39 +17,17 @@ namespace Snap.Data.Visualizer.ViewModel;
 internal class MainViewModel : ObservableObject
 {
     private const string TextMapFolderName = "TextMap";
+
     private string? genshinDataFolder;
     private IList<ITextMap>? textMaps;
     private ITextMap? selectedTextMap;
-    private IList<NamedValue<WorkingMode>> workingModes = new List<NamedValue<WorkingMode>>
-    {
-        new("ExcelBinOutput", WorkingMode.ExcelBinOutput),
-        new("BinOutput", WorkingMode.BinOutput),
-    };
-    private NamedValue<WorkingMode> selectedWorkingMode = default!;
     private IList<NamedValue<Lazy<IOutputHandler>>>? outputHandlers;
     private NamedValue<Lazy<IOutputHandler>>? selectedOutputHandler;
 
     public MainViewModel()
     {
-        SelectedWorkingMode = WorkingModes.First();
-
         SelectDataFolderCommand = new RelayCommand(SelectDataFolder);
-    }
-
-    public IList<NamedValue<WorkingMode>> WorkingModes
-    {
-        get => workingModes;
-        set => SetProperty(ref workingModes, value);
-    }
-
-    public NamedValue<WorkingMode> SelectedWorkingMode
-    {
-        get => selectedWorkingMode;
-        set
-        {
-            SetProperty(ref selectedWorkingMode, value);
-            UpdateOutputHandlers();
-        }
+        ExportSelectedOutputDataCommand = new RelayCommand(ExportSelectedOutputData);
     }
 
     public IList<ITextMap>? TextMaps
@@ -65,14 +42,14 @@ internal class MainViewModel : ObservableObject
         set
         {
             SetProperty(ref selectedTextMap, value);
+            UpdateOutputHandlers();
+
             JsonContext.Options = JsonContext.CreateDefaultOption();
 
             if (value != null)
             {
                 AddJsonConverters(JsonContext.Options.Converters, value);
             }
-
-            UpdateOutputHandlers();
         }
     }
 
@@ -89,6 +66,7 @@ internal class MainViewModel : ObservableObject
     }
 
     public ICommand SelectDataFolderCommand { get; }
+    public ICommand ExportSelectedOutputDataCommand { get; }
 
     private void AddJsonConverters(IList<JsonConverter> converters, ITextMap value)
     {
@@ -117,6 +95,27 @@ internal class MainViewModel : ObservableObject
 
                 UpdateTextMaps();
                 UpdateOutputHandlers();
+            }
+        }
+    }
+
+    private void ExportSelectedOutputData()
+    {
+        if(SelectedOutputHandler is null)
+        {
+            return;
+        }
+
+        SaveFileDialog saveFileDialog = new()
+        { 
+            FileName = $"{SelectedOutputHandler.Name}.json",
+        };
+        using (saveFileDialog)
+        {
+            if(saveFileDialog.ShowDialog() is DialogResult.OK)
+            {
+                string targetPath = saveFileDialog.FileName;
+                File.WriteAllText(targetPath, SelectedOutputHandler.Value.Value.Output);
             }
         }
     }
@@ -151,11 +150,6 @@ internal class MainViewModel : ObservableObject
             return;
         }
 
-        OutputHandlers = SelectedWorkingMode.Value switch
-        {
-            WorkingMode.BinOutput => null,
-            WorkingMode.ExcelBinOutput => ExcelBin.Initialize(genshinDataFolder),
-            _ => null,
-        };
+        OutputHandlers = ExcelBin.Initialize(genshinDataFolder);
     }
 }

@@ -26,26 +26,3 @@ public class HomeWorldBgmExcelConfigData : DataObject
     [JsonPropertyName("JEGDGCKPKPK")]
     public bool? JEGDGCKPKPK { get; set; }
 }
-public class HomeWorldComfortLevelExcelConfigData : DataObject
-{
-    [JsonPropertyName("levelID")]
-    public int LevelID { get; set; }
-
-    [JsonPropertyName("homeCoinProduceRate")]
-    public int HomeCoinProduceRate { get; set; }
-
-    [JsonPropertyName("companionshipExpProduceRate")]
-    public int CompanionshipExpProduceRate { get; set; }
-
-    [JsonPropertyName("levelNameTextMapHash")]
-    public Text LevelNameTextMapHash { get; set; }
-
-    [JsonPropertyName("levelIconHashSuffix")]
-    public HashSuffix LevelIconHashSuffix { get; set; }
-
-    [JsonPropertyName("levelIconHashPre")]
-    public HashPre LevelIconHashPre { get; set; }
-
-    [JsonPropertyName("comfort")]
-    public int? Comfort { get; set; }
-}

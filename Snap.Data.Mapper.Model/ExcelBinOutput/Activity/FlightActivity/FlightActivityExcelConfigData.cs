@@ -21,5 +21,5 @@ public class FlightActivityExcelConfigData : DataObject
     public IList<int> MedalId { get; set; } = default!;
 
     [JsonPropertyName("dailyFactorVec")]
-    public IList<DailyFactorVec> DailyFactorVec { get; set; } = default!;
+    public IList<TimeFactorGoldFactor> DailyFactorVec { get; set; } = default!;
 }

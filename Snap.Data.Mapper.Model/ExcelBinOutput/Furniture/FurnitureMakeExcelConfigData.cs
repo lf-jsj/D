@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Furniture;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Furniture;
 public class FurnitureMakeExcelConfigData : DataObject
 {
     [JsonPropertyName("configID")]
@@ -14,7 +16,7 @@ public class FurnitureMakeExcelConfigData : DataObject
     public int Exp { get; set; }
 
     [JsonPropertyName("materialItems")]
-    public IList<MaterialItem> MaterialItems { get; set; } = default!;
+    public IList<IdCount<int>> MaterialItems { get; set; } = default!;
 
     [JsonPropertyName("makeTime")]
     public int MakeTime { get; set; }

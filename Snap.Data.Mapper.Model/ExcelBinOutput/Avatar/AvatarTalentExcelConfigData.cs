@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
 
 public class AvatarTalentExcelConfigData : DataObject
 {
@@ -24,7 +26,7 @@ public class AvatarTalentExcelConfigData : DataObject
     public string OpenConfig { get; set; } = default!;
 
     [JsonPropertyName("addProps")]
-    public IList<AddProp> AddProps { get; set; } = default!;
+    public IList<PropTypeValue> AddProps { get; set; } = default!;
 
     [JsonPropertyName("paramList")]
     public IList<double> ParamList { get; set; } = default!;

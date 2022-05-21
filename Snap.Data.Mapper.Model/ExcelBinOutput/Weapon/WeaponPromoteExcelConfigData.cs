@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
 
 public class WeaponPromoteExcelConfigData : DataObject
 {
@@ -6,10 +8,10 @@ public class WeaponPromoteExcelConfigData : DataObject
     public int WeaponPromoteId { get; set; }
 
     [JsonPropertyName("costItems")]
-    public IList<CountableItem> CostItems { get; set; } = default!;
+    public IList<IdCount<int>> CostItems { get; set; } = default!;
 
     [JsonPropertyName("addProps")]
-    public IList<AddProp> AddProps { get; set; } = default!;
+    public IList<PropTypeValue> AddProps { get; set; } = default!;
 
     [JsonPropertyName("unlockMaxLevel")]
     public int UnlockMaxLevel { get; set; }

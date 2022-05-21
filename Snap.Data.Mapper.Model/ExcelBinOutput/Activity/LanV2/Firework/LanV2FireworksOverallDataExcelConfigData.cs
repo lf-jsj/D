@@ -9,7 +9,7 @@ public class LanV2FireworksOverallDataExcelConfigData : DataObject
     public int GONHGNFKBDP { get; set; }
 
     [JsonPropertyName("IFACAFEIHLB")]
-    public IList<IFACAFEIHLB> IFACAFEIHLB { get; set; } = default!;
+    public IList<MJJDNALGLOJLPICMNCMNCG> IFACAFEIHLB { get; set; } = default!;
 
     [JsonPropertyName("NEEEOBDOCPP")]
     public double NEEEOBDOCPP { get; set; }

@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Salesman;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Salesman;
 
 public class ActivitySalesmanDailyExcelConfigData : DataObject
 {
@@ -6,7 +8,7 @@ public class ActivitySalesmanDailyExcelConfigData : DataObject
     public int DailyConfigId { get; set; }
 
     [JsonPropertyName("costItemList")]
-    public IList<CountableItem> CostItemList { get; set; } = default!;
+    public IList<IdCount<int>> CostItemList { get; set; } = default!;
 
     [JsonPropertyName("clusPosTextMapHash")]
     public Text ClusPosTextMapHash { get; set; }

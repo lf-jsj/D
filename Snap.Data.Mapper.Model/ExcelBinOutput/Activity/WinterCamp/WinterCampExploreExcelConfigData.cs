@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.WinterCamp;
+﻿using Snap.Data.Mapper.Model.Common.Wrapper;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.WinterCamp;
 
 public class WinterCampExploreExcelConfigData : DataObject
 {
@@ -21,5 +23,5 @@ public class WinterCampExploreExcelConfigData : DataObject
     public int RewardID { get; set; }
 
     [JsonPropertyName("CGCGOEGGAAA")]
-    public IList<CGCGOEGGAAA> CGCGOEGGAAA { get; set; } = default!;
+    public IList<DropIdWrapper> CGCGOEGGAAA { get; set; } = default!;
 }

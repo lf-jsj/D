@@ -1,11 +1,14 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reward;
-public class RewardExcelConfigData : DataObject
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reward;
+public class RewardExcelConfigData : IndexableDataObject
 {
     [JsonPropertyName("rewardId")]
+    [PrimaryKey]
     public int RewardId { get; set; }
 
     [JsonPropertyName("rewardItemList")]
-    public IList<RewardItem> RewardItemList { get; set; } = default!;
+    public IList<ItemIdItemCount> RewardItemList { get; set; } = default!;
 
     [JsonPropertyName("scoin")]
     public int? Scoin { get; set; }
@@ -15,4 +18,9 @@ public class RewardExcelConfigData : DataObject
 
     [JsonPropertyName("hcoin")]
     public int? Hcoin { get; set; }
+
+    public override int GetIndex()
+    {
+        return RewardId;
+    }
 }

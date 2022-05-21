@@ -1,6 +1,6 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Material;
 
-public class MaterialExcelConfigData : DataObject
+public class MaterialExcelConfigData : IndexableDataObject
 {
     [JsonPropertyName("interactionTitleTextMapHash")]
     public Text InteractionTitleTextMapHash { get; set; }
@@ -9,7 +9,7 @@ public class MaterialExcelConfigData : DataObject
     public bool NoFirstGetHint { get; set; }
 
     [JsonPropertyName("itemUse")]
-    public IList<ItemUse> ItemUse { get; set; } = default!;
+    public IList<UseOpUseParam> ItemUse { get; set; } = default!;
 
     [JsonPropertyName("rankLevel")]
     public int RankLevel { get; set; }
@@ -42,6 +42,7 @@ public class MaterialExcelConfigData : DataObject
     public IList<DataObject> DestroyReturnMaterialCount { get; set; } = default!;
 
     [JsonPropertyName("id")]
+    [PrimaryKey]
     public int Id { get; set; }
 
     [JsonPropertyName("nameTextMapHash")]
@@ -57,7 +58,7 @@ public class MaterialExcelConfigData : DataObject
     public string ItemType { get; set; } = default!;
 
     [JsonPropertyName("rank")]
-    public int Rank { get; set; }
+    public int? Rank { get; set; }
 
     [JsonPropertyName("effectGadgetID")]
     public int? EffectGadgetID { get; set; }
@@ -118,4 +119,9 @@ public class MaterialExcelConfigData : DataObject
 
     [JsonPropertyName("isHidden")]
     public bool? IsHidden { get; set; }
+
+    public override int GetIndex()
+    {
+        return Id;
+    }
 }

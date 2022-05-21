@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput;
 
 public class RqTalkExcelConfigData : DataObject
 {
@@ -9,7 +11,7 @@ public class RqTalkExcelConfigData : DataObject
     public string BeginWay { get; set; } = default!;
 
     [JsonPropertyName("beginCond")]
-    public IList<ParamType> BeginCond { get; set; } = default!;
+    public IList<TypeParam<int>> BeginCond { get; set; } = default!;
 
     [JsonPropertyName("priority")]
     public int Priority { get; set; }

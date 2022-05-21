@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
 
 public class WeaponCurveExcelConfigData : DataObject
 {
@@ -6,5 +8,5 @@ public class WeaponCurveExcelConfigData : DataObject
     public int Level { get; set; }
 
     [JsonPropertyName("curveInfos")]
-    public IList<CurveInfo> CurveInfos { get; set; } = default!;
+    public IList<TypeArithValue> CurveInfos { get; set; } = default!;
 }

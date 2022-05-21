@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.MpPlay;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.MpPlay;
 
 public class MpPlayGroupExcelConfigData : DataObject
 {
@@ -18,7 +20,7 @@ public class MpPlayGroupExcelConfigData : DataObject
     public IList<int> UpAvatarList { get; set; } = default!;
 
     [JsonPropertyName("rewardVec")]
-    public IList<RewardVec> RewardVec { get; set; } = default!;
+    public IList<DropIDRewardPreview> RewardVec { get; set; } = default!;
 
     [JsonPropertyName("activateGroupList")]
     public IList<int> ActivateGroupList { get; set; } = default!;

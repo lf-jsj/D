@@ -1,13 +1,9 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.RandomQuest;
+﻿using Snap.Data.Mapper.Model.Common.Param;
 
-public class Guide : DataObject
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.RandomQuest;
+
+public class Guide : TypeParam<string>
 {
-    [JsonPropertyName("type")]
-    public string Type { get; set; } = default!;
-
-    [JsonPropertyName("param")]
-    public IList<string> Param { get; set; } = default!;
-
     [JsonPropertyName("guideScene")]
     public int GuideScene { get; set; }
 

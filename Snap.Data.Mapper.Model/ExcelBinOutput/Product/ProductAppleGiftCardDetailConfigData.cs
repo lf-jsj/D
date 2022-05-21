@@ -1,9 +1,11 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Product;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Product;
 
 public class ProductAppleGiftCardDetailConfigData : DataObject
 {
     [JsonPropertyName("contentVec")]
-    public IList<ContentVec> ContentVec { get; set; } = default!;
+    public IList<MaterialIdMaterialNum> ContentVec { get; set; } = default!;
 
     [JsonPropertyName("mailConfigId")]
     public int MailConfigId { get; set; }

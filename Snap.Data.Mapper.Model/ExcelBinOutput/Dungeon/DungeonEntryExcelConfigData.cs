@@ -24,7 +24,7 @@ public class DungeonEntryExcelConfigData : DataObject
     public string CondComb { get; set; } = default!;
 
     [JsonPropertyName("satisfiedCond")]
-    public IList<SatisfiedCond> SatisfiedCond { get; set; } = default!;
+    public IList<TypeParam1> SatisfiedCond { get; set; } = default!;
 
     [JsonPropertyName("picPath")]
     public string PicPath { get; set; } = default!;

@@ -3,7 +3,9 @@
 
 namespace Snap.Data.Mapper.Abstraction;
 
-public interface IExcelBinOutputHandler : IOutputHandler
+public interface IExcelBinOutputHandler<TElement> : IOutputHandler
 {
+    public IList<TElement> OutputData { get; }
 
+    public IDictionary<int, TElement> OutputDataMap { get; }
 }

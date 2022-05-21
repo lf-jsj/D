@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Photograph;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Photograph;
 
 public class PhotographExpressionExcelConfigData : DataObject
 {
@@ -24,7 +26,7 @@ public class PhotographExpressionExcelConfigData : DataObject
     public int AvatarId { get; set; }
 
     [JsonPropertyName("openConds")]
-    public IList<OpenCond> OpenConds { get; set; } = default!;
+    public IList<CondTypeParamList> OpenConds { get; set; } = default!;
 
     [JsonPropertyName("finishConds")]
     public IList<DataObject> FinishConds { get; set; } = default!;

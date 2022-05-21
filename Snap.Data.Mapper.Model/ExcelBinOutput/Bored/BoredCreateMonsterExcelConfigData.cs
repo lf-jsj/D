@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Bored;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Bored;
 
 public class BoredCreateMonsterExcelConfigData : DataObject
 {
@@ -6,5 +8,5 @@ public class BoredCreateMonsterExcelConfigData : DataObject
     public int PlayerLevel { get; set; }
 
     [JsonPropertyName("monsterConfigVec")]
-    public IList<MonsterConfigVec> MonsterConfigVec { get; set; } = default!;
+    public IList<IdWeight> MonsterConfigVec { get; set; } = default!;
 }

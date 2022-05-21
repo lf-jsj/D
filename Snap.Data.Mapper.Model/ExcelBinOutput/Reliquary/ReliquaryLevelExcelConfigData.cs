@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reliquary;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reliquary;
 
 public class ReliquaryLevelExcelConfigData : DataObject
 {
@@ -6,7 +8,7 @@ public class ReliquaryLevelExcelConfigData : DataObject
     public int Level { get; set; }
 
     [JsonPropertyName("addProps")]
-    public IList<AddProp> AddProps { get; set; } = default!;
+    public IList<PropTypeValue> AddProps { get; set; } = default!;
 
     [JsonPropertyName("rank")]
     public int? Rank { get; set; }

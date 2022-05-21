@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.NewActivity;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.NewActivity;
 
 public class NewActivityCondExcelConfigData : DataObject
 {
@@ -9,5 +11,5 @@ public class NewActivityCondExcelConfigData : DataObject
     public string CondComb { get; set; } = default!;
 
     [JsonPropertyName("cond")]
-    public IList<ParamType> Cond { get; set; } = default!;
+    public IList<TypeParam<int>> Cond { get; set; } = default!;
 }

@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
+﻿using Snap.Data.Mapper.Model.Common.Wrapper;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity;
 
 public class ActivityExcelConfigData : DataObject
 {
@@ -9,7 +11,7 @@ public class ActivityExcelConfigData : DataObject
     public string Type { get; set; } = default!;
 
     [JsonPropertyName("DestroyItem")]
-    public IList<DestroyItem> DestroyItem { get; set; } = default!;
+    public IList<ItemIdWrapper> DestroyItem { get; set; } = default!;
 
     [JsonPropertyName("NameTextMapHash")]
     public long NameTextMapHash { get; set; }

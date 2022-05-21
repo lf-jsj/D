@@ -12,10 +12,10 @@ public class ExpeditionDataExcelConfigData : DataObject
     public int CityId { get; set; }
 
     [JsonPropertyName("openConditionVec")]
-    public IList<OpenConditionVec> OpenConditionVec { get; set; } = default!;
+    public IList<TypeParaPJNLDIOJPGB> OpenConditionVec { get; set; } = default!;
 
     [JsonPropertyName("timeRewardVec")]
-    public IList<TimeRewardVec> TimeRewardVec { get; set; } = default!;
+    public IList<TimeReward> TimeRewardVec { get; set; } = default!;
 
     [JsonPropertyName("descriptionTextMapHash")]
     public Text DescriptionTextMapHash { get; set; }

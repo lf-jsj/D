@@ -18,5 +18,5 @@ public class RogueSequenceExcelConfigData : DataObject
     public HFHJLLEIGHK HFHJLLEIGHK { get; set; } = default!;
 
     [JsonPropertyName("PGAJLDPJLIO")]
-    public IList<PGAJLDPJLIO> PGAJLDPJLIO { get; set; } = default!;
+    public IList<TypeMJJDNALGLOJ> PGAJLDPJLIO { get; set; } = default!;
 }

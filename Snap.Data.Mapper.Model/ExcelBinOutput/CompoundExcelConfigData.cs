@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput;
 
 public class CompoundExcelConfigData : DataObject
 {
@@ -27,10 +29,10 @@ public class CompoundExcelConfigData : DataObject
     public int QueueSize { get; set; }
 
     [JsonPropertyName("inputVec")]
-    public IList<CountableItem> InputVec { get; set; } = default!;
+    public IList<IdCount<int>> InputVec { get; set; } = default!;
 
     [JsonPropertyName("outputVec")]
-    public IList<CountableItem> OutputVec { get; set; } = default!;
+    public IList<IdCount<int>> OutputVec { get; set; } = default!;
 
     [JsonPropertyName("icon")]
     public string Icon { get; set; } = default!;

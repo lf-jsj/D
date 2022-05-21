@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Bartender;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Bartender;
 
 public class BartenderFormulaExcelConfigData : DataObject
 {
@@ -6,10 +8,10 @@ public class BartenderFormulaExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("BOENDAGDFCI")]
-    public IList<CountableItem> BOENDAGDFCI { get; set; } = default!;
+    public IList<IdCount<int>> BOENDAGDFCI { get; set; } = default!;
 
     [JsonPropertyName("OJLPCCLKHLJ")]
-    public IList<CountableItem> OJLPCCLKHLJ { get; set; } = default!;
+    public IList<IdCount<int>> OJLPCCLKHLJ { get; set; } = default!;
 
     [JsonPropertyName("AJJNCNNHCEA")]
     public IList<int> AJJNCNNHCEA { get; set; } = default!;

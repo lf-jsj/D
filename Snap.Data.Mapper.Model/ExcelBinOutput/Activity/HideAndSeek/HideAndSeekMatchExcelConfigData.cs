@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.HideAndSeek;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.HideAndSeek;
 
 public class HideAndSeekMatchExcelConfigData : DataObject
 {
@@ -48,5 +50,5 @@ public class HideAndSeekMatchExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("cond")]
-    public IList<ParamType> Cond { get; set; } = default!;
+    public IList<TypeParam<int>> Cond { get; set; } = default!;
 }

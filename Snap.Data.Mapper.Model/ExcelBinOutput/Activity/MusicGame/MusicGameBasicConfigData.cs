@@ -42,11 +42,11 @@ public class MusicGameBasicConfigData : DataObject
     public int ScoreOneKey { get; set; }
 
     [JsonPropertyName("comboConfig")]
-    public IList<ComboConfig> ComboConfig { get; set; } = default!;
+    public IList<ComboUpLimitRate> ComboConfig { get; set; } = default!;
 
     [JsonPropertyName("unlockTipsTextMapHash")]
     public Text UnlockTipsTextMapHash { get; set; }
 
     [JsonPropertyName("INOAKFACPHC")]
-    public IList<INOAKFACPHC> INOAKFACPHC { get; set; } = default!;
+    public IList<OILMPMKAIPGDJDAHKCOBJFHAGMMLFIIED> INOAKFACPHC { get; set; } = default!;
 }

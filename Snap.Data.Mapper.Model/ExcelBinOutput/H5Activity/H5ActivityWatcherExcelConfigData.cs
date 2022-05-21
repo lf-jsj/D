@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.H5Activity;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.H5Activity;
 
 public class H5ActivityWatcherExcelConfigData : DataObject
 {
@@ -9,7 +11,7 @@ public class H5ActivityWatcherExcelConfigData : DataObject
     public string CondComb { get; set; } = default!;
 
     [JsonPropertyName("condList")]
-    public IList<ParamStrCond> CondList { get; set; } = default!;
+    public IList<TypeParamStr> CondList { get; set; } = default!;
 
     [JsonPropertyName("isDailyRefresh")]
     public bool IsDailyRefresh { get; set; }

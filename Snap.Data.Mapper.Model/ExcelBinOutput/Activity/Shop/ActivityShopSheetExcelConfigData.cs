@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Shop;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Shop;
 
 public class ActivityShopSheetExcelConfigData : DataObject
 {
@@ -12,8 +14,8 @@ public class ActivityShopSheetExcelConfigData : DataObject
     public Text SheetNameTextMapHash { get; set; }
 
     [JsonPropertyName("cond")]
-    public IList<ParamType> Cond { get; set; } = default!;
+    public IList<TypeParam<int>> Cond { get; set; } = default!;
 
     [JsonPropertyName("sortLevel")]
-    public IList<object> SortLevel { get; set; } = default!;
+    public IList<DataObject> SortLevel { get; set; } = default!;
 }

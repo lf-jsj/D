@@ -12,7 +12,7 @@ public class AbilityOverrideExcelConfigData : DataObject
 
     [JsonPropertyName("JLJPHIAFGOJ")]
     [DataArray(Length = 5)]
-    public IList<JLJPHIAFGOJ> JLJPHIAFGOJ { get; set; } = default!;
+    public IList<ELPCOOLNPFFLNJAEIIDNAO> JLJPHIAFGOJ { get; set; } = default!;
 
     [JsonPropertyName("FOKEAEJGIOA")]
     public IList<string> FOKEAEJGIOA { get; set; } = default!;

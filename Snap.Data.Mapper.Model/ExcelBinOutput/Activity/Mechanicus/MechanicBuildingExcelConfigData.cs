@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Mechanicus;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.Mechanicus;
 
 public class MechanicBuildingExcelConfigData : DataObject
 {
@@ -24,7 +26,7 @@ public class MechanicBuildingExcelConfigData : DataObject
     public int MaxLevel { get; set; }
 
     [JsonPropertyName("openConds")]
-    public IList<OpenCond> OpenConds { get; set; } = default!;
+    public IList<KeyValue> OpenConds { get; set; } = default!;
 
     [JsonPropertyName("defaultDungeonList")]
     public IList<int> DefaultDungeonList { get; set; } = default!;

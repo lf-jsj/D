@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Giving;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Giving;
 
 public class GivingExcelConfigData : DataObject
 {
@@ -18,7 +20,7 @@ public class GivingExcelConfigData : DataObject
     public string GivingMethod { get; set; } = default!;
 
     [JsonPropertyName("exactItems")]
-    public IList<CountableItem> ExactItems { get; set; } = default!;
+    public IList<IdCount<int>> ExactItems { get; set; } = default!;
 
     [JsonPropertyName("exactFinishTalkId")]
     public int ExactFinishTalkId { get; set; }

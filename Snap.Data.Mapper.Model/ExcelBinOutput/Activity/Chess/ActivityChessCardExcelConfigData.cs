@@ -53,7 +53,7 @@ public class ActivityChessCardExcelConfigData : DataObject
     public int EMOKONNNHCA { get; set; }
 
     [JsonPropertyName("NFOAKLIOPMH")]
-    public NFOAKLIOPMH NFOAKLIOPMH { get; set; } = default!;
+    public TargetTypeEffectParam3 NFOAKLIOPMH { get; set; } = default!;
 
     [JsonPropertyName("CIPIIHPDONO")]
     public int CIPIIHPDONO { get; set; }
@@ -65,7 +65,7 @@ public class ActivityChessCardExcelConfigData : DataObject
     public bool NJANICODPCH { get; set; }
 
     [JsonPropertyName("PLDAMHDHOLO")]
-    public IList<PLDAMHDHOLO> PLDAMHDHOLO { get; set; } = default!;
+    public IList<ChessEffectParam> PLDAMHDHOLO { get; set; } = default!;
 
     [JsonPropertyName("KEIHCOBHONL")]
     public bool? KEIHCOBHONL { get; set; }

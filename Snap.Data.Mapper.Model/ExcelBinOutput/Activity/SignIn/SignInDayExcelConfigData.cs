@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.SignIn;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.SignIn;
 
 public class SignInDayExcelConfigData : DataObject
 {
@@ -12,5 +14,5 @@ public class SignInDayExcelConfigData : DataObject
     public int PeriodId { get; set; }
 
     [JsonPropertyName("RewardItemList")]
-    public IList<RewardItem> RewardItemList { get; set; } = default!;
+    public IList<ItemIdCountQuality> RewardItemList { get; set; } = default!;
 }

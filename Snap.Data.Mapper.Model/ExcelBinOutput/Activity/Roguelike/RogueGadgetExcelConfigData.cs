@@ -12,5 +12,5 @@ public class RogueGadgetExcelConfigData : DataObject
     public int GadgetId { get; set; }
 
     [JsonPropertyName("OJEEGENALAE")]
-    public IList<OJEEGENALAE> OJEEGENALAE { get; set; } = default!;
+    public IList<DJCONOGMKPHOEFPHILAACD> OJEEGENALAE { get; set; } = default!;
 }

@@ -6,7 +6,7 @@ public class DraftExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("transferConfig")]
-    public IList<TransferConfig> TransferConfig { get; set; } = default!;
+    public IList<GroupIdConfigId> TransferConfig { get; set; } = default!;
 
     [JsonPropertyName("sceneId")]
     public int SceneId { get; set; }

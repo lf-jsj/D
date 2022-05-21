@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.RandomQuest;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.RandomQuest;
 
 public class RandomQuestTemplateExcelConfigData : DataObject
 {
@@ -6,5 +8,5 @@ public class RandomQuestTemplateExcelConfigData : DataObject
     public int MainId { get; set; }
 
     [JsonPropertyName("elemList")]
-    public IList<ElemList> ElemList { get; set; } = default!;
+    public IList<PoolIdName> ElemList { get; set; } = default!;
 }

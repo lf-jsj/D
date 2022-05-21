@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Cook;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Cook;
 
 public class CookRecipeExcelConfigData : DataObject
 {
@@ -33,10 +35,10 @@ public class CookRecipeExcelConfigData : DataObject
     public int MaxProficiency { get; set; }
 
     [JsonPropertyName("qualityOutputVec")]
-    public IList<CountableItem> QualityOutputVec { get; set; } = default!;
+    public IList<IdCount<int>> QualityOutputVec { get; set; } = default!;
 
     [JsonPropertyName("inputVec")]
-    public IList<CountableItem> InputVec { get; set; } = default!;
+    public IList<IdCount<int>> InputVec { get; set; } = default!;
 
     [JsonPropertyName("qteParam")]
     public string QteParam { get; set; } = default!;

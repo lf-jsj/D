@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Fetter;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Fetter;
 
 public class FetterInfoExcelConfigData : DataObject
 {
@@ -54,5 +56,5 @@ public class FetterInfoExcelConfigData : DataObject
     public IList<DataObject> OpenConds { get; set; } = default!;
 
     [JsonPropertyName("finishConds")]
-    public IList<ParamListCondType> FinishConds { get; set; } = default!;
+    public IList<CondTypeParamList> FinishConds { get; set; } = default!;
 }

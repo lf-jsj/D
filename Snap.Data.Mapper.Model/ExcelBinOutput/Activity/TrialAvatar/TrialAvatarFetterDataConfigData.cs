@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.TrialAvatar;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.TrialAvatar;
 
 public class TrialAvatarFetterDataConfigData : DataObject
 {
@@ -9,5 +11,5 @@ public class TrialAvatarFetterDataConfigData : DataObject
     public int HKAMALMFNDH { get; set; }
 
     [JsonPropertyName("finishCond")]
-    public FinishCond FinishCond { get; set; } = default!;
+    public CondTypeParamList FinishCond { get; set; } = default!;
 }

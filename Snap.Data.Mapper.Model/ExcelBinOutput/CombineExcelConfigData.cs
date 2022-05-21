@@ -1,4 +1,7 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput;
+﻿using Snap.Data.Mapper.Model.Common;
+using Snap.Data.Mapper.Model.Common.Wrapper;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput;
 
 public class CombineExcelConfigData : DataObject
 {
@@ -27,10 +30,10 @@ public class CombineExcelConfigData : DataObject
     public int ScoinCost { get; set; }
 
     [JsonPropertyName("randomItems")]
-    public IList<RandomItem> RandomItems { get; set; } = default!;
+    public IList<CountWrapper> RandomItems { get; set; } = default!;
 
     [JsonPropertyName("materialItems")]
-    public IList<MaterialItem> MaterialItems { get; set; } = default!;
+    public IList<IdCount<int>> MaterialItems { get; set; } = default!;
 
     [JsonPropertyName("effectDescTextMapHash")]
     public Text EffectDescTextMapHash { get; set; }

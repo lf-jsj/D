@@ -15,5 +15,5 @@ public class DungeonRosterConfigData : DataObject
     public string CycleType { get; set; } = default!;
 
     [JsonPropertyName("rosterPool")]
-    public IList<RosterPool> RosterPool { get; set; } = default!;
+    public IList<DungeonListWrapper> RosterPool { get; set; } = default!;
 }

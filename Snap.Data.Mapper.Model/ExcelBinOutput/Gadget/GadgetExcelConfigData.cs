@@ -1,6 +1,6 @@
 ﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Gadget;
 
-public class GadgetExcelConfigData : DataObject
+public class GadgetExcelConfigData : IndexableDataObject
 {
     [JsonPropertyName("type")]
     public string Type { get; set; } = default!;
@@ -91,6 +91,9 @@ public class GadgetExcelConfigData : DataObject
 
     [JsonPropertyName("controllerPathHashPre")]
     public HashPre? ControllerPathHashPre { get; set; }
+
+    public override int GetIndex()
+    {
+        return Id;
+    }
 }
-
-

@@ -1,4 +1,7 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Monster;
+﻿using Snap.Data.Mapper.Model.Common;
+using Snap.Data.Mapper.Model.Common.Curve;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Monster;
 
 public class MonsterExcelConfigData : DataObject
 {
@@ -36,7 +39,7 @@ public class MonsterExcelConfigData : DataObject
     public IList<int> Equips { get; set; } = default!;
 
     [JsonPropertyName("hpDrops")]
-    public IList<HpDrop> HpDrops { get; set; } = default!;
+    public IList<DropIdHpPercent> HpDrops { get; set; } = default!;
 
     [JsonPropertyName("killDropId")]
     public int KillDropId { get; set; }
@@ -93,7 +96,7 @@ public class MonsterExcelConfigData : DataObject
     public double RockSubHurt { get; set; }
 
     [JsonPropertyName("propGrowCurves")]
-    public IList<PropGrowCurve> PropGrowCurves { get; set; } = default!;
+    public IList<TypeGrowCurve> PropGrowCurves { get; set; } = default!;
 
     [JsonPropertyName("physicalSubHurt")]
     public double PhysicalSubHurt { get; set; }

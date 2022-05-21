@@ -42,7 +42,7 @@ public class ActivitySumoStageExcelConfigData : DataObject
     public IList<int> OBHGBLBGMNC { get; set; } = default!;
 
     [JsonPropertyName("EFIMENECJNP")]
-    public IList<EFIMENECJNP> EFIMENECJNP { get; set; } = default!;
+    public IList<HPGLJGCCMFFLGFBKELLAEI> EFIMENECJNP { get; set; } = default!;
 
     [JsonPropertyName("FNFGOEDEPDN")]
     public IList<int> FNFGOEDEPDN { get; set; } = default!;

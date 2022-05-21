@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.FlightActivity;
+﻿using Snap.Data.Mapper.Model.Common.Wrapper;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Activity.FlightActivity;
 
 public class FlightActivityMedalExcelConfigData : DataObject
 {
@@ -9,5 +11,5 @@ public class FlightActivityMedalExcelConfigData : DataObject
     public string MedalIcon { get; set; } = default!;
 
     [JsonPropertyName("dailyInfo")]
-    public IList<DailyInfo> DailyInfo { get; set; } = default!;
+    public IList<WatcherWrapper> DailyInfo { get; set; } = default!;
 }

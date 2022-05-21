@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.RandomQuest;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.RandomQuest;
 
 public class RandomQuestExcelConfigData : DataObject
 {
@@ -18,13 +20,13 @@ public class RandomQuestExcelConfigData : DataObject
     public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("acceptCond")]
-    public IList<ParamType> AcceptCond { get; set; } = default!;
+    public IList<TypeParam<int>> AcceptCond { get; set; } = default!;
 
     [JsonPropertyName("finishCond")]
-    public IList<FinishCond> FinishCond { get; set; } = default!;
+    public IList<TypeParamParamStrCount<string>> FinishCond { get; set; } = default!;
 
     [JsonPropertyName("failCond")]
-    public IList<FailCond> FailCond { get; set; } = default!;
+    public IList<TypeParamParamStrCount<string>> FailCond { get; set; } = default!;
 
     [JsonPropertyName("guide")]
     public Guide Guide { get; set; } = default!;
@@ -39,13 +41,13 @@ public class RandomQuestExcelConfigData : DataObject
     public IList<AwardItem> AwardItems { get; set; } = default!;
 
     [JsonPropertyName("beginExec")]
-    public IList<BeginExec> BeginExec { get; set; } = default!;
+    public IList<TypeParam<string>> BeginExec { get; set; } = default!;
 
     [JsonPropertyName("finishExec")]
-    public IList<FinishExec> FinishExec { get; set; } = default!;
+    public IList<TypeParam<string>> FinishExec { get; set; } = default!;
 
     [JsonPropertyName("failExec")]
-    public IList<FailExec> FailExec { get; set; } = default!;
+    public IList<TypeParam<string>> FailExec { get; set; } = default!;
 
     [JsonPropertyName("isRewind")]
     public bool? IsRewind { get; set; }

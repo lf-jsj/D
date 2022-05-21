@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Forge;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Forge;
 
 public class ForgeRandomExcelConfigData : DataObject
 {
@@ -6,5 +8,5 @@ public class ForgeRandomExcelConfigData : DataObject
     public int ForgeRandomId { get; set; }
 
     [JsonPropertyName("mainRandomItems")]
-    public IList<MainRandomItem> MainRandomItems { get; set; } = default!;
+    public IList<ItemIdCountWeight> MainRandomItems { get; set; } = default!;
 }

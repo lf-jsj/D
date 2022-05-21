@@ -1,4 +1,7 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Offering;
+﻿using Snap.Data.Mapper.Model.Common;
+using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Offering;
 
 public class OfferingLevelUpExcelConfigData : DataObject
 {
@@ -9,13 +12,13 @@ public class OfferingLevelUpExcelConfigData : DataObject
     public int Level { get; set; }
 
     [JsonPropertyName("actionVec")]
-    public IList<ActionVec> ActionVec { get; set; } = default!;
+    public IList<IdCount<int>> ActionVec { get; set; } = default!;
 
     [JsonPropertyName("rewardId")]
     public int RewardId { get; set; }
 
     [JsonPropertyName("FJFOAPDLHDF")]
-    public IList<FJFOAPDLHDF> FJFOAPDLHDF { get; set; } = default!;
+    public IList<ActionTypeParam<string>> FJFOAPDLHDF { get; set; } = default!;
 
     [JsonPropertyName("cutSceneId")]
     public int? CutSceneId { get; set; }

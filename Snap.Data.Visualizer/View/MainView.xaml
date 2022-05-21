@@ -15,23 +15,20 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <ui:CommandBar>
+            <ui:AppBarButton Label="导出当前项" Command="{Binding ExportSelectedOutputDataCommand}">
+                <ui:AppBarButton.Icon>
+                    <ui:FontIcon Glyph="&#xEDE1;"/>
+                </ui:AppBarButton.Icon>
+            </ui:AppBarButton>
+            <ui:AppBarSeparator/>
             <ui:AppBarElementContainer>
-                <StackPanel Orientation="Horizontal">
-                    <ComboBox
-                        Margin="12,4,0,0"
-                        MinWidth="160"
-                        ui:ControlHelper.PlaceholderText="工作模式"
-                        DisplayMemberPath="Value"
-                        ItemsSource="{Binding WorkingModes}"
-                        SelectedItem="{Binding SelectedWorkingMode}"/>
-                    <ComboBox
-                        Margin="12,4,0,0"
-                        MinWidth="160"
-                        ui:ControlHelper.PlaceholderText="文本映射语言"
-                        DisplayMemberPath="Language"
-                        ItemsSource="{Binding TextMaps}"
-                        SelectedItem="{Binding SelectedTextMap}"/>
-                </StackPanel>
+                <ComboBox
+                    Margin="0,4,0,0"
+                    MinWidth="160"
+                    ui:ControlHelper.PlaceholderText="文本映射语言"
+                    DisplayMemberPath="Language"
+                    ItemsSource="{Binding TextMaps}"
+                    SelectedItem="{Binding SelectedTextMap}"/>
             </ui:AppBarElementContainer>
             <ui:AppBarSeparator/>
             <ui:AppBarButton
@@ -55,60 +52,16 @@
             </ui:SplitView.Pane>
             <ui:SplitView.Content>
                 <TabControl>
-                    <TabItem Header="Possible Enum">
-                        <ScrollViewer>
-                            <ItemsControl Margin="12"
-                                ItemsSource="{Binding SelectedOutputHandler.Value.Value.KeyEnumerations}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <TextBlock
-                                                Margin="0,24,0,0"
-                                                Text="{Binding Key}"
-                                                Style="{StaticResource BaseTextBlockStyle}"/>
-                                            <TextBlock
-                                                Margin="0,6,0,0"
-                                                Text="{Binding Value.Count}"
-                                                Style="{StaticResource BaseTextBlockStyle}"/>
-                                            <ItemsControl
-                                                Margin="0,12,0,0"
-                                                ItemsSource="{Binding Value}">
-                                                <ItemsControl.ItemsPanel>
-                                                    <ItemsPanelTemplate>
-                                                        <UniformGrid Columns="5"/>
-                                                    </ItemsPanelTemplate>
-                                                </ItemsControl.ItemsPanel>
-                                                <ItemsControl.ItemTemplate>
-                                                    <DataTemplate>
-                                                        <TextBox
-                                                            Margin="0,0,6,6"
-                                                            Text="{Binding Mode=OneTime}"
-                                                            >
-                                                            <TextBox.Style>
-                                                                <Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">
-                                                                    <Style.Triggers>
-                                                                        <DataTrigger Binding="{Binding Mode=OneTime}" Value="">
-                                                                            <Setter Property="ui:ControlHelper.PlaceholderText" Value="string.Empty"/>
-                                                                        </DataTrigger>
-                                                                        <DataTrigger Binding="{Binding Mode=OneTime}" Value="{x:Null}">
-                                                                            <Setter Property="ui:ControlHelper.PlaceholderText" Value="null"/>
-                                                                        </DataTrigger>
-                                                                    </Style.Triggers>
-                                                                </Style>
-                                                            </TextBox.Style>
-                                                        </TextBox>
-                                                    </DataTemplate>
-                                                </ItemsControl.ItemTemplate>
-                                            </ItemsControl>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </ScrollViewer>
+                    <TabItem Header="Data">
+                        <DataGrid>
+                            
+                        </DataGrid>
                     </TabItem>
                     <TabItem Header="Output">
-                        <ScrollViewer>
+                        <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="0">
                             <TextBlock
+                                Margin="16"
+                                FontFamily="Cascadia Code,Microsoft YaHei UI"
                                 Text="{Binding SelectedOutputHandler.Value.Value.Output}"/>
                         </ScrollViewer>
                     </TabItem>

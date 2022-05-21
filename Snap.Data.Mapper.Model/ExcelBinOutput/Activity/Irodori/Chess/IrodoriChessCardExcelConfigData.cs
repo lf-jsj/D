@@ -9,10 +9,10 @@ public class IrodoriChessCardExcelConfigData : DataObject
     public int CostPoints { get; set; }
 
     [JsonPropertyName("NFOAKLIOPMH")]
-    public NFOAKLIOPMH NFOAKLIOPMH { get; set; } = default!;
+    public IrodoriChessEffectParam NFOAKLIOPMH { get; set; } = default!;
 
     [JsonPropertyName("PLDAMHDHOLO")]
-    public IList<PLDAMHDHOLO> PLDAMHDHOLO { get; set; } = default!;
+    public IList<IrodoriChessEffectParam> PLDAMHDHOLO { get; set; } = default!;
 
     [JsonPropertyName("cardType")]
     public string CardType { get; set; } = default!;
@@ -30,7 +30,7 @@ public class IrodoriChessCardExcelConfigData : DataObject
     public IList<double> DescParam { get; set; } = default!;
 
     [JsonPropertyName("HPKKLACDOAL")]
-    public IList<HPKKLACDOAL> HPKKLACDOAL { get; set; } = default!;
+    public IList<JNFDJJCLCBAGMHNKGFHLMCADCOECLELMG> HPKKLACDOAL { get; set; } = default!;
 
     [JsonPropertyName("OPPLAFJOCAM")]
     public string OPPLAFJOCAM { get; set; } = default!;

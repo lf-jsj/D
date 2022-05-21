@@ -6,5 +6,5 @@ public class CaptureExcelConfigData : DataObject
     public int MonsterID { get; set; }
 
     [JsonPropertyName("BLFLMKOEFMK")]
-    public IList<BLFLMKOEFMK> BLFLMKOEFMK { get; set; } = default!;
+    public IList<ItemIDDropIDFMOMPMOKDPG> BLFLMKOEFMK { get; set; } = default!;
 }

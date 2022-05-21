@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reputation;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reputation;
 
 public class ReputationEntranceExcelConfigData : DataObject
 {
@@ -12,7 +14,7 @@ public class ReputationEntranceExcelConfigData : DataObject
     public int CityId { get; set; }
 
     [JsonPropertyName("goodsIdVec")]
-    public IList<GoodsIdVec> GoodsIdVec { get; set; } = default!;
+    public IList<TypeParam1> GoodsIdVec { get; set; } = default!;
 
     [JsonPropertyName("condNameVec")]
     public IList<Text> CondNameVec { get; set; } = default!;

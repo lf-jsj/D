@@ -16,5 +16,5 @@ public class AchievementGoalExcelConfigData : DataObject
 
     [JsonPropertyName("finishRewardId")]
     [ForeignKey]
-    public int? FinishRewardId { get; set; }
+    public int FinishRewardId { get; set; }
 }

@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Shop;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Shop;
 
 public class ShopGoodsExcelConfigData : DataObject
 {
@@ -18,7 +20,7 @@ public class ShopGoodsExcelConfigData : DataObject
     public int ItemCount { get; set; }
 
     [JsonPropertyName("costItems")]
-    public IList<CountableItem> CostItems { get; set; } = default!;
+    public IList<IdCount<int>> CostItems { get; set; } = default!;
 
     [JsonPropertyName("beginTime")]
     [JsonConverter(typeof(ParsedDateTimeConverter))]

@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Coop;
+﻿using Snap.Data.Mapper.Model.Common.Param;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Coop;
 
 public class CoopChapterExcelConfigData : DataObject
 {
@@ -24,7 +26,7 @@ public class CoopChapterExcelConfigData : DataObject
     public string ChapterIcon { get; set; } = default!;
 
     [JsonPropertyName("unlockCond")]
-    public IList<ArgsCond> UnlockCond { get; set; } = default!;
+    public IList<CondTypeArgs> UnlockCond { get; set; } = default!;
 
     [JsonPropertyName("unlockCondTips")]
     public IList<Text> UnlockCondTips { get; set; } = default!;
