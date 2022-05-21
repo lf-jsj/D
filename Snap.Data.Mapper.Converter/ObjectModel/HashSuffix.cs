@@ -8,4 +8,9 @@ public struct HashSuffix
     }
 
     public ulong Value { get; set; }
+
+    public override string ToString()
+    {
+        return Value.ToString();
+    }
 }

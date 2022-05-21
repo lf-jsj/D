@@ -8,4 +8,9 @@ public struct HashPre
     }
 
     public ushort Value { get; set; }
+
+    public override string ToString()
+    {
+        return Value.ToString();
+    }
 }

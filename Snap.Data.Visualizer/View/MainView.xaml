@@ -52,19 +52,21 @@
             </ui:SplitView.Pane>
             <ui:SplitView.Content>
                 <TabControl>
-                    <TabItem Header="Data">
-                        <DataGrid>
-                            
-                        </DataGrid>
+                    <TabItem Header="数据">
+                        <DataGrid
+                            CanUserAddRows="False"
+                            CanUserDeleteRows="False"
+                            AlternatingRowBackground="{StaticResource SystemAccentColorDark3Brush}"
+                            ItemsSource="{Binding SelectedOutputHandler.Value.Value.OutputData}"/>
                     </TabItem>
-                    <TabItem Header="Output">
+                    <!--<TabItem Header="Output">
                         <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="0">
                             <TextBlock
                                 Margin="16"
                                 FontFamily="Cascadia Code,Microsoft YaHei UI"
                                 Text="{Binding SelectedOutputHandler.Value.Value.Output}"/>
                         </ScrollViewer>
-                    </TabItem>
+                    </TabItem>-->
                 </TabControl>
             </ui:SplitView.Content>
         </ui:SplitView>
