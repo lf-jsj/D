@@ -1,4 +1,6 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reliquary;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reliquary;
 
 public class ReliquaryMainPropExcelConfigData : DataObject
 {
@@ -9,7 +11,8 @@ public class ReliquaryMainPropExcelConfigData : DataObject
     public int PropDepotId { get; set; }
 
     [JsonPropertyName("propType")]
-    public string PropType { get; set; } = default!;
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public FightProperty PropType { get; set; } = default!;
 
     [JsonPropertyName("affixName")]
     public string AffixName { get; set; } = default!;

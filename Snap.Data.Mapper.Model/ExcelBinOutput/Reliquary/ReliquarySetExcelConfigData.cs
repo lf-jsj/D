@@ -12,7 +12,7 @@ public class ReliquarySetExcelConfigData : DataObject
     public IList<int> SetNeedNum { get; set; } = default!;
 
     [JsonPropertyName("EquipAffixId")]
-    public int EquipAffixId { get; set; }
+    public int? EquipAffixId { get; set; }
 
     [JsonPropertyName("containsList")]
     public IList<int> ContainsList { get; set; } = default!;

@@ -1,5 +1,4 @@
 ﻿using Snap.Data.Mapper.Core.Extension;
-using Snap.Data.Mapper.Core.Validation;
 using Snap.Data.Mapper.Model.Common;
 using Snap.Data.Mapper.Model.Common.Curve;
 using Snap.Data.Mapper.Model.ExcelBinOutput;
@@ -149,9 +148,9 @@ public class AvatarGenerator
         LevelParam2 level40Info = new() { Level = "40", Parameters = GetPropertyValues(item, 40, 1, propertyList, propGrow, promotes), };
         // 40 p
         LevelParam2 level40pInfo = new() { Level = "40+", Parameters = GetPropertyValues(item, 40, 2, propertyList, propGrow, promotes), };
-        LevelParam2 level50Info = new(){ Level = "50",Parameters = GetPropertyValues(item, 50, 2, propertyList, propGrow, promotes), };
+        LevelParam2 level50Info = new() { Level = "50", Parameters = GetPropertyValues(item, 50, 2, propertyList, propGrow, promotes), };
         // 50 p
-        LevelParam2 level50pInfo = new() { Level = "50+",  Parameters = GetPropertyValues(item, 50, 3, propertyList, propGrow, promotes), };
+        LevelParam2 level50pInfo = new() { Level = "50+", Parameters = GetPropertyValues(item, 50, 3, propertyList, propGrow, promotes), };
         LevelParam2 level60Info = new() { Level = "60", Parameters = GetPropertyValues(item, 60, 3, propertyList, propGrow, promotes), };
         // 60 p
         LevelParam2 level60pInfo = new() { Level = "60+", Parameters = GetPropertyValues(item, 60, 4, propertyList, propGrow, promotes), };
@@ -227,7 +226,7 @@ public class AvatarGenerator
             FightProperty.FIGHT_PROP_BASE_ATTACK => item.AttackBase,
             FightProperty.FIGHT_PROP_CRITICAL => item.Critical,
             FightProperty.FIGHT_PROP_CRITICAL_HURT => item.CriticalHurt,
-            FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY =>item.ChargeEfficiency,
+            FightProperty.FIGHT_PROP_CHARGE_EFFICIENCY => item.ChargeEfficiency,
             // other properties always start from 0
             _ => 0,
         };
@@ -349,7 +348,7 @@ public class AvatarGenerator
 
     private Talent GetTalentById(int id)
     {
-        AvatarTalentExcelConfigData data = this.talents[id];
+        AvatarTalentExcelConfigData data = talents[id];
 
         return new Talent
         {

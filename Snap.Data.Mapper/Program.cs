@@ -5,6 +5,7 @@ using Snap.Data.Mapper.Model.ObjectModel.Converter;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using Snap.Data.Mapper.Pipeline.Achievement;
 using Snap.Data.Mapper.Pipeline.Avatar;
+using Snap.Data.Mapper.Pipeline.Reliquary;
 using Snap.Data.Mapper.TextMapping;
 using System;
 using System.Diagnostics;
@@ -15,7 +16,7 @@ namespace Snap.Data.Mapper;
 
 internal class Program
 {
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
         Console.WriteLine("Mapper Started.");
         Console.WriteLine("Please input GenshinData Folder Path:");
@@ -38,9 +39,9 @@ internal class Program
 
                 RunPipeLine<AchievementPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
                 RunPipeLine<AvatarPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
+                RunPipeLine<ReliquaryPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
 
-                Console.WriteLine("All Pipelines Completed. Press any key to exit.");
-                Console.ReadKey(true);
+                Console.WriteLine("All Pipelines Completed.");
             }
         }
     }
@@ -52,5 +53,6 @@ internal class Program
         Console.WriteLine("Running {0}...", typeName);
         new TPipeline().Run(genshinDataFolder, outputFolder, options);
         Console.WriteLine("{0} Run to completion in {1} ms.", typeName, stopwatch.ElapsedMilliseconds);
+        stopwatch.Restart();
     }
 }

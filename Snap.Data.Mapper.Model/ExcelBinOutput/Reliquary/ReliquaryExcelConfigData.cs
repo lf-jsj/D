@@ -3,7 +3,8 @@
 public class ReliquaryExcelConfigData : DataObject
 {
     [JsonPropertyName("equipType")]
-    public string EquipType { get; set; } = default!;
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public EquipType EquipType { get; set; } = default!;
 
     [JsonPropertyName("showPic")]
     public string ShowPic { get; set; } = default!;
@@ -45,7 +46,8 @@ public class ReliquaryExcelConfigData : DataObject
     public string Icon { get; set; } = default!;
 
     [JsonPropertyName("itemType")]
-    public string ItemType { get; set; } = default!;
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public ItemType ItemType { get; set; } = default!;
 
     [JsonPropertyName("weight")]
     public int Weight { get; set; }
@@ -70,4 +72,26 @@ public class ReliquaryExcelConfigData : DataObject
 
     [JsonPropertyName("dropable")]
     public bool? Dropable { get; set; }
+}
+
+public enum ItemType
+{
+    ITEM_NONE = 0,
+    ITEM_VIRTUAL = 1,
+    ITEM_MATERIAL = 2,
+    ITEM_RELIQUARY = 3,
+    ITEM_WEAPON = 4,
+    ITEM_DISPLAY = 5,
+    ITEM_FURNITURE = 6,
+}
+
+public enum EquipType
+{
+    EQUIP_NONE = 0,
+    EQUIP_BRACER = 1,
+    EQUIP_NECKLACE = 2,
+    EQUIP_SHOES = 3,
+    EQUIP_RING = 4,
+    EQUIP_DRESS = 5,
+    EQUIP_WEAPON = 6,
 }

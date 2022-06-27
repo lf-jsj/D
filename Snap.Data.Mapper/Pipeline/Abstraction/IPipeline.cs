@@ -24,10 +24,10 @@ internal interface IPipeline
         return Must.NotNull(data!);
     }
 
-    public static IDictionary<int,T> GetMap<T>(string genshinDataFolder, JsonSerializerOptions options, Func<T,int> keySelector)
+    public static IDictionary<int, T> GetMap<T>(string genshinDataFolder, JsonSerializerOptions options, Func<T, int> keySelector)
         where T : class
     {
-        return GetData<T>(genshinDataFolder,options).ToDictionary(keySelector, x => x);
+        return GetData<T>(genshinDataFolder, options).ToDictionary(keySelector, x => x);
     }
 
     public static void GenerateFile<T>(object data, string outputFolder, JsonSerializerOptions options)
