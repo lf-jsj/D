@@ -31,7 +31,7 @@ public class AchievementExcelConfigData : DataObject
     public string Ps5TrophyId { get; set; } = string.Empty;
 
     [JsonPropertyName("icon")]
-    public string Icon { get; set; } = string.Empty;
+    public string? Icon { get; set; }
 
     [JsonPropertyName("finishRewardId")]
     [ForeignKey]

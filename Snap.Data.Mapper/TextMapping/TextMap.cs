@@ -2,16 +2,17 @@
 // Licensed under the MIT license.
 
 using Snap.Data.Mapper.Abstraction;
-using Snap.Data.Visualizer.Core.Validation;
+using Snap.Data.Mapper.Core.Validation;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace Snap.Data.Visualizer.TextMapping;
+namespace Snap.Data.Mapper.TextMapping;
 
 /// <summary>
 /// 默认的文本映射实现
+/// 
 ///             Min: 640
 ///             Max: 4294966372
 /// UInt32.MaxValue: 4294967295

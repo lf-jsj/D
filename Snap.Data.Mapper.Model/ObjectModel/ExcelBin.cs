@@ -147,7 +147,7 @@ public static partial class ExcelBin
     {
         string targetFolder = Path.Combine(genshinDataFolder, "ExcelBinOutput");
 
-        handlers =  new List<NamedValue<Lazy<IOutputHandler>>>
+        handlers = new List<NamedValue<Lazy<IOutputHandler>>>
         {
             Register<AbilityOverrideExcelConfigData>(targetFolder),
             Register<AbilityPropExcelConfigData>(targetFolder),

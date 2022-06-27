@@ -8,3 +8,13 @@ public class TypeGrowCurve : DataObject
     [JsonPropertyName("growCurve")]
     public string GrowCurve { get; set; } = default!;
 }
+
+public class FightPropertyTypeGrowCurve : DataObject
+{
+    [JsonPropertyName("type")]
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public FightProperty Type { get; set; } = default!;
+
+    [JsonPropertyName("growCurve")]
+    public string GrowCurve { get; set; } = default!;
+}

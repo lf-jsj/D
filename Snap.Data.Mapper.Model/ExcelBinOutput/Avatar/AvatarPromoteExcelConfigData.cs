@@ -17,7 +17,7 @@ public class AvatarPromoteExcelConfigData : DataObject
     public int UnlockMaxLevel { get; set; }
 
     [JsonPropertyName("addProps")]
-    public IList<PropTypeValue> AddProps { get; set; } = default!;
+    public IList<FightPropTypeValue> AddProps { get; set; } = default!;
 
     [JsonPropertyName("promoteLevel")]
     public int? PromoteLevel { get; set; }

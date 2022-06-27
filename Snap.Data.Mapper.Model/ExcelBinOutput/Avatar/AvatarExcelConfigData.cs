@@ -20,7 +20,8 @@ public class AvatarExcelConfigData : DataObject
     public string SideIconName { get; set; } = default!;
 
     [JsonPropertyName("qualityType")]
-    public string QualityType { get; set; } = default!;
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public ItemQuality QualityType { get; set; } = default!;
 
     [JsonPropertyName("chargeEfficiency")]
     public double ChargeEfficiency { get; set; }
@@ -35,7 +36,8 @@ public class AvatarExcelConfigData : DataObject
     public int InitialWeapon { get; set; }
 
     [JsonPropertyName("weaponType")]
-    public string WeaponType { get; set; } = default!;
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public WeaponType WeaponType { get; set; } = default!;
 
     [JsonPropertyName("manekinPathHashSuffix")]
     public HashSuffix ManekinPathHashSuffix { get; set; }
@@ -51,12 +53,6 @@ public class AvatarExcelConfigData : DataObject
 
     [JsonPropertyName("gachaCardNameHashPre")]
     public HashPre GachaCardNameHashPre { get; set; }
-
-    [JsonPropertyName("FBOKCBDCILD")]
-    public HashSuffix FBOKCBDCILD { get; set; }
-
-    [JsonPropertyName("EAOMKNHGEOE")]
-    public HashPre EAOMKNHGEOE { get; set; }
 
     [JsonPropertyName("cutsceneShow")]
     public string CutsceneShow { get; set; } = string.Empty;
@@ -116,7 +112,7 @@ public class AvatarExcelConfigData : DataObject
     public double CriticalHurt { get; set; }
 
     [JsonPropertyName("propGrowCurves")]
-    public IList<TypeGrowCurve> PropGrowCurves { get; set; } = default!;
+    public IList<FightPropertyTypeGrowCurve> PropGrowCurves { get; set; } = default!;
 
     [JsonPropertyName("prefabPathRagdollHashSuffix")]
     public HashSuffix PrefabPathRagdollHashSuffix { get; set; }
@@ -168,4 +164,88 @@ public class AvatarExcelConfigData : DataObject
 
     [JsonPropertyName("isRangeAttack")]
     public bool? IsRangeAttack { get; set; }
+}
+/// <summary>
+/// 武器类型
+/// https://github.com/Grasscutters/Grasscutter/blob/development/src/main/java/emu/grasscutter/game/props/WeaponType.java
+/// </summary>
+public enum WeaponType
+{
+    /// <summary>
+    /// ?
+    /// </summary>
+    WEAPON_NONE = 0,
+
+    /// <summary>
+    /// 单手剑
+    /// </summary>
+    WEAPON_SWORD_ONE_HAND = 1,
+
+    /// <summary>
+    /// ?
+    /// </summary>
+    [Obsolete("尚未发现使用")]
+    WEAPON_CROSSBOW = 2,
+
+    /// <summary>
+    /// ?
+    /// </summary>
+    [Obsolete("尚未发现使用")]
+    WEAPON_STAFF = 3,
+
+    /// <summary>
+    /// ?
+    /// </summary>
+    [Obsolete("尚未发现使用")]
+    WEAPON_DOUBLE_DAGGER = 4,
+
+    /// <summary>
+    /// ?
+    /// </summary>
+    [Obsolete("尚未发现使用")]
+    WEAPON_KATANA = 5,
+
+    /// <summary>
+    /// ?
+    /// </summary>
+    [Obsolete("尚未发现使用")]
+    WEAPON_SHURIKEN = 6,
+
+    /// <summary>
+    /// ?
+    /// </summary>
+    [Obsolete("尚未发现使用")]
+    WEAPON_STICK = 7,
+
+    /// <summary>
+    /// ?
+    /// </summary>
+    [Obsolete("尚未发现使用")]
+    WEAPON_SPEAR = 8,
+
+    /// <summary>
+    /// ?
+    /// </summary>
+    [Obsolete("尚未发现使用")]
+    WEAPON_SHIELD_SMALL = 9,
+
+    /// <summary>
+    /// 法器
+    /// </summary>
+    WEAPON_CATALYST = 10,
+
+    /// <summary>
+    /// 双手剑
+    /// </summary>
+    WEAPON_CLAYMORE = 11,
+
+    /// <summary>
+    /// 弓
+    /// </summary>
+    WEAPON_BOW = 12,
+
+    /// <summary>
+    /// 长柄武器
+    /// </summary>
+    WEAPON_POLE = 13,
 }
