@@ -303,6 +303,7 @@ public class AvatarGenerator
         return new SkillInfo()
         {
             Id = avatarSkill.Id,
+            GroupId = proudSkillGroupId,
             Name = avatarSkill.NameTextMapHash.Value,
             Description = avatarSkill.DescTextMapHash.Value,
             Icon = avatarSkill.SkillIcon,
