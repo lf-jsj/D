@@ -1,9 +1,12 @@
-﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
+﻿using Snap.Data.Mapper.Model.Common;
+
+namespace Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
 
 public class WeaponProp : DataObject
 {
     [JsonPropertyName("propType")]
-    public string PropType { get; set; } = default!;
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public FightProperty PropType { get; set; } = default!;
 
     [JsonPropertyName("initValue")]
     public double InitValue { get; set; }

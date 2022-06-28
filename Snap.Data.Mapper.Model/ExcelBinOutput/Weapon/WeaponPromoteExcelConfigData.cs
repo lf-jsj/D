@@ -11,7 +11,7 @@ public class WeaponPromoteExcelConfigData : DataObject
     public IList<IdCount<int>> CostItems { get; set; } = default!;
 
     [JsonPropertyName("addProps")]
-    public IList<PropTypeValue> AddProps { get; set; } = default!;
+    public IList<FightPropTypeValue> AddProps { get; set; } = default!;
 
     [JsonPropertyName("unlockMaxLevel")]
     public int UnlockMaxLevel { get; set; }

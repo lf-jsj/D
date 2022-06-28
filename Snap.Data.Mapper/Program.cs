@@ -6,6 +6,7 @@ using Snap.Data.Mapper.Pipeline.Abstraction;
 using Snap.Data.Mapper.Pipeline.Achievement;
 using Snap.Data.Mapper.Pipeline.Avatar;
 using Snap.Data.Mapper.Pipeline.Reliquary;
+using Snap.Data.Mapper.Pipeline.Weapon;
 using Snap.Data.Mapper.TextMapping;
 using System;
 using System.Diagnostics;
@@ -40,6 +41,7 @@ internal class Program
                 RunPipeLine<AchievementPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
                 RunPipeLine<AvatarPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
                 RunPipeLine<ReliquaryPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
+                RunPipeLine<WeaponPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
 
                 Console.WriteLine("All Pipelines Completed.");
             }

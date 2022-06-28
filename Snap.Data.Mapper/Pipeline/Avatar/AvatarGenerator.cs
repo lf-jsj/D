@@ -106,7 +106,7 @@ public class AvatarGenerator
                 Quality = avatar.QualityType,
                 Weapon = avatar.WeaponType,
                 SkillDepot = skillDepot,
-                Property = GetProperties(avatar, avatarCurves, avatarPromoteMap),
+                Property = GetProperties(avatar),
                 Description = avatar.DescTextMapHash.Value,
                 Id = avatar.Id,
                 Name = avatar.NameTextMapHash.Value,
@@ -129,9 +129,7 @@ public class AvatarGenerator
     }
 
     public PropertyInfo GetProperties(
-        AvatarExcelConfigData item,
-        IEnumerable<AvatarCurveExcelConfigData> avatarCurves,
-        IDictionary<int, IEnumerable<AvatarPromoteExcelConfigData>> avatarPromoteMap)
+        AvatarExcelConfigData item)
     {
         IList<AvatarPromoteExcelConfigData> promotes = avatarPromoteMap[item.AvatarPromoteId].ToList();
         IList<FightPropTypeValue> addProps = promotes[0].AddProps;

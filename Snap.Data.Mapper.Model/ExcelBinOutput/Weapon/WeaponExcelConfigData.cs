@@ -3,7 +3,8 @@
 public class WeaponExcelConfigData : DataObject
 {
     [JsonPropertyName("weaponType")]
-    public string WeaponType { get; set; } = default!;
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public WeaponType WeaponType { get; set; } = default!;
 
     [JsonPropertyName("rankLevel")]
     public int RankLevel { get; set; }
