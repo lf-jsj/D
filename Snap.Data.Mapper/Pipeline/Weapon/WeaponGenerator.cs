@@ -94,7 +94,7 @@ public class WeaponGenerator
 
         return new PropertyInfo()
         {
-            Properties = propertyList,
+            Properties = propertyList.Where(p => p != FightProperty.FIGHT_PROP_NONE),
             Parameters = resultCache,
         };
     }
@@ -108,6 +108,7 @@ public class WeaponGenerator
         IList<WeaponPromoteExcelConfigData> promotes)
     {
         return propertyList
+            .Where(p => p != FightProperty.FIGHT_PROP_NONE)
             .Select(p =>
             {
                 // seek name in avatar's propGrowCurve
