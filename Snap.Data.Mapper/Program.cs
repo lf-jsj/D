@@ -9,8 +9,10 @@ using Snap.Data.Mapper.Pipeline.Reliquary;
 using Snap.Data.Mapper.Pipeline.Weapon;
 using Snap.Data.Mapper.TextMapping;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Security.Cryptography;
 using System.Text.Json;
 
 namespace Snap.Data.Mapper;
@@ -44,11 +46,15 @@ internal class Program
                 RunPipeLine<WeaponPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
 
                 Console.WriteLine("All Pipelines Completed.");
+
+                GenerateMetaMd5(outputFolder, options);
+
+                Console.WriteLine("MD5 Generation Completed.");
             }
         }
     }
 
-    public static void RunPipeLine<TPipeline>(string genshinDataFolder, string outputFolder, JsonSerializerOptions options, Stopwatch stopwatch)
+    private static void RunPipeLine<TPipeline>(string genshinDataFolder, string outputFolder, JsonSerializerOptions options, Stopwatch stopwatch)
         where TPipeline : IPipeline, new()
     {
         string typeName = typeof(TPipeline).Name;
@@ -56,5 +62,35 @@ internal class Program
         new TPipeline().Run(genshinDataFolder, outputFolder, options);
         Console.WriteLine("{0} Run to completion in {1} ms.", typeName, stopwatch.ElapsedMilliseconds);
         stopwatch.Restart();
+    }
+
+    private static void GenerateMetaMd5(string outputFolder, JsonSerializerOptions options)
+    {
+        Dictionary<string, string> meta = new();
+
+        foreach (string fileName in Directory.EnumerateFiles(Path.GetDirectoryName(outputFolder)!, "*.json", SearchOption.AllDirectories))
+        {
+            string name = Path.GetFileNameWithoutExtension(fileName);
+
+            if(name == "Meta")
+            {
+                continue;
+            }
+
+            // get md5
+            using (FileStream file = new(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
+            {
+                MD5 md5 = MD5.Create();
+                byte[] computedByts = md5.ComputeHash(file);
+                string check = Convert.ToHexString(computedByts);
+
+                meta.Add(name, check);
+            }
+        }
+
+        using (FileStream outStream = File.Create(Path.Combine(outputFolder, "Meta.json")))
+        {
+            JsonSerializer.Serialize(outStream, meta, options);
+        }
     }
 }

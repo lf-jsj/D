@@ -4,7 +4,6 @@ namespace Snap.Data.Mapper.Pipeline.Achievement.Model;
 
 public class AchievementTrigger
 {
-    [JsonConverter(typeof(JsonStringEnumConverter))]
     public AchievementStepType Type { get; set; }
     public string Id { get; set; } = default!;
     public string Title { get; set; } = default!;
