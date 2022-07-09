@@ -50,6 +50,12 @@ internal class Program
                 GenerateMetaMd5(outputFolder, options);
 
                 Console.WriteLine("MD5 Generation Completed.");
+
+                //string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+
+                //RunPipeLine<GachaRobotPipeline>(genshinDataFolder, desktop, options, stopwatch);
+
+                //Console.WriteLine("Extra Stuff Completed.");
             }
         }
     }

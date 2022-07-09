@@ -235,16 +235,18 @@ public class AvatarGenerator
         IDictionary<int, IEnumerable<FettersExcelConfigData>> fettersMap,
         IDictionary<int, IEnumerable<FetterStoryExcelConfigData>> fetterStoryMap)
     {
-        IEnumerable<Fetter> fetters = fettersMap[id].Select(x => new Fetter
-        {
-            Title = x.VoiceTitleTextMapHash.Value,
-            Context = x.VoiceFileTextTextMapHash.Value,
+        IEnumerable<Fetter> fetters = fettersMap[id].Select(x => {
+            return new Fetter
+            {
+                Title = x.VoiceTitleTextMapHash.Value,
+                Context = x.VoiceFileTextTextMapHash.Value.Replace(@"\n", "\n"),
+            };
         });
 
         IEnumerable<Fetter> fetterStories = fetterStoryMap[id].Select(x => new Fetter
         {
             Title = x.StoryTitleTextMapHash.Value,
-            Context = x.StoryContextTextMapHash.Value,
+            Context = x.StoryContextTextMapHash.Value.Replace(@"\n", "\n"),
         });
 
         FetterInfoExcelConfigData fetterData = fetterInfos[id];
@@ -305,7 +307,7 @@ public class AvatarGenerator
             Id = avatarSkill.Id,
             GroupId = proudSkillGroupId,
             Name = avatarSkill.NameTextMapHash.Value,
-            Description = avatarSkill.DescTextMapHash.Value,
+            Description = avatarSkill.DescTextMapHash.Value.Replace(@"\n", "\n"),
             Icon = avatarSkill.SkillIcon,
             Proud = proud,
         };
@@ -339,7 +341,7 @@ public class AvatarGenerator
         {
             Id = first.ProudSkillId,
             Name = first.NameTextMapHash.Value,
-            Description = first.DescTextMapHash.Value,
+            Description = first.DescTextMapHash.Value.Replace(@"\n", "\n"),
             Icon = first.Icon,
             Proud = proud,
         };
@@ -353,7 +355,7 @@ public class AvatarGenerator
         {
             Id = data.TalentId,
             Name = data.NameTextMapHash.Value,
-            Description = data.DescTextMapHash.Value,
+            Description = data.DescTextMapHash.Value.Replace(@"\n", "\n"),
             Icon = data.Icon,
         };
     }
@@ -366,7 +368,7 @@ public class AvatarGenerator
             {
                 Id = c.Id,
                 Name = c.NameTextMapHash.Value,
-                Description = c.DescTextMapHash.Value,
+                Description = c.DescTextMapHash.Value.Replace(@"\n", "\n"),
                 IsDefault = c.IsDefault,
             });
     }
