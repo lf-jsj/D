@@ -22,6 +22,7 @@ internal class Program
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarImg"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaEquipIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaFlyclockIcon"));
+                Directory.CreateDirectory(Path.Combine(staticFolder, "IconElement"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "ItemIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "LegendQuestImg"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "LoadingPic"));
@@ -87,6 +88,16 @@ internal class Program
                     if (fileName.StartsWith("UI_Gacha_FlyclockIcon_"))
                     {
                         File.Copy(file, Path.Combine(staticFolder, "GachaFlyclockIcon", TrimBlkName(fileName)), true);
+                        continue;
+                    }
+
+                    if (fileName.StartsWith("UI_Icon_Element_"))
+                    {
+                        string iconFile = Path.Combine(staticFolder, "IconElement", TrimBlkName(fileName));
+                        if (!File.Exists(iconFile))
+                        {
+                            File.Copy(file, iconFile, false);
+                        }
                         continue;
                     }
 
