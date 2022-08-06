@@ -17,6 +17,7 @@ namespace Snap.Data.Mapper.Pipeline.Achievement;
 public class AchievementGenerator
 {
     private readonly string outputFolder;
+    private readonly string compatFolder;
     private readonly JsonSerializerOptions options;
 
     private readonly IEnumerable<AchievementExcelConfigData> achievementsData;
@@ -32,6 +33,7 @@ public class AchievementGenerator
 
     public AchievementGenerator(
         string outputFolder,
+        string compatFolder,
         JsonSerializerOptions options,
         IEnumerable<AchievementExcelConfigData> achievementsData,
         IDictionary<int, RewardExcelConfigData> rewardMap,
@@ -40,6 +42,7 @@ public class AchievementGenerator
         IDictionary<int, DailyTaskExcelConfigData> dailyTasks)
     {
         this.outputFolder = outputFolder;
+        this.compatFolder = compatFolder;
         this.options = options;
 
         this.achievementsData = achievementsData;
@@ -52,6 +55,7 @@ public class AchievementGenerator
     public void Generate()
     {
         List<Model.Achievement> resultsCache = new();
+        List<Model.SnapGenshin.SGAchievement> compatResults = new();
 
         foreach (AchievementExcelConfigData achievement in achievementsData!)
         {
@@ -86,10 +90,22 @@ public class AchievementGenerator
                 Icon = string.IsNullOrEmpty(achievement.Icon) ? null : achievement.Icon,
             };
 
+            Model.SnapGenshin.SGAchievement compatResult = new()
+            {
+                GoalId = achievement.GoalId,
+                OrderId = achievement.OrderId,
+                Title = achievement.TitleTextMapHash.Value,
+                Description = achievement.DescTextMapHash.Value,
+                FinishRewardCount = rewardItem.ItemCount!.Value,
+                Id = achievement.Id,
+            };
+
             resultsCache.Add(result);
+            compatResults.Add(compatResult);
         }
 
         IPipeline.GenerateFile<Model.Achievement>(resultsCache, outputFolder, options);
+        IPipeline.GenerateFile("achievements", compatResults, compatFolder, options);
     }
 
     private static bool ShouldSkip(AchievementExcelConfigData item)

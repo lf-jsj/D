@@ -1,5 +1,6 @@
 ﻿using Snap.Data.Mapper.Abstraction;
 using Snap.Data.Mapper.Converter;
+using Snap.Data.Mapper.Core;
 using Snap.Data.Mapper.Model.ObjectModel;
 using Snap.Data.Mapper.Model.ObjectModel.Converter;
 using Snap.Data.Mapper.Pipeline.Abstraction;
@@ -10,7 +11,6 @@ using Snap.Data.Mapper.Pipeline.Weapon;
 using Snap.Data.Mapper.TextMapping;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text.Json;
@@ -38,12 +38,10 @@ internal class Program
                 options.Converters.Add(new HashPreConverter());
                 options.Converters.Add(new HashSuffixConverter());
 
-                Stopwatch stopwatch = Stopwatch.StartNew();
-
-                RunPipeLine<AchievementPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
-                RunPipeLine<AvatarPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
-                RunPipeLine<ReliquaryPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
-                RunPipeLine<WeaponPipeline>(genshinDataFolder, outputFolder, options, stopwatch);
+                RunPipeLine<AchievementPipeline>(genshinDataFolder, outputFolder, options);
+                RunPipeLine<AvatarPipeline>(genshinDataFolder, outputFolder, options);
+                RunPipeLine<ReliquaryPipeline>(genshinDataFolder, outputFolder, options);
+                RunPipeLine<WeaponPipeline>(genshinDataFolder, outputFolder, options);
 
                 Console.WriteLine("All Pipelines Completed.");
 
@@ -60,21 +58,21 @@ internal class Program
         }
     }
 
-    private static void RunPipeLine<TPipeline>(string genshinDataFolder, string outputFolder, JsonSerializerOptions options, Stopwatch stopwatch)
+    private static void RunPipeLine<TPipeline>(string genshinDataFolder, string outputFolder, JsonSerializerOptions options)
         where TPipeline : IPipeline, new()
     {
+        ValueStopwatch stopwatch = ValueStopwatch.StartNew();
         string typeName = typeof(TPipeline).Name;
         Console.WriteLine("Running {0}...", typeName);
         new TPipeline().Run(genshinDataFolder, outputFolder, options);
-        Console.WriteLine("{0} Run to completion in {1} ms.", typeName, stopwatch.ElapsedMilliseconds);
-        stopwatch.Restart();
+        Console.WriteLine("{0} Run to completion in {1} ms.", typeName, stopwatch.GetElapsedTime().Milliseconds);
     }
 
     private static void GenerateMetaMd5(string outputFolder, JsonSerializerOptions options)
     {
         Dictionary<string, string> meta = new();
 
-        foreach (string fileName in Directory.EnumerateFiles(Path.GetDirectoryName(outputFolder)!, "*.json", SearchOption.AllDirectories))
+        foreach (string fileName in Directory.EnumerateFiles(outputFolder!, "*.json", SearchOption.AllDirectories))
         {
             string name = Path.GetFileNameWithoutExtension(fileName);
 

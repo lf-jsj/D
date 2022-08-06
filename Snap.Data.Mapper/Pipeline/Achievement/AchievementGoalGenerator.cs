@@ -12,17 +12,21 @@ namespace Snap.Data.Mapper.Pipeline.Achievement;
 public class AchievementGoalGenerator
 {
     private readonly string outputFolder;
+    private readonly string compatFolder;
     private readonly JsonSerializerOptions options;
 
     private readonly IEnumerable<AchievementGoalExcelConfigData> goals;
     private readonly IDictionary<int, RewardExcelConfigData> rewardMap;
 
     public AchievementGoalGenerator(
-        string outputFolder, JsonSerializerOptions options,
+        string outputFolder,
+        string compatFolder,
+        JsonSerializerOptions options,
         IEnumerable<AchievementGoalExcelConfigData> goals,
         IDictionary<int, RewardExcelConfigData> rewardMap)
     {
         this.outputFolder = outputFolder;
+        this.compatFolder = compatFolder;
         this.options = options;
         this.goals = goals;
         this.rewardMap = rewardMap;
@@ -31,6 +35,7 @@ public class AchievementGoalGenerator
     public void Generate()
     {
         List<AchievementGoal> achievementGoalCache = new();
+        List<Model.SnapGenshin.SGAchievementGoal> compatGoalCache = new();
         foreach (AchievementGoalExcelConfigData item in goals)
         {
             SimpleReward? simpleReward = null;
@@ -51,15 +56,26 @@ public class AchievementGoalGenerator
 
             AchievementGoal achievementGoal = new()
             {
+                Id = item.Id ?? 0,
                 Order = item.OrderId,
                 Name = item.NameTextMapHash.Value,
                 FinishReward = simpleReward,
                 Icon = string.IsNullOrEmpty(item.IconPath) ? null : item.IconPath,
             };
 
+            Model.SnapGenshin.SGAchievementGoal compatGoal = new()
+            {
+                Id = item.Id ?? 0,
+                OrderId = item.OrderId,
+                Name = item.NameTextMapHash.Value,
+                IconPath = string.IsNullOrEmpty(item.IconPath) ? null : item.IconPath,
+            };
+
             achievementGoalCache.Add(achievementGoal);
+            compatGoalCache.Add(compatGoal);
         }
 
         IPipeline.GenerateFile<AchievementGoal>(achievementGoalCache, outputFolder, options);
+        IPipeline.GenerateFile("achievementgoals", compatGoalCache, compatFolder, options);
     }
 }

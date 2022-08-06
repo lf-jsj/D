@@ -2,6 +2,7 @@
 
 public class AchievementGoal
 {
+    public int Id { get; set; }
     public int Order { get; set; }
     public string Name { get; set; } = default!;
     public SimpleReward? FinishReward { get; set; }

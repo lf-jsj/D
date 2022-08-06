@@ -5,6 +5,7 @@ using Snap.Data.Mapper.Model.ExcelBinOutput.Quest;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Reward;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using System.Collections.Generic;
+using System.IO;
 using System.Text.Json;
 
 namespace Snap.Data.Mapper.Pipeline.Achievement;
@@ -16,6 +17,8 @@ internal class AchievementPipeline : IPipeline
 {
     public void Run(string genshinDataFolder, string outputFolder, JsonSerializerOptions options)
     {
+        string compatFolder = Path.Combine(Directory.GetParent(outputFolder)!.FullName, "Compat");
+
         // AchievementGoalExcelConfigData
         IEnumerable<AchievementGoalExcelConfigData> goals = IPipeline
             .GetData<AchievementGoalExcelConfigData>(genshinDataFolder, options);
@@ -26,6 +29,7 @@ internal class AchievementPipeline : IPipeline
 
         new AchievementGoalGenerator(
             outputFolder,
+            compatFolder,
             options,
             goals,
             rewardMap)
@@ -49,6 +53,7 @@ internal class AchievementPipeline : IPipeline
 
         new AchievementGenerator(
             outputFolder,
+            compatFolder,
             options,
             excelData,
             rewardMap,

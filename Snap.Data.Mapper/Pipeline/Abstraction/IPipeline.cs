@@ -37,4 +37,12 @@ internal interface IPipeline
             JsonSerializer.Serialize(stream, data, options);
         }
     }
+
+    public static void GenerateFile(string name, object data, string outputFolder, JsonSerializerOptions options)
+    {
+        using (FileStream stream = File.Create(GetOutputPathByName(outputFolder, name)))
+        {
+            JsonSerializer.Serialize(stream, data, options);
+        }
+    }
 }

@@ -13,7 +13,6 @@ public class Avatar
     public string Icon { get; set; } = default!;
     public string SideIcon { get; set; } = default!;
     public string Name { get; set; } = default!;
-    public string Description { get; set; } = default!;
     public DateTimeOffset BeginTime { get; set; }
     public ItemQuality Quality { get; set; }
     public WeaponType Weapon { get; set; }

@@ -107,7 +107,6 @@ public class AvatarGenerator
                 Weapon = avatar.WeaponType,
                 SkillDepot = skillDepot,
                 Property = GetProperties(avatar),
-                Description = avatar.DescTextMapHash.Value,
                 Id = avatar.Id,
                 Name = avatar.NameTextMapHash.Value,
                 BeginTime = avatarCodex[avatar.Id].BeginTime,

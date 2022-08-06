@@ -54,7 +54,4 @@ public class FetterInfoExcelConfigData : DataObject
 
     [JsonPropertyName("openConds")]
     public IList<DataObject> OpenConds { get; set; } = default!;
-
-    [JsonPropertyName("finishConds")]
-    public IList<CondTypeParamList> FinishConds { get; set; } = default!;
 }

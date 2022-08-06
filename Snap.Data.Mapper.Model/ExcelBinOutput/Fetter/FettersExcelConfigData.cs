@@ -31,9 +31,6 @@ public class FettersExcelConfigData : DataObject
     [JsonPropertyName("openConds")]
     public IList<CondTypeParamList> OpenConds { get; set; } = default!;
 
-    [JsonPropertyName("finishConds")]
-    public IList<CondTypeParamList> FinishConds { get; set; } = default!;
-
     [JsonPropertyName("isHiden")]
     public bool? IsHiden { get; set; }
 }

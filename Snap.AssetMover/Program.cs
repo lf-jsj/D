@@ -5,7 +5,7 @@ internal class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Mapper Started.");
-        Console.WriteLine("Please input GenshinAsset Sprite Folder Path:");
+        Console.WriteLine("Please input GenshinAsset Folder Path:");
 
         if (Console.ReadLine() is string assetFolder)
         {
@@ -21,16 +21,13 @@ internal class Program
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarImg"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaEquipIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "GachaFlyclockIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "IconElement"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "ItemIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "LegendQuestImg"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "LoadingPic"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterSmallIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardPic"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "TabGachaShowPanel"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "Talent"));
 
                 foreach (string file in Directory.GetFiles(assetFolder))
@@ -85,12 +82,6 @@ internal class Program
                         continue;
                     }
 
-                    if (fileName.StartsWith("UI_Gacha_FlyclockIcon_"))
-                    {
-                        File.Copy(file, Path.Combine(staticFolder, "GachaFlyclockIcon", TrimBlkName(fileName)), true);
-                        continue;
-                    }
-
                     if (fileName.StartsWith("UI_Icon_Element_"))
                     {
                         string iconFile = Path.Combine(staticFolder, "IconElement", TrimBlkName(fileName));
@@ -140,12 +131,6 @@ internal class Program
                     if (fileName.StartsWith("UI_QUALITY_"))
                     {
                         File.Copy(file, Path.Combine(staticFolder, "Bg", TrimBlkName(fileName)), true);
-                        continue;
-                    }
-
-                    if (fileName.StartsWith("UI_Tab_GachaShowPanel_"))
-                    {
-                        File.Copy(file, Path.Combine(staticFolder, "TabGachaShowPanel", TrimBlkName(fileName)), true);
                         continue;
                     }
 
