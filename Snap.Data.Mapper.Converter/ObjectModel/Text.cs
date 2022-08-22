@@ -8,7 +8,7 @@ public struct Text
     public Text(ulong hash,string value)
     {
         Hash = hash;
-        Value = value;
+        Value = value ?? string.Empty;
     }
 
     public ulong Hash { get; }

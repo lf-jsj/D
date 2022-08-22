@@ -15,14 +15,13 @@ internal class Program
             {
                 Directory.CreateDirectory(Path.Combine(staticFolder, "Skill"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "AchievementIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "AnimalIcon"));
+                Directory.CreateDirectory(Path.Combine(staticFolder, "AvatarIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "ChapterIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "EmotionIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarImg"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaEquipIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "IconElement"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "ItemIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "LoadingPic"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterSmallIcon"));
@@ -46,9 +45,9 @@ internal class Program
                         continue;
                     }
 
-                    if (fileName.StartsWith("UI_AnimalIcon_"))
+                    if (fileName.StartsWith("UI_AvatarIcon_") && (!fileName.Contains("_Card")) && (!fileName.Contains("Costume")))
                     {
-                        File.Copy(file, Path.Combine(staticFolder, "AnimalIcon", TrimBlkName(fileName)), true);
+                        File.Copy(file, Path.Combine(staticFolder, "AvatarIcon", TrimBlkName(fileName)), true);
                         continue;
                     }
 
@@ -89,12 +88,6 @@ internal class Program
                         {
                             File.Copy(file, iconFile, false);
                         }
-                        continue;
-                    }
-
-                    if (fileName.StartsWith("UI_ItemIcon_"))
-                    {
-                        File.Copy(file, Path.Combine(staticFolder, "ItemIcon", TrimBlkName(fileName)), true);
                         continue;
                     }
 

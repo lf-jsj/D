@@ -1,4 +1,5 @@
 ﻿using Snap.Data.Mapper.Model.Common.Param;
+using System.Text.Json;
 
 namespace Snap.Data.Mapper.Model.ExcelBinOutput.Quest;
 
@@ -59,7 +60,7 @@ public class QuestExcelConfigData : DataObject
     public IList<int> ExclusivePlaceList { get; set; } = default!;
 
     [JsonPropertyName("finishCondComb")]
-    public string FinishCondComb { get; set; } = default!;
+    public JsonElement FinishCondComb { get; set; } = default!;
 
     [JsonPropertyName("finishParent")]
     public bool? FinishParent { get; set; }
