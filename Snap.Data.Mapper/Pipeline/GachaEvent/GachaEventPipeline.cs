@@ -107,7 +107,7 @@ internal class GachaEventPipeline : IPipeline
             UpBlueList = { "香菱", "行秋", "诺艾尔" },
             From = new(2021, 1, 12, 18, 0, 0, UTC8),
             To = new(2021, 2, 2, 14, 59, 59, UTC8),
-            Name = "陵薮市朝",
+            Name = "浮生孰来",
         },
         new()
         {
