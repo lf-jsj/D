@@ -18,6 +18,7 @@ internal class Program
                 Directory.CreateDirectory(Path.Combine(staticFolder, "AvatarIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "ChapterIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "EmotionIcon"));
+                Directory.CreateDirectory(Path.Combine(staticFolder, "EquipIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarImg"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaEquipIcon"));
@@ -60,6 +61,16 @@ internal class Program
                     if (fileName.StartsWith("UI_EmotionIcon"))
                     {
                         File.Copy(file, Path.Combine(staticFolder, "EmotionIcon", TrimBlkName(fileName)), true);
+                        continue;
+                    }
+
+                    if (fileName.StartsWith("UI_EquipIcon"))
+                    {
+                        string iconFile = Path.Combine(staticFolder, "EquipIcon", TrimBlkName(fileName));
+                        if (!File.Exists(iconFile))
+                        {
+                            File.Copy(file, iconFile, false);
+                        }
                         continue;
                     }
 
