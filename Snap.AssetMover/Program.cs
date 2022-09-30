@@ -28,6 +28,7 @@ internal class Program
                 Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterSmallIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardPic"));
+                Directory.CreateDirectory(Path.Combine(staticFolder, "RelicIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "Talent"));
 
                 foreach (string file in Directory.GetFiles(assetFolder))
@@ -135,6 +136,12 @@ internal class Program
                     if (fileName.StartsWith("UI_QUALITY_"))
                     {
                         File.Copy(file, Path.Combine(staticFolder, "Bg", TrimBlkName(fileName)), true);
+                        continue;
+                    }
+
+                    if (fileName.StartsWith("UI_RelicIcon_"))
+                    {
+                        File.Copy(file, Path.Combine(staticFolder, "RelicIcon", TrimBlkName(fileName)), true);
                         continue;
                     }
 

@@ -6,8 +6,9 @@ public class AvatarCostumeExcelConfigData : DataObject
     /// GMECDCKBFJM
     /// BDFMGMADMGC
     /// EEFPIKPJIBC
+    /// OGKFGGNLLDG
     /// </summary>
-    [JsonPropertyName("EEFPIKPJIBC")]
+    [JsonPropertyName("OGKFGGNLLDG")]
     public int Id { get; set; }
 
     [JsonPropertyName("nameTextMapHash")]
@@ -21,8 +22,9 @@ public class AvatarCostumeExcelConfigData : DataObject
     /// FMAJGGBGKKN
     /// PDBPABLOMMA
     /// MJIEAHCHGFC
+    /// AKOANLMAFDD
     /// </summary>
-    [JsonPropertyName("MJIEAHCHGFC")]
+    [JsonPropertyName("AKOANLMAFDD")]
     public int AvatarId { get; set; }
 
     [JsonPropertyName("itemId")]
@@ -35,8 +37,9 @@ public class AvatarCostumeExcelConfigData : DataObject
     /// FOINIGFDKIP
     /// MKPEEANCLCO
     /// AEKONDDFAHF
+    /// IFIODPDADEI
     /// </summary>
-    [JsonPropertyName("AEKONDDFAHF")]
+    [JsonPropertyName("IFIODPDADEI")]
     public string IconName { get; set; } = default!;
 
     [JsonPropertyName("sideIconName")]
