@@ -1,7 +1,9 @@
 ﻿using Snap.Data.Mapper.Model.Common;
+using Snap.Data.Mapper.Model.ExcelBinOutput;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using Snap.Data.Mapper.Pipeline.Avatar.Model;
+using Snap.Data.Mapper.Pipeline.Weapon.Model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
@@ -16,19 +18,22 @@ public class WeaponGenerator
     private readonly IEnumerable<WeaponExcelConfigData> weapons;
     private readonly IEnumerable<WeaponCurveExcelConfigData> weaponCurves;
     private readonly IDictionary<int, IEnumerable<WeaponPromoteExcelConfigData>> weaponPromoteMap;
+    private readonly IDictionary<int, IEnumerable<EquipAffixExcelConfigData>> equipAffixMap;
 
     public WeaponGenerator(
         string outputFolder,
         JsonSerializerOptions options,
         IEnumerable<WeaponExcelConfigData> weapons,
         IEnumerable<WeaponCurveExcelConfigData> weaponCurves,
-        IDictionary<int, IEnumerable<WeaponPromoteExcelConfigData>> weaponPromoteMap)
+        IDictionary<int, IEnumerable<WeaponPromoteExcelConfigData>> weaponPromoteMap,
+        IDictionary<int, IEnumerable<EquipAffixExcelConfigData>> equipAffixMap)
     {
         this.outputFolder = outputFolder;
         this.options = options;
         this.weapons = weapons;
         this.weaponCurves = weaponCurves;
         this.weaponPromoteMap = weaponPromoteMap;
+        this.equipAffixMap = equipAffixMap;
     }
 
     public void Generate()
@@ -41,6 +46,7 @@ public class WeaponGenerator
                 WeaponType = weapon.WeaponType,
                 RankLevel = weapon.RankLevel,
                 Property = GetProperties(weapon, weaponCurves, weaponPromoteMap),
+                Affix = GetAffix(weapon, equipAffixMap),
                 AwakenIcon = weapon.AwakenIcon,
                 Id = weapon.Id,
                 Name = weapon.NameTextMapHash.Value,
@@ -130,5 +136,32 @@ public class WeaponGenerator
                 }
                 return baseValue;
             });
+    }
+
+    private AffixInfo? GetAffix(WeaponExcelConfigData item, IDictionary<int, IEnumerable<EquipAffixExcelConfigData>> equipAffixMap)
+    {
+        int affixGroupId = item.SkillAffix[0];
+
+        if(affixGroupId == 0)
+        {
+            return null;
+        }
+
+        IEnumerable<EquipAffixExcelConfigData> matched = equipAffixMap[affixGroupId];
+
+        IEnumerable<AffixLevelDescription> descriptions = equipAffixMap[affixGroupId].Select(affix =>
+        {
+            return new AffixLevelDescription
+            {
+                Description = affix.DescTextMapHash.Value,
+                Level = (affix.Level ?? 0),
+            };
+        });
+
+        return new AffixInfo
+        {
+            Name = matched.First().NameTextMapHash.Value,
+            Descriptions = descriptions.ToList(),
+        };
     }
 }

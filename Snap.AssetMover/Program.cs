@@ -47,7 +47,7 @@ internal class Program
                         continue;
                     }
 
-                    if (fileName.StartsWith("UI_AvatarIcon_") && (!fileName.Contains("_Card")) && (!fileName.Contains("Costume")))
+                    if (fileName.StartsWith("UI_AvatarIcon_") && (!fileName.Contains("_Card")) /*&& (!fileName.Contains("Costume"))*/)
                     {
                         File.Copy(file, Path.Combine(staticFolder, "AvatarIcon", TrimBlkName(fileName)), true);
                         continue;

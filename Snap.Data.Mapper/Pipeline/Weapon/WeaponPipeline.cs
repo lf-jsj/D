@@ -1,4 +1,5 @@
-﻿using Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
+﻿using Snap.Data.Mapper.Model.ExcelBinOutput;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +21,18 @@ internal class WeaponPipeline : IPipeline
             .GroupBy(x => x.WeaponPromoteId)
             .ToDictionary(group => group.Key, group => group.AsEnumerable());
 
+        IDictionary<int, IEnumerable<EquipAffixExcelConfigData>> equipAffixMap = IPipeline
+            .GetData<EquipAffixExcelConfigData>(genshinDataFolder, options)
+            .GroupBy(x=>x.Id)
+            .ToDictionary(group=>group.Key, group => group.AsEnumerable());
+
         new WeaponGenerator(
             outputFolder,
             options,
             weapons,
             weaponCurves,
-            weaponPromoteMap)
+            weaponPromoteMap,
+            equipAffixMap)
             .Generate();
     }
 }

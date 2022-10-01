@@ -32,7 +32,7 @@ public class ReliquaryGenerator
             .Where(x => x.SetId.HasValue)
             .Where(x => x.SetId != 15000)
 
-            .GroupBy(x => $"{x.SetId!.Value}-{x.EquipType}")
+            .GroupBy(x => new ReliquaryGroupFactor(x))
             
             .Select(r =>
             {
@@ -43,7 +43,7 @@ public class ReliquaryGenerator
                 return new Model.Reliquary
                 {
                     EquipType = first.EquipType,
-                    RankLevels = r.Select(relic => relic.RankLevel).Distinct().OrderBy(x => x),
+                    RankLevel = first.RankLevel,
                     Ids = r.Select(relic => relic.Id),
                     Name = first.NameTextMapHash.Value,
                     Description = first.DescTextMapHash.Value,
@@ -54,5 +54,24 @@ public class ReliquaryGenerator
             });
 
         IPipeline.GenerateFile<Model.Reliquary>(resultCache, outputFolder, options);
+    }
+
+    private record struct ReliquaryGroupFactor
+    {
+        public int SetId;
+        public EquipType EquipType;
+        public int RankLevel;
+
+        public ReliquaryGroupFactor(ReliquaryExcelConfigData data)
+            : this(data.SetId!.Value, data.EquipType, data.RankLevel)
+        {
+        }
+
+        private ReliquaryGroupFactor(int setId,EquipType equipType,int rankLevel)
+        {
+            SetId = setId;
+            EquipType = equipType;
+            RankLevel = rankLevel;
+        }
     }
 }
