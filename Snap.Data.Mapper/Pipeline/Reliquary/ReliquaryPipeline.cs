@@ -52,5 +52,14 @@ internal class ReliquaryPipeline : IPipeline
             options,
             reliquaryMainAffixes)
             .Generate();
+
+        IEnumerable<ReliquaryLevelExcelConfigData> reliquaryLevelExcelConfigData = IPipeline
+            .GetData<ReliquaryLevelExcelConfigData>(genshinDataFolder, options);
+
+        new ReliquaryMainAffixLevelGenerator(
+            outputFolder,
+            options,
+            reliquaryLevelExcelConfigData)
+            .Generate();
     }
 }

@@ -369,6 +369,8 @@ public class AvatarGenerator
                 Name = c.NameTextMapHash.Value,
                 Description = c.DescTextMapHash.Value.Replace(@"\n", "\n"),
                 IsDefault = c.IsDefault,
+                Icon = c.IconName == string.Empty ? null : c.IconName,
+                SideIcon = c.SideIconName == string.Empty ? null : c.SideIconName,
             });
     }
 }

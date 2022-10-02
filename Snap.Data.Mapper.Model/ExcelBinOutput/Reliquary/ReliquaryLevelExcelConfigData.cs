@@ -8,7 +8,7 @@ public class ReliquaryLevelExcelConfigData : DataObject
     public int Level { get; set; }
 
     [JsonPropertyName("addProps")]
-    public IList<PropTypeValue> AddProps { get; set; } = default!;
+    public IList<FightPropTypeValue> AddProps { get; set; } = default!;
 
     [JsonPropertyName("rank")]
     public int? Rank { get; set; }
