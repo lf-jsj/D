@@ -28,7 +28,10 @@ public class AchievementGenerator
 
     private static readonly List<int> ObsoleteIds = new()
     {
-        84027, 82011, 82016, 82018, 84517, 84521, 81006, 81007, 81008, 81009, 81011, 81012, 81013, 81219,
+        84027, 82011, 82016, 82018, 84517,
+        84521, 81006, 81007, 81008, 81009,
+        81011, 81012, 81013, 81219, 82152,
+        82153, 82154,
     };
 
     public AchievementGenerator(
@@ -112,7 +115,8 @@ public class AchievementGenerator
     {
         return ObsoleteIds.Contains(item.Id)
             || (item.GoalId == 0 && item.OrderId == 0)
-            || string.IsNullOrEmpty(item.TitleTextMapHash.Value);
+            || string.IsNullOrEmpty(item.TitleTextMapHash.Value)
+            || item.TitleTextMapHash.Value == "废弃";
     }
 
     public static IEnumerable<AchievementTrigger>? DescriptTrigger(

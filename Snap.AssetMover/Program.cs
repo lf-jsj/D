@@ -23,6 +23,7 @@ internal class Program
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarImg"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "GachaEquipIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "IconElement"));
+                Directory.CreateDirectory(Path.Combine(staticFolder, "ItemIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "LoadingPic"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterIcon"));
                 Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterSmallIcon"));
@@ -34,7 +35,6 @@ internal class Program
                 foreach (string file in Directory.GetFiles(assetFolder))
                 {
                     string fileName = Path.GetFileName(file);
-                    Console.WriteLine(fileName);
                     if (fileName.StartsWith("Skill_"))
                     {
                         File.Copy(file, Path.Combine(staticFolder, "Skill", TrimBlkName(fileName)), true);
@@ -100,6 +100,12 @@ internal class Program
                         {
                             File.Copy(file, iconFile, false);
                         }
+                        continue;
+                    }
+
+                    if (fileName.StartsWith("UI_ItemIcon_"))
+                    {
+                        File.Copy(file, Path.Combine(staticFolder, "ItemIcon", TrimBlkName(fileName)), true);
                         continue;
                     }
 

@@ -119,6 +119,14 @@ public class AvatarGenerator
         }
 
         IPipeline.GenerateFile<Model.Avatar>(resultsCache, outputFolder, options);
+
+        //IEnumerable<GrowCurveInfo> growCurves = avatarCurves.Select(c => new GrowCurveInfo
+        //{
+        //    Level = c.Level,
+        //    Info = c.CurveInfos.ToDictionary(t => t.Type, t => t.Value),
+        //});
+
+        //IPipeline.GenerateFile<GrowCurveInfo>(growCurves, outputFolder, options);
     }
 
     public static bool ShouldSkip(AvatarExcelConfigData item)

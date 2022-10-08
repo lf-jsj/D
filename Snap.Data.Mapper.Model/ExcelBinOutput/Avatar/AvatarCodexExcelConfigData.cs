@@ -14,6 +14,6 @@ public class AvatarCodexExcelConfigData : DataObject
     [JsonConverter(typeof(ParsedDateTimeConverter))]
     public DateTime BeginTime { get; set; }
 
-    [JsonPropertyName("LJECMAJLPIG")]
+    [JsonPropertyName("IMPOGOCCALB")]
     public bool? LJECMAJLPIG { get; set; }
 }
