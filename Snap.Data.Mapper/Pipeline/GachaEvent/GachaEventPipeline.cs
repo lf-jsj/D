@@ -647,6 +647,29 @@ internal class GachaEventPipeline : IPipeline
             From = new(2022, 9, 28, 6, 0, 0, UTC8),
             To = new(2022, 10, 14, 17, 59, 59, UTC8)
         },
+
+        //3.1 下半
+        new("3.1","翩舞歈莲", GachaType.AvatarEventWish)
+        {
+            UpOrangeList = new() { "妮露" },
+            UpPurpleList = new() { "北斗", "芭芭拉", "香菱" },
+            From = new(2022, 10, 14, 18, 0, 0, UTC8),
+            To = new(2022, 11, 1, 14, 59, 59, UTC8)
+        },
+        new("3.1","深秘之息", GachaType.AvatarEventWish2)
+        {
+            UpOrangeList = new() { "阿贝多" },
+            UpPurpleList = new() { "北斗", "芭芭拉", "香菱" },
+            From = new(2022, 10, 14, 18, 0, 0, UTC8),
+            To = new(2022, 11, 1, 14, 59, 59, UTC8)
+        },
+        new("3.1","神铸赋形", GachaType.WeaponEventWish)
+        {
+            UpOrangeList = new() { "圣显之钥", "磐岩结绿" },
+            UpPurpleList = new() { "西福斯的月光", "流浪的晚星", "雨裁", "祭礼弓", "匣里灭辰" },
+            From = new(2022, 10, 14, 18, 0, 0, UTC8),
+            To = new(2022, 11, 1, 14, 59, 59, UTC8)
+        },
     };
 
     public void Run(string genshinDataFolder, string outputFolder, JsonSerializerOptions options)
