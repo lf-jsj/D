@@ -37,12 +37,15 @@ public class ReliquarySetGenerator
 
             .Select(r =>
             {
-                IEnumerable<EquipAffixExcelConfigData> equipAffixDatas = equipAffixMap[r.EquipAffixId!.Value];
+                List<EquipAffixExcelConfigData> equipAffixDatas = equipAffixMap[r.EquipAffixId!.Value].ToList();
 
                 return new ReliquarySet
                 {
                     SetId = r.SetId,
+                    EquipAffixId = r.EquipAffixId ?? 0,
                     NeedNumber = r.SetNeedNum,
+                    Icon = r.SetIcon,
+                    Name = equipAffixDatas[0].NameTextMapHash.Value,
                     Descriptions = equipAffixDatas.Select(data => data.DescTextMapHash.Value),
                 };
             });
