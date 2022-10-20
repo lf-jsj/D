@@ -13,24 +13,24 @@ internal class Program
 
             if (Console.ReadLine() is string staticFolder)
             {
-                Directory.CreateDirectory(Path.Combine(staticFolder, "Skill"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "AchievementIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "AvatarIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "ChapterIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "EmotionIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "EquipIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarImg"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "GachaEquipIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "IconElement"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "ItemIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "LoadingPic"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterSmallIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardPic"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "RelicIcon"));
-                Directory.CreateDirectory(Path.Combine(staticFolder, "Talent"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "Skill"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "AchievementIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "AvatarIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "ChapterIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "EmotionIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "EquipIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarImg"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "GachaEquipIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "IconElement"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "ItemIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "LoadingPic"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterSmallIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardPic"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "RelicIcon"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "Talent"));
 
                 foreach (string file in Directory.GetFiles(assetFolder))
                 {
