@@ -3,6 +3,7 @@ using Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Fetter;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 
@@ -10,14 +11,10 @@ namespace Snap.Data.Mapper.Pipeline.Avatar;
 
 internal class AvatarPipeline : IPipeline
 {
-    // https://www.projectcelestia.com/static/images/UI_AvatarIcon_Albedo.webp
-    // https://www.projectcelestia.com/static/images/Skill_S_Albedo_01.webp
-
-    // https://upload-bbs.mihoyo.com/game_record/genshin/character_icon/{iconName}.png
-    // https://upload-bbs.mihoyo.com/game_record/genshin/character_side_icon/{iconName}.png
-
     public void Run(string genshinDataFolder, string outputFolder, JsonSerializerOptions options)
     {
+        string simpleFolder = Path.Combine(Directory.GetParent(outputFolder)!.FullName, "Simple");
+
         // 角色
         IEnumerable<AvatarExcelConfigData> avatars = IPipeline
             .GetData<AvatarExcelConfigData>(genshinDataFolder, options);
@@ -76,6 +73,7 @@ internal class AvatarPipeline : IPipeline
 
         new AvatarGenerator(
             outputFolder,
+            simpleFolder,
             options,
             avatars,
             avatarCostumes,

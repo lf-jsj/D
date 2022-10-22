@@ -6,6 +6,7 @@ using Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Fetter;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using Snap.Data.Mapper.Pipeline.Avatar.Model;
+using Snap.Data.Mapper.Pipeline.Model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
@@ -15,6 +16,7 @@ namespace Snap.Data.Mapper.Pipeline.Avatar;
 public class AvatarGenerator
 {
     private readonly string outputFolder;
+    private readonly string simpleFolder;
     private readonly JsonSerializerOptions options;
 
     private readonly IEnumerable<AvatarExcelConfigData> avatars;
@@ -37,6 +39,7 @@ public class AvatarGenerator
 
     public AvatarGenerator(
         string outputFolder,
+        string simpleFolder,
         JsonSerializerOptions options,
         IEnumerable<AvatarExcelConfigData> avatars,
         IEnumerable<AvatarCostumeExcelConfigData> avatarCostumes,
@@ -52,6 +55,7 @@ public class AvatarGenerator
         IDictionary<int, IEnumerable<AvatarPromoteExcelConfigData>> avatarPromoteMap)
     {
         this.outputFolder = outputFolder;
+        this.simpleFolder = simpleFolder;
         this.options = options;
 
         this.avatars = avatars;
@@ -120,13 +124,8 @@ public class AvatarGenerator
 
         IPipeline.GenerateFile<Model.Avatar>(resultsCache, outputFolder, options);
 
-        //IEnumerable<GrowCurveInfo> growCurves = avatarCurves.Select(c => new GrowCurveInfo
-        //{
-        //    Level = c.Level,
-        //    Info = c.CurveInfos.ToDictionary(t => t.Type, t => t.Value),
-        //});
-
-        //IPipeline.GenerateFile<GrowCurveInfo>(growCurves, outputFolder, options);
+        IEnumerable<IdName> simpleIdNames = avatars.Select(a => new IdName(a.Id, a.NameTextMapHash.Value));
+        IPipeline.GenerateFile("Avatars",simpleIdNames, simpleFolder, options);
     }
 
     public static bool ShouldSkip(AvatarExcelConfigData item)

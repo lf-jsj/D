@@ -3,6 +3,7 @@ using Snap.Data.Mapper.Model.ExcelBinOutput;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using Snap.Data.Mapper.Pipeline.Avatar.Model;
+using Snap.Data.Mapper.Pipeline.Model;
 using Snap.Data.Mapper.Pipeline.Weapon.Model;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Snap.Data.Mapper.Pipeline.Weapon;
 public class WeaponGenerator
 {
     private readonly string outputFolder;
+    private readonly string simpleFolder;
     private readonly JsonSerializerOptions options;
 
     private readonly IEnumerable<WeaponExcelConfigData> weapons;
@@ -22,6 +24,7 @@ public class WeaponGenerator
 
     public WeaponGenerator(
         string outputFolder,
+        string simpleFolder,
         JsonSerializerOptions options,
         IEnumerable<WeaponExcelConfigData> weapons,
         IEnumerable<WeaponCurveExcelConfigData> weaponCurves,
@@ -29,6 +32,7 @@ public class WeaponGenerator
         IDictionary<int, IEnumerable<EquipAffixExcelConfigData>> equipAffixMap)
     {
         this.outputFolder = outputFolder;
+        this.simpleFolder = simpleFolder;
         this.options = options;
         this.weapons = weapons;
         this.weaponCurves = weaponCurves;
@@ -55,6 +59,10 @@ public class WeaponGenerator
             });
 
         IPipeline.GenerateFile<Model.Weapon>(resultCache, outputFolder, options);
+
+        IEnumerable<IdName> simpleIdNames = weapons
+            .Select(w => new IdName(w.Id, w.NameTextMapHash.Value));
+        IPipeline.GenerateFile("Weapons", simpleIdNames, simpleFolder, options);
     }
 
     public PropertyInfo GetProperties(
@@ -142,7 +150,7 @@ public class WeaponGenerator
     {
         int affixGroupId = item.SkillAffix[0];
 
-        if(affixGroupId == 0)
+        if (affixGroupId == 0)
         {
             return null;
         }

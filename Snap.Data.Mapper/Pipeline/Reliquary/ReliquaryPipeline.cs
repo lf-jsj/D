@@ -2,6 +2,7 @@
 using Snap.Data.Mapper.Model.ExcelBinOutput.Reliquary;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 
@@ -11,6 +12,8 @@ internal class ReliquaryPipeline : IPipeline
 {
     public void Run(string genshinDataFolder, string outputFolder, JsonSerializerOptions options)
     {
+        string simpleFolder = Path.Combine(Directory.GetParent(outputFolder)!.FullName, "Simple");
+
         IEnumerable<ReliquaryExcelConfigData> reliquaries = IPipeline
             .GetData<ReliquaryExcelConfigData>(genshinDataFolder, options);
 
@@ -30,6 +33,7 @@ internal class ReliquaryPipeline : IPipeline
 
         new ReliquarySetGenerator(
             outputFolder,
+            simpleFolder,
             options,
             requarySets,
             equipAffixMap)

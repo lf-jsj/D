@@ -2,6 +2,7 @@
 using Snap.Data.Mapper.Model.ExcelBinOutput.Weapon;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 
@@ -10,6 +11,8 @@ internal class WeaponPipeline : IPipeline
 {
     public void Run(string genshinDataFolder, string outputFolder, JsonSerializerOptions options)
     {
+        string simpleFolder = Path.Combine(Directory.GetParent(outputFolder)!.FullName, "Simple");
+
         IEnumerable<WeaponExcelConfigData> weapons = IPipeline
             .GetData<WeaponExcelConfigData>(genshinDataFolder, options);
 
@@ -28,6 +31,7 @@ internal class WeaponPipeline : IPipeline
 
         new WeaponGenerator(
             outputFolder,
+            simpleFolder,
             options,
             weapons,
             weaponCurves,
