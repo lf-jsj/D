@@ -14,6 +14,7 @@ internal class GachaEvent
 
     public string Name { get; set; }
     public string Version { get; set; }
+    public string Banner { get; set; } = default!;
     public DateTimeOffset From { get; set; }
     public DateTimeOffset To { get; set; }
     public GachaType Type { get; set; }

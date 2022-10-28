@@ -3,7 +3,9 @@ using Snap.Data.Mapper.Model.Common;
 using Snap.Data.Mapper.Model.Common.Curve;
 using Snap.Data.Mapper.Model.ExcelBinOutput;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Cook;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Fetter;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Material;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using Snap.Data.Mapper.Pipeline.Avatar.Model;
 using Snap.Data.Mapper.Pipeline.Model;
@@ -31,6 +33,10 @@ public class AvatarGenerator
     private readonly IDictionary<int, IEnumerable<FetterStoryExcelConfigData>> fetterStoryMap;
     private readonly IEnumerable<AvatarCurveExcelConfigData> avatarCurves;
     private readonly IDictionary<int, IEnumerable<AvatarPromoteExcelConfigData>> avatarPromoteMap;
+    private readonly Dictionary<int, CookBonusExcelConfigData> cookBonusMap;
+    private readonly IDictionary<int, MaterialExcelConfigData> materialMap;
+    private readonly IDictionary<int, CookRecipeExcelConfigData> cookRecipeMap;
+
 
     private static readonly List<int> SkipAvatars = new()
     {
@@ -52,7 +58,10 @@ public class AvatarGenerator
         IDictionary<int, IEnumerable<FettersExcelConfigData>> fettersMap,
         IDictionary<int, IEnumerable<FetterStoryExcelConfigData>> fetterStoryMap,
         IEnumerable<AvatarCurveExcelConfigData> avatarCurves,
-        IDictionary<int, IEnumerable<AvatarPromoteExcelConfigData>> avatarPromoteMap)
+        IDictionary<int, IEnumerable<AvatarPromoteExcelConfigData>> avatarPromoteMap,
+        Dictionary<int, CookBonusExcelConfigData> cookBonusMap,
+        IDictionary<int, MaterialExcelConfigData> materialMap,
+        IDictionary<int, CookRecipeExcelConfigData> cookRecipeMap)
     {
         this.outputFolder = outputFolder;
         this.simpleFolder = simpleFolder;
@@ -70,6 +79,9 @@ public class AvatarGenerator
         this.fetterStoryMap = fetterStoryMap;
         this.avatarCurves = avatarCurves;
         this.avatarPromoteMap = avatarPromoteMap;
+        this.cookBonusMap = cookBonusMap;
+        this.materialMap = materialMap;
+        this.cookRecipeMap = cookRecipeMap;
     }
 
     public void Generate()
@@ -255,6 +267,40 @@ public class AvatarGenerator
             Context = x.StoryContextTextMapHash.Value.Replace(@"\n", "\n"),
         });
 
+        CookBonusExcelConfigData? cookBonusData = cookBonusMap.GetValueOrDefault(id);
+        CookBonus? cookBonus = null;
+        if (cookBonusData != null)
+        {
+            CookRecipeExcelConfigData recipeData = cookRecipeMap[cookBonusData.RecipeId];
+            MaterialExcelConfigData materialData = materialMap[cookBonusData.ParamVec[0]];
+
+            cookBonus = new()
+            {
+                OriginName = recipeData.NameTextMapHash.Value,
+                OriginDescription = recipeData.DescTextMapHash.Value,
+                OriginIcon = recipeData.Icon,
+                Name = materialData.NameTextMapHash.Value,
+                Description = materialData.DescTextMapHash.Value,
+                EffectDescription = materialData.EffectDescTextMapHash.Value,
+                Icon = materialData.Icon,
+                RankLevel = materialData.RankLevel,
+                InputList = recipeData.InputVec.Where(x => x.Count > 0).Select(idCount =>
+                {
+                    MaterialExcelConfigData material = materialMap[idCount.Id ?? 0];
+
+                    return new Item
+                    {
+                        Id = idCount.Id ?? 0,
+                        Name = material.NameTextMapHash.Value,
+                        Icon = material.Icon,
+                        RankLevel = material.RankLevel,
+                        Count = idCount.Count,
+                    };
+                }).ToList(),
+            };
+        }
+        
+
         FetterInfoExcelConfigData fetterData = fetterInfos[id];
 
         FetterInfo fetterInfo = new()
@@ -273,6 +319,7 @@ public class AvatarGenerator
             CvJapanese = fetterData.CvJapaneseTextMapHash.Value,
             CvEnglish = fetterData.CvEnglishTextMapHash.Value,
             CvKorean = fetterData.CvKoreanTextMapHash.Value,
+            CookBonus = cookBonus,
             Fetters = fetters,
             FetterStories = fetterStories,
         };

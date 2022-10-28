@@ -1,6 +1,8 @@
 ﻿using Snap.Data.Mapper.Model.ExcelBinOutput;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Cook;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Fetter;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Material;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using System.Collections.Generic;
 using System.IO;
@@ -71,6 +73,18 @@ internal class AvatarPipeline : IPipeline
             .GroupBy(x => x.AvatarPromoteId)
             .ToDictionary(group => group.Key, group => group.AsEnumerable());
 
+        Dictionary<int, CookBonusExcelConfigData> cookBonusMap = IPipeline
+            .GetData<CookBonusExcelConfigData>(genshinDataFolder, options)
+            .ToDictionary(x => x.AvatarId);
+
+        IDictionary<int, MaterialExcelConfigData> materialMap = IPipeline
+            .GetData<MaterialExcelConfigData>(genshinDataFolder, options)
+            .ToDictionary(x => x.Id);
+
+        IDictionary<int, CookRecipeExcelConfigData> cookRecipeMap = IPipeline
+            .GetData<CookRecipeExcelConfigData>(genshinDataFolder, options)
+            .ToDictionary(x => x.Id);
+
         new AvatarGenerator(
             outputFolder,
             simpleFolder,
@@ -86,7 +100,10 @@ internal class AvatarPipeline : IPipeline
             fettersMap,
             fetterStoryMap,
             avatarCurves,
-            avatarPromoteMap)
+            avatarPromoteMap,
+            cookBonusMap,
+            materialMap,
+            cookRecipeMap)
             .Generate();
     }
 }

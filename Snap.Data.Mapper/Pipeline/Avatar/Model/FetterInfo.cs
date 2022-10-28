@@ -22,6 +22,8 @@ public class FetterInfo
     public string CvEnglish { get; set; } = default!;
     public string CvKorean { get; set; } = default!;
 
+    public CookBonus? CookBonus { get; set; }
+
     public IEnumerable<Fetter> Fetters { get; set; } = default!;
     public IEnumerable<Fetter> FetterStories { get; set; } = default!;
 }
