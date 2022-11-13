@@ -11,6 +11,5 @@ public class Achievement
     public string Description { get; set; } = default!;
     public SimpleReward FinishReward { get; set; } = default!;
     public int Progress { get; set; }
-    public IEnumerable<AchievementTrigger>? Triggers { get; set; }
     public string? Icon { get; set; }
 }

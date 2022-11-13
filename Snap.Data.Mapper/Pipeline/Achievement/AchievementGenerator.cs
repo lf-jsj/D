@@ -77,9 +77,6 @@ public class AchievementGenerator
                 Count = rewardItem.ItemCount!.Value,
             };
 
-            // parse achievement triggers
-            IEnumerable<AchievementTrigger>? triggers = DescriptTrigger(achievement.TriggerConfig, mainQuests, quests, dailyTasks);
-
             Model.Achievement result = new()
             {
                 Goal = achievement.GoalId,
@@ -88,7 +85,6 @@ public class AchievementGenerator
                 Description = achievement.DescTextMapHash.Value,
                 FinishReward = simpleReward,
                 Id = achievement.Id,
-                Triggers = triggers,
                 Progress = achievement.Progress,
                 Icon = string.IsNullOrEmpty(achievement.Icon) ? null : achievement.Icon,
             };
@@ -117,73 +113,5 @@ public class AchievementGenerator
             || (item.GoalId == 0 && item.OrderId == 0)
             || string.IsNullOrEmpty(item.TitleTextMapHash.Value)
             || item.TitleTextMapHash.Value == "废弃";
-    }
-
-    public static IEnumerable<AchievementTrigger>? DescriptTrigger(
-        ParamListTriggerConfig config,
-        IDictionary<int, MainQuestExcelConfigData> mainQuests,
-        IDictionary<int, QuestExcelConfigData> quests,
-        IDictionary<int, DailyTaskExcelConfigData> dailyTasks)
-    {
-        string triggerType = config.TriggerType;
-
-        // parent quests
-        if (triggerType == "TRIGGER_FINISH_PARENT_QUEST_AND" || triggerType == "TRIGGER_FINISH_PARENT_QUEST_OR")
-        {
-            IEnumerable<string> notEmptyQuestIds = ProcessQuestIds(config.ParamList);
-
-            IEnumerable<AchievementTrigger> results = notEmptyQuestIds
-                .Select(id => mainQuests[int.Parse(id)])
-                .Select(quest => new AchievementTrigger
-                {
-                    Id = quest.Id.ToString(),
-                    Type = AchievementStepType.Quest,
-                    Title = quest.TitleTextMapHash.Value,
-                    Description = quest.DescTextMapHash.Value,
-                });
-
-            return results;
-        }
-
-        // quests
-        if (triggerType == "TRIGGER_FINISH_QUEST_AND" || triggerType == "TRIGGER_FINISH_QUEST_OR")
-        {
-            IEnumerable<string> notEmptyQuestIds = ProcessQuestIds(config.ParamList);
-
-            IEnumerable<AchievementTrigger> results = notEmptyQuestIds
-                .Select(id => quests[int.Parse(id)])
-                .Select(quest => new AchievementTrigger
-                {
-                    Id = $"{quest.MainId}-{quest.SubId}",
-                    Type = AchievementStepType.SubQuest,
-                    Title = mainQuests[quest.MainId].TitleTextMapHash.Value,
-                    Description = quest.DescTextMapHash.Value,
-                });
-
-            return results;
-        }
-
-        // daily task
-        if (triggerType == "TRIGGER_DAILY_TASK_VAR_EQUAL")
-        {
-            DailyTaskExcelConfigData task = dailyTasks[int.Parse(config.ParamList[0])];
-
-            return new AchievementTrigger
-            {
-                Id = task.ID.ToString(),
-                Type = AchievementStepType.DailyTask,
-                Title = task.TitleTextMapHash.Value,
-                Description = task.DescriptionTextMapHash.Value,
-            }
-            .Enumerate();
-        }
-
-        return null;
-    }
-
-    private static IEnumerable<string> ProcessQuestIds(IList<string> paramList)
-    {
-        IEnumerable<string> notEmptyQuestIds0 = paramList.Where(x => !string.IsNullOrEmpty(x));
-        return string.Join(',', notEmptyQuestIds0).Split(',');
     }
 }

@@ -2,12 +2,12 @@
 
 public struct HashPre
 {
-    public HashPre(ushort value)
+    public HashPre(ulong value)
     {
         Value = value;
     }
 
-    public ushort Value { get; set; }
+    public ulong Value { get; set; }
 
     public override string ToString()
     {
