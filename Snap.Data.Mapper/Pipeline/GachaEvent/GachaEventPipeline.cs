@@ -385,7 +385,7 @@ internal class GachaEventPipeline : IPipeline
         {
             UpOrangeList = new() { "阿贝多" },
             UpPurpleList = new() { "班尼特", "诺艾尔", "罗莎莉亚" },
-            Banner = "https://upload-bbs.mihoyo.com/upload/2021/11/22/75276539/0ab29581ea15452002abccf59c41359f_2943098344986593317.jpg",
+            Banner = "https://upload-bbs.mihoyo.com/upload/2021/11/22/75276539/561fd999c964dbe083792413d19cba9f_7019830319213578722.jpg",
             From = new(2021, 11, 24, 6, 0, 0, UTC8),
             To = new(2021, 12, 14, 17, 59, 59, UTC8)
         },
@@ -393,7 +393,7 @@ internal class GachaEventPipeline : IPipeline
         {
             UpOrangeList = new() { "优菈" },
             UpPurpleList = new() { "班尼特", "诺艾尔", "罗莎莉亚" },
-            Banner = "https://upload-bbs.mihoyo.com/upload/2021/11/22/75276539/561fd999c964dbe083792413d19cba9f_7019830319213578722.jpg",
+            Banner = "https://upload-bbs.mihoyo.com/upload/2021/11/22/75276539/0ab29581ea15452002abccf59c41359f_2943098344986593317.jpg",
             From = new(2021, 11, 24, 6, 0, 0, UTC8),
             To = new(2021, 12, 14, 17, 59, 59, UTC8)
         },
