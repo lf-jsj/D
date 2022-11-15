@@ -780,6 +780,32 @@ internal class GachaEventPipeline : IPipeline
             From = new(2022, 11, 2, 6, 0, 0, UTC8),
             To = new(2022, 11, 18, 17, 59, 59, UTC8)
         },
+
+        //3.2下半
+        new("3.2","华紫樱绯", GachaType.AvatarEventWish)
+        {
+            UpOrangeList = new() { "八重神子" },
+            UpPurpleList = new() { "莱依拉", "托马", "鹿野院平藏" },
+            Banner = "https://upload-bbs.mihoyo.com/upload/2022/11/14/75276539/bb82ed25f817318641a1dc1bb904dfaa_8197331366260922626.jpg",
+            From = new(2022, 11, 18, 18, 0, 0, UTC8),
+            To = new(2022, 12, 6, 14, 59, 59, UTC8)
+        },
+        new("3.2","暂别冬都", GachaType.AvatarEventWish2)
+        {
+            UpOrangeList = new() { "达达利亚" },
+            UpPurpleList = new() { "莱依拉", "托马", "鹿野院平藏" },
+            Banner = "https://upload-bbs.mihoyo.com/upload/2022/11/14/75276539/f315c063e2bb97bc7a62c9bb28bcbde7_6647071877413651364.jpg",
+            From = new(2022, 11, 18, 18, 0, 0, UTC8),
+            To = new(2022, 12, 6, 14, 59, 59, UTC8)
+        },
+        new("3.2","神铸赋形", GachaType.WeaponEventWish)
+        {
+            UpOrangeList = new() { "神乐之真意", "冬极白星" },
+            UpPurpleList = new() { "西风剑", "西风秘典", "钟剑", "绝弦", "匣里灭辰" },
+            Banner = "https://upload-bbs.mihoyo.com/upload/2022/11/14/75276539/367bdd944eb3f0e63cf7364710d05210_4988150181253091247.jpg",
+            From = new(2022, 11, 18, 18, 0, 0, UTC8),
+            To = new(2022, 12, 6, 14, 59, 59, UTC8)
+        },
     };
 
     public void Run(string genshinDataFolder, string outputFolder, JsonSerializerOptions options)
