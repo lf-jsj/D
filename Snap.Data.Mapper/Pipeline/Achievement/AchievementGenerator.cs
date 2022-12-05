@@ -68,7 +68,7 @@ public class AchievementGenerator
                 Goal = achievement.GoalId,
                 Order = achievement.OrderId,
                 Title = achievement.TitleTextMapHash.Value,
-                Description = achievement.DescTextMapHash.Value,
+                Description = ReplaceWithProgress(achievement.DescTextMapHash.Value, achievement.Progress),
                 FinishReward = simpleReward,
                 Id = achievement.Id,
                 Progress = achievement.Progress,
@@ -98,6 +98,12 @@ public class AchievementGenerator
         return ObsoleteIds.Contains(item.Id)
             || (item.GoalId == 0 && item.OrderId == 0)
             || string.IsNullOrEmpty(item.TitleTextMapHash.Value)
+            || item.TitleTextMapHash.Value.Contains("test")
             || item.TitleTextMapHash.Value == "废弃";
+    }
+
+    private static string ReplaceWithProgress(string input, int progress)
+    {
+        return input.Replace("{param0}", progress.ToString());
     }
 }
