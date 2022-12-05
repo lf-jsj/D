@@ -20,33 +20,19 @@ namespace Snap.Data.Mapper.TextMapping;
 internal class TextMap : ITextMap
 {
     private readonly Lazy<IDictionary<string, string>> textMapping;
-    private readonly string language;
+
     /// <summary>
     /// 构造一个新的文本映射的默认实现
     /// </summary>
     /// <param name="filePath">映射文件路径</param>
     public TextMap(string filePath)
     {
-        // [7..] trim out prefixed TextMap
-        language = Path.GetFileNameWithoutExtension(filePath)[7..];
-        textMapping = new Lazy<IDictionary<string, string>>(() =>
+        textMapping = new(() =>
         {
             string content = File.ReadAllText(filePath);
             IDictionary<string, string>? map = JsonSerializer.Deserialize<IDictionary<string, string>>(content);
             return Must.NotNull(map!);
         });
-    }
-
-    /// <inheritdoc/>
-    public string Language
-    {
-        get => language;
-    }
-
-    /// <inheritdoc/>
-    public int KeyCount
-    {
-        get => textMapping.Value.Count;
     }
 
     /// <inheritdoc/>

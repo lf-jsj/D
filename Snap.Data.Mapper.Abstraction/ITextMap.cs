@@ -9,16 +9,6 @@ namespace Snap.Data.Mapper.Abstraction;
 public interface ITextMap
 {
     /// <summary>
-    /// 获取此映射的语言的字符串表示形式
-    /// </summary>
-    string Language { get; }
-
-    /// <summary>
-    /// 获取此映射的键个数
-    /// </summary>
-    int KeyCount { get; }
-
-    /// <summary>
     /// 获取映射的目标文本
     /// </summary>
     /// <param name="key">键</param>
