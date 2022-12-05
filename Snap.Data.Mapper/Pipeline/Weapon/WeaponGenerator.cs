@@ -125,10 +125,10 @@ public class WeaponGenerator
             .Where(p => p != FightProperty.FIGHT_PROP_NONE)
             .Select(p =>
             {
-                // seek name in avatar's propGrowCurve
-                string? curveName = propGrow.SingleOrDefault(x => x.PropType == p)?.Type;
+                // seek name in weapon's propGrowCurve
+                int? curveName = propGrow.SingleOrDefault(x => x.PropType == p)?.Type;
 
-                // seek curve in avatarCurves by curve name
+                // seek curve in weaponCurves by curve name
                 TypeArithValue? curve = weaponCurves.First(x => x.Level == level).CurveInfos.FirstOrDefault(x => x.Type == curveName);
 
                 double baseValue = item.WeaponProp.First(x => x.PropType == p).InitValue;
@@ -138,9 +138,9 @@ public class WeaponGenerator
                 }
 
                 FightPropTypeValue? add = promotes[promoteIndex].AddProps.FirstOrDefault(x => x.PropType == p);
-                if (add != null && add.Value.HasValue)
+                if (add != null && add.Value != 0)
                 {
-                    baseValue += add.Value.Value;
+                    baseValue += add.Value;
                 }
                 return baseValue;
             });
@@ -162,7 +162,7 @@ public class WeaponGenerator
             return new AffixLevelDescription
             {
                 Description = affix.DescTextMapHash.Value,
-                Level = (affix.Level ?? 0),
+                Level = affix.Level,
             };
         });
 

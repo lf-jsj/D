@@ -1,15 +1,10 @@
 ﻿using Microsoft;
-using Snap.Data.Mapper.Core.Extension;
 using Snap.Data.Mapper.Model.Common;
-using Snap.Data.Mapper.Model.ExcelBinOutput;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Achievement;
-using Snap.Data.Mapper.Model.ExcelBinOutput.Daily;
-using Snap.Data.Mapper.Model.ExcelBinOutput.Quest;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Reward;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using Snap.Data.Mapper.Pipeline.Achievement.Model;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
 
 namespace Snap.Data.Mapper.Pipeline.Achievement;
@@ -22,9 +17,6 @@ public class AchievementGenerator
 
     private readonly IEnumerable<AchievementExcelConfigData> achievementsData;
     private readonly IDictionary<int, RewardExcelConfigData> rewardMap;
-    private readonly IDictionary<int, MainQuestExcelConfigData> mainQuests;
-    private readonly IDictionary<int, QuestExcelConfigData> quests;
-    private readonly IDictionary<int, DailyTaskExcelConfigData> dailyTasks;
 
     private static readonly List<int> ObsoleteIds = new()
     {
@@ -39,10 +31,7 @@ public class AchievementGenerator
         string compatFolder,
         JsonSerializerOptions options,
         IEnumerable<AchievementExcelConfigData> achievementsData,
-        IDictionary<int, RewardExcelConfigData> rewardMap,
-        IDictionary<int, MainQuestExcelConfigData> mainQuests,
-        IDictionary<int, QuestExcelConfigData> quests,
-        IDictionary<int, DailyTaskExcelConfigData> dailyTasks)
+        IDictionary<int, RewardExcelConfigData> rewardMap)
     {
         this.outputFolder = outputFolder;
         this.compatFolder = compatFolder;
@@ -50,9 +39,6 @@ public class AchievementGenerator
 
         this.achievementsData = achievementsData;
         this.rewardMap = rewardMap;
-        this.mainQuests = mainQuests;
-        this.quests = quests;
-        this.dailyTasks = dailyTasks;
     }
 
     public void Generate()
@@ -69,12 +55,12 @@ public class AchievementGenerator
 
             // parse achievement reward
             RewardExcelConfigData reward = rewardMap[achievement.FinishRewardId];
-            Verify.Operation(reward.RewardItemList[1].ItemId == null, "出现多个奖励内容");
+            Verify.Operation(reward.RewardItemList[1].ItemId == 0, "出现多个奖励内容");
             ItemIdItemCount rewardItem = reward.RewardItemList[0];
             SimpleReward simpleReward = new()
             {
-                Id = rewardItem.ItemId!.Value,
-                Count = rewardItem.ItemCount!.Value,
+                Id = rewardItem.ItemId,
+                Count = rewardItem.ItemCount,
             };
 
             Model.Achievement result = new()
@@ -95,7 +81,7 @@ public class AchievementGenerator
                 OrderId = achievement.OrderId,
                 Title = achievement.TitleTextMapHash.Value,
                 Description = achievement.DescTextMapHash.Value,
-                FinishRewardCount = rewardItem.ItemCount!.Value,
+                FinishRewardCount = rewardItem.ItemCount,
                 Id = achievement.Id,
             };
 

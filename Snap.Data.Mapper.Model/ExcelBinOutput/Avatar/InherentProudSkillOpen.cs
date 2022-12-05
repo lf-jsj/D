@@ -2,9 +2,7 @@
 
 public class InherentProudSkillOpen : DataObject
 {
-    [JsonPropertyName("proudSkillGroupId")]
-    public int? ProudSkillGroupId { get; set; }
+    public int ProudSkillGroupId { get; set; }
 
-    [JsonPropertyName("needAvatarPromoteLevel")]
-    public int? NeedAvatarPromoteLevel { get; set; }
+    public int NeedAvatarPromoteLevel { get; set; }
 }

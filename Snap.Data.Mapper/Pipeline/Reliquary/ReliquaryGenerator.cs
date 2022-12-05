@@ -29,7 +29,7 @@ public class ReliquaryGenerator
         IEnumerable<Model.Reliquary> resultCache = reliquaries
 
             // filter out no set relics
-            .Where(x => x.SetId.HasValue)
+            .Where(x => x.SetId != 0)
             .Where(x => x.SetId != 15000)
 
             .GroupBy(x => new ReliquaryGroupFactor(x))
@@ -49,7 +49,7 @@ public class ReliquaryGenerator
                     Description = first.DescTextMapHash.Value,
                     Icon = first.Icon,
                     ItemType = first.ItemType,
-                    SetId = first.SetId!.Value,
+                    SetId = first.SetId,
                 };
             });
 
@@ -63,7 +63,7 @@ public class ReliquaryGenerator
         public int RankLevel;
 
         public ReliquaryGroupFactor(ReliquaryExcelConfigData data)
-            : this(data.SetId!.Value, data.EquipType, data.RankLevel)
+            : this(data.SetId, data.EquipType, data.RankLevel)
         {
         }
 

@@ -37,16 +37,16 @@ public class ReliquarySetGenerator
         IEnumerable<ReliquarySet> resultCache = requarySets
 
             // filter out useless sets
-            .Where(x => x.EquipAffixId.HasValue)
+            .Where(x => x.EquipAffixId != 0)
 
             .Select(r =>
             {
-                List<EquipAffixExcelConfigData> equipAffixDatas = equipAffixMap[r.EquipAffixId!.Value].ToList();
+                List<EquipAffixExcelConfigData> equipAffixDatas = equipAffixMap[r.EquipAffixId].ToList();
 
                 return new ReliquarySet
                 {
                     SetId = r.SetId,
-                    EquipAffixId = r.EquipAffixId ?? 0,
+                    EquipAffixId = r.EquipAffixId,
                     NeedNumber = r.SetNeedNum,
                     Icon = r.SetIcon,
                     Name = equipAffixDatas[0].NameTextMapHash.Value,
@@ -57,11 +57,11 @@ public class ReliquarySetGenerator
         IPipeline.GenerateFile<ReliquarySet>(resultCache, outputFolder, options);
 
         IEnumerable<IdName> simpleIdNames = requarySets
-            .Where(x => x.EquipAffixId.HasValue)
+            .Where(x => x.EquipAffixId != 0)
             .Select(r =>
             {
-                List<EquipAffixExcelConfigData> equipAffixDatas = equipAffixMap[r.EquipAffixId!.Value].ToList();
-                return new IdName(r.EquipAffixId ?? 0, equipAffixDatas[0].NameTextMapHash.Value);
+                List<EquipAffixExcelConfigData> equipAffixDatas = equipAffixMap[r.EquipAffixId].ToList();
+                return new IdName(r.EquipAffixId, equipAffixDatas[0].NameTextMapHash.Value);
             });
         IPipeline.GenerateFile("ReliquarySet", simpleIdNames, simpleFolder, options);
     }

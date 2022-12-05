@@ -2,21 +2,16 @@
 
 public class PropTypeValue : DataObject
 {
-    [JsonPropertyName("propType")]
-    public string? PropType { get; set; }
+    public int PropType { get; set; } = default!;
 
-    [JsonPropertyName("value")]
-    public double? Value { get; set; }
+    public double Value { get; set; }
 }
 
 public class FightPropTypeValue : DataObject
 {
-    [JsonPropertyName("propType")]
-    [JsonConverter(typeof(JsonStringEnumConverter))]
     public FightProperty PropType { get; set; }
 
-    [JsonPropertyName("value")]
-    public double? Value { get; set; }
+    public double Value { get; set; }
 }
 
 

@@ -2,12 +2,9 @@
 
 public class TypeArithValue : DataObject
 {
-    [JsonPropertyName("type")]
-    public string Type { get; set; } = default!;
+    public int Type { get; set; } = default!;
 
-    [JsonPropertyName("arith")]
-    public string Arith { get; set; } = default!;
+    public int Arith { get; set; } = default!;
 
-    [JsonPropertyName("value")]
     public double Value { get; set; }
 }

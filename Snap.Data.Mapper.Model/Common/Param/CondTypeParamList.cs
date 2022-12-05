@@ -2,9 +2,7 @@
 
 public class CondTypeParamList : DataObject
 {
-    [JsonPropertyName("paramList")]
     public IList<int> ParamList { get; set; } = default!;
 
-    [JsonPropertyName("condType")]
-    public string CondType { get; set; } = default!;
+    public int CondType { get; set; } = default!;
 }

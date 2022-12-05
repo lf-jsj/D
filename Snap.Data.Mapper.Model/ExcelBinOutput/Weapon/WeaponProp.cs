@@ -12,5 +12,5 @@ public class WeaponProp : DataObject
     public double InitValue { get; set; }
 
     [JsonPropertyName("type")]
-    public string Type { get; set; } = default!;
+    public int Type { get; set; } = default!;
 }

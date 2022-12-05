@@ -103,8 +103,8 @@ public class AvatarGenerator
             IEnumerable<Talent> talents = avatarSkillDepot.Talents
                 .Select(GetTalentById);
             IEnumerable<SkillInfo> inherents = avatarSkillDepot.InherentProudSkillOpens
-                .Where(open => open.ProudSkillGroupId.HasValue)
-                .Select(open => open.ProudSkillGroupId!.Value)
+                .Where(open => open.ProudSkillGroupId != 0)
+                .Select(open => open.ProudSkillGroupId)
                 .Select(GetSkillInfoByGroupId);
             SkillDepot skillDepot = new()
             {
@@ -142,7 +142,7 @@ public class AvatarGenerator
 
     public static bool ShouldSkip(AvatarExcelConfigData item)
     {
-        return item.UseType != "AVATAR_FORMAL"
+        return item.UseType != 2
             || SkipAvatars.Contains(item.Id);
     }
 
@@ -213,7 +213,7 @@ public class AvatarGenerator
             .Select(p =>
             {
                 // seek name in avatar's propGrowCurve
-                string? curveName = propGrow.SingleOrDefault(x => x.Type == p)?.GrowCurve;
+                int? curveName = propGrow.SingleOrDefault(x => x.Type == p)?.GrowCurve;
 
                 // seek curve in avatarCurves by curve name
                 TypeArithValue? curve = avatarCurves.First(x => x.Level == level).CurveInfos.FirstOrDefault(x => x.Type == curveName);
@@ -225,9 +225,9 @@ public class AvatarGenerator
                 }
 
                 FightPropTypeValue? add = promotes[promoteIndex].AddProps.FirstOrDefault(x => x.PropType == p);
-                if (add != null && add.Value.HasValue)
+                if (add != null && add.Value != 0)
                 {
-                    baseValue += add.Value.Value;
+                    baseValue += add.Value;
                 }
                 return baseValue;
             });
@@ -314,7 +314,7 @@ public class AvatarGenerator
             ConstellationAfter = fetterData.AvatarConstellationAfterTextMapHash.Value,
             Title = fetterData.AvatarTitleTextMapHash.Value,
             Detail = fetterData.AvatarDetailTextMapHash.Value,
-            Association = fetterData.AvatarAssocType,
+            Association = fetterData.AvatarAssocType.ToString(),
             CvChinese = fetterData.CvChineseTextMapHash.Value,
             CvJapanese = fetterData.CvJapaneseTextMapHash.Value,
             CvEnglish = fetterData.CvEnglishTextMapHash.Value,
@@ -330,7 +330,7 @@ public class AvatarGenerator
     private SkillInfo GetSkillInfoBySkillId(int skillId)
     {
         AvatarSkillExcelConfigData avatarSkill = skills[skillId];
-        int proudSkillGroupId = avatarSkill.ProudSkillGroupId!.Value;
+        int proudSkillGroupId = avatarSkill.ProudSkillGroupId;
 
         IEnumerable<ProudSkillExcelConfigData> proudSkills = proudSkillsMap[proudSkillGroupId];
 
@@ -416,15 +416,15 @@ public class AvatarGenerator
     private IEnumerable<Costume> GetCostumes(AvatarExcelConfigData item)
     {
         return avatarCostumes
-            .Where(c => c.AvatarId == item.Id)
+            .Where(c => c.CharacterId == item.Id)
             .Select(c => new Costume()
             {
-                Id = c.Id,
+                Id = c.SkinId,
                 Name = c.NameTextMapHash.Value,
                 Description = c.DescTextMapHash.Value.Replace(@"\n", "\n"),
                 IsDefault = c.IsDefault,
-                Icon = c.IconName == string.Empty ? null : c.IconName,
-                SideIcon = c.SideIconName == string.Empty ? null : c.SideIconName,
+                Icon = c.FrontIconName,
+                SideIcon = c.SideIconName,
             });
     }
 }

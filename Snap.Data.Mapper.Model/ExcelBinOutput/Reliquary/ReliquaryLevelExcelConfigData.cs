@@ -1,18 +1,15 @@
 ﻿using Snap.Data.Mapper.Model.Common;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
 
 namespace Snap.Data.Mapper.Model.ExcelBinOutput.Reliquary;
 
 public class ReliquaryLevelExcelConfigData : DataObject
 {
-    [JsonPropertyName("level")]
     public int Level { get; set; }
 
-    [JsonPropertyName("addProps")]
     public IList<FightPropTypeValue> AddProps { get; set; } = default!;
 
-    [JsonPropertyName("rank")]
-    public int? Rank { get; set; }
+    public ItemQuality Rank { get; set; }
 
-    [JsonPropertyName("exp")]
-    public int? Exp { get; set; }
+    public int Exp { get; set; }
 }

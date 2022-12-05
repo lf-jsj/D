@@ -2,14 +2,11 @@
 
 public class CookBonusExcelConfigData : DataObject
 {
-    [JsonPropertyName("avatarId")]
     public int AvatarId { get; set; }
 
-    [JsonPropertyName("recipeId")]
     public int RecipeId { get; set; }
 
-    [JsonPropertyName("bonusType")]
-    public string BonusType { get; set; } = default!;
+    public int BonusType { get; set; }
 
     [JsonPropertyName("paramVec")]
     public IList<int> ParamVec { get; set; } = default!;

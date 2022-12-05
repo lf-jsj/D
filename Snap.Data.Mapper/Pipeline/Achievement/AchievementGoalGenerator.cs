@@ -40,23 +40,23 @@ public class AchievementGoalGenerator
         {
             SimpleReward? simpleReward = null;
 
-            if (item.FinishRewardId.HasValue)
+            if (item.FinishRewardId != 0)
             {
-                RewardExcelConfigData rewardExcelConfigData = rewardMap[item.FinishRewardId.Value];
-                Verify.Operation(rewardExcelConfigData.RewardItemList[1].ItemId == null, "出现多个奖励内容");
+                RewardExcelConfigData rewardExcelConfigData = rewardMap[item.FinishRewardId];
+                Verify.Operation(rewardExcelConfigData.RewardItemList[1].ItemId == 0, "出现多个奖励内容");
 
                 ItemIdItemCount reward = rewardExcelConfigData.RewardItemList[0];
 
                 simpleReward = new()
                 {
-                    Id = reward.ItemId!.Value,
-                    Count = reward.ItemCount!.Value,
+                    Id = reward.ItemId,
+                    Count = reward.ItemCount,
                 };
             }
 
             AchievementGoal achievementGoal = new()
             {
-                Id = item.Id ?? 0,
+                Id = item.Id,
                 Order = item.OrderId,
                 Name = item.NameTextMapHash.Value,
                 FinishReward = simpleReward,
@@ -65,7 +65,7 @@ public class AchievementGoalGenerator
 
             Model.SnapGenshin.SGAchievementGoal compatGoal = new()
             {
-                Id = item.Id ?? 0,
+                Id = item.Id,
                 OrderId = item.OrderId,
                 Name = item.NameTextMapHash.Value,
                 IconPath = string.IsNullOrEmpty(item.IconPath) ? null : item.IconPath,

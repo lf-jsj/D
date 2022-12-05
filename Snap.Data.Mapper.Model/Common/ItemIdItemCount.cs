@@ -2,9 +2,7 @@
 
 public class ItemIdItemCount : DataObject
 {
-    [JsonPropertyName("itemId")]
-    public int? ItemId { get; set; } = default!;
+    public int ItemId { get; set; } = default!;
 
-    [JsonPropertyName("itemCount")]
-    public int? ItemCount { get; set; }
+    public int ItemCount { get; set; }
 }

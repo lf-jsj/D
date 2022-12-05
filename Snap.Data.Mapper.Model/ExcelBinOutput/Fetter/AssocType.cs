@@ -1,0 +1,16 @@
+﻿namespace Snap.Data.Mapper.Model.ExcelBinOutput.Fetter;
+
+public enum AssocType
+{
+    ASSOC_TYPE_NONE,
+    ASSOC_TYPE_MONDSTADT,
+    ASSOC_TYPE_LIYUE,
+    ASSOC_TYPE_MAINACTOR,
+    ASSOC_TYPE_FATUI,
+    ASSOC_TYPE_INAZUMA,
+    ASSOC_TYPE_RANGER,
+    ASSOC_TYPE_SUMERU,
+    ASSOC_TYPE_FONTAINE,
+    ASSOC_TYPE_NATLAN,
+    ASSOC_TYPE_SNEZHNAYA,
+}

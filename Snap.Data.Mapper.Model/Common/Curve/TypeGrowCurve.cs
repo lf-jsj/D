@@ -16,5 +16,5 @@ public class FightPropertyTypeGrowCurve : DataObject
     public FightProperty Type { get; set; } = default!;
 
     [JsonPropertyName("growCurve")]
-    public string GrowCurve { get; set; } = default!;
+    public int GrowCurve { get; set; } = default!;
 }

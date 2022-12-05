@@ -2,6 +2,7 @@
 using Snap.Data.Mapper.Model.ExcelBinOutput.Avatar;
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Snap.Data.Mapper.Pipeline.Avatar.Model;
 
@@ -9,7 +10,9 @@ public class Avatar
 {
     public int Id { get; set; }
     public int Sort { get; set; }
-    public string Body { get; set; } = default!;
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public BodyType Body { get; set; } = default!;
     public string Icon { get; set; } = default!;
     public string SideIcon { get; set; } = default!;
     public string Name { get; set; } = default!;

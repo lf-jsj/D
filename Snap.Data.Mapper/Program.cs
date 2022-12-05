@@ -31,7 +31,7 @@ internal class Program
 
             if (Console.ReadLine() is string outputFolder)
             {
-                ITextMap textMap = new TextMap(Path.Combine(genshinDataFolder, "TextMap", "TextMapCHS.json"));
+                ITextMap textMap = new CsvTextMap(Path.Combine(genshinDataFolder, "TextMap", "Hash"));
                 TextMapHashConverter textMapHashConverter = new(textMap);
 
                 JsonSerializerOptions options = JsonContext.CreateDefaultOption();

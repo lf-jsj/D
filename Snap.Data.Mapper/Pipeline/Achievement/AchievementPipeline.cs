@@ -1,7 +1,4 @@
-﻿using Snap.Data.Mapper.Model.ExcelBinOutput;
-using Snap.Data.Mapper.Model.ExcelBinOutput.Achievement;
-using Snap.Data.Mapper.Model.ExcelBinOutput.Daily;
-using Snap.Data.Mapper.Model.ExcelBinOutput.Quest;
+﻿using Snap.Data.Mapper.Model.ExcelBinOutput.Achievement;
 using Snap.Data.Mapper.Model.ExcelBinOutput.Reward;
 using Snap.Data.Mapper.Pipeline.Abstraction;
 using System.Collections.Generic;
@@ -39,27 +36,12 @@ internal class AchievementPipeline : IPipeline
         IEnumerable<AchievementExcelConfigData> excelData = IPipeline
             .GetData<AchievementExcelConfigData>(genshinDataFolder, options);
 
-        // MainQuestExcelConfigData
-        IDictionary<int, MainQuestExcelConfigData> mainQuests = IPipeline
-            .GetMap<MainQuestExcelConfigData>(genshinDataFolder, options, data => data.Id);
-
-        // QuestExcelConfigData
-        IDictionary<int, QuestExcelConfigData> quests = IPipeline
-            .GetMap<QuestExcelConfigData>(genshinDataFolder, options, data => data.SubId);
-
-        // DailyTaskExcelConfigData
-        IDictionary<int, DailyTaskExcelConfigData> dailyTasks = IPipeline
-            .GetMap<DailyTaskExcelConfigData>(genshinDataFolder, options, data => data.ID);
-
         new AchievementGenerator(
             outputFolder,
             compatFolder,
             options,
             excelData,
-            rewardMap,
-            mainQuests,
-            quests,
-            dailyTasks)
+            rewardMap)
             .Generate();
     }
 }

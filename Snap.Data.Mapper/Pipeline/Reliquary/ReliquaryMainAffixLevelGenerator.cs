@@ -31,9 +31,9 @@ internal class ReliquaryMainAffixLevelGenerator
             {
                 return new ReliquaryMainAffixLevel
                 {
-                    Quality = (ItemQuality)(r.Rank ?? 0),
+                    Quality = r.Rank,
                     Level = r.Level,
-                    Properties = r.AddProps.ToDictionary(x => x.PropType, x => x.Value!.Value),
+                    Properties = r.AddProps.ToDictionary(x => x.PropType, x => x.Value),
                 };
             })
             .Skip(1);
