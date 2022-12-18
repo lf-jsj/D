@@ -13,5 +13,5 @@ public class Talent
 public class GrowCurveInfo
 {
     public int Level { get; set; }
-    public Dictionary<string, double> Info { get; set; } = default!;
+    public Dictionary<string, float> Info { get; set; } = default!;
 }

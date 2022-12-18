@@ -18,5 +18,5 @@ public class AbilityOverrideExcelConfigData : DataObject
     public IList<string> FOKEAEJGIOA { get; set; } = default!;
 
     [JsonPropertyName("KAACPJHILCD")]
-    public IList<double> KAACPJHILCD { get; set; } = default!;
+    public IList<float> KAACPJHILCD { get; set; } = default!;
 }

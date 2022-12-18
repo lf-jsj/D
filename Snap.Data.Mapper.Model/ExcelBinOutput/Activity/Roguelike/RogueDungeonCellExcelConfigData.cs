@@ -12,7 +12,7 @@ public class RogueDungeonCellExcelConfigData : DataObject
     public int OLDABJHNHBM { get; set; }
 
     [JsonPropertyName("JIIPMPOBKMO")]
-    public IList<double> JIIPMPOBKMO { get; set; } = default!;
+    public IList<float> JIIPMPOBKMO { get; set; } = default!;
 
     [JsonPropertyName("BGAOFCDEIEL")]
     public IList<int> BGAOFCDEIEL { get; set; } = default!;
@@ -27,13 +27,13 @@ public class RogueDungeonCellExcelConfigData : DataObject
     public int LPICDCKJPFJ { get; set; }
 
     [JsonPropertyName("IPDLBPNMJCL")]
-    public double IPDLBPNMJCL { get; set; }
+    public float IPDLBPNMJCL { get; set; }
 
     [JsonPropertyName("EKFFFOGEEJD")]
-    public double EKFFFOGEEJD { get; set; }
+    public float EKFFFOGEEJD { get; set; }
 
     [JsonPropertyName("OOPPJMDHFON")]
-    public double OOPPJMDHFON { get; set; }
+    public float OOPPJMDHFON { get; set; }
 
     [JsonPropertyName("FBAOPAKKDGL")]
     public string FBAOPAKKDGL { get; set; } = default!;

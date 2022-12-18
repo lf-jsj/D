@@ -12,7 +12,7 @@ public class ActivitySumoDifficultyExcelConfigData : DataObject
     public int EAANBLBBFEE { get; set; }
 
     [JsonPropertyName("LPICMNCMNCG")]
-    public double LPICMNCMNCG { get; set; }
+    public float LPICMNCMNCG { get; set; }
 
     [JsonPropertyName("descTextMapHash")]
     public Text DescTextMapHash { get; set; }

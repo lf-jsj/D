@@ -6,8 +6,8 @@ public class ActivityChessMapPointExcelConfigData : DataObject
     public int ID { get; set; }
 
     [JsonPropertyName("coordX")]
-    public double CoordX { get; set; }
+    public float CoordX { get; set; }
 
     [JsonPropertyName("coordY")]
-    public double CoordY { get; set; }
+    public float CoordY { get; set; }
 }

@@ -6,11 +6,11 @@ public class MichiaeErosionAreaExcelConfigData : DataObject
     public int? JILFOMKOBHL { get; set; }
 
     [JsonPropertyName("NACPOKPPLCI")]
-    public double? NACPOKPPLCI { get; set; }
+    public float? NACPOKPPLCI { get; set; }
 
     [JsonPropertyName("OMAIOPCKNPB")]
-    public double? OMAIOPCKNPB { get; set; }
+    public float? OMAIOPCKNPB { get; set; }
 
     [JsonPropertyName("HLCHHAKEGJN")]
-    public double? HLCHHAKEGJN { get; set; }
+    public float? HLCHHAKEGJN { get; set; }
 }

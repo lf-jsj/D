@@ -1,4 +1,5 @@
-﻿using Snap.Data.Mapper.Model.ExcelBinOutput.Reliquary;
+﻿using Snap.Data.Mapper.Model.ExcelBinOutput;
+using Snap.Data.Mapper.Model.ExcelBinOutput.Reliquary;
 using System.Collections.Generic;
 
 namespace Snap.Data.Mapper.Pipeline.Reliquary.Model;

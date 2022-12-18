@@ -12,7 +12,7 @@ public class ActivityCrystalLinkDifficultyExcelConfigData : DataObject
     public int EAANBLBBFEE { get; set; }
 
     [JsonPropertyName("scoreRatio")]
-    public double ScoreRatio { get; set; }
+    public float ScoreRatio { get; set; }
 
     [JsonPropertyName("descTextMapHash")]
     public Text DescTextMapHash { get; set; }

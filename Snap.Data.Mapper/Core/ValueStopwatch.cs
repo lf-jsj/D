@@ -4,7 +4,7 @@ using System.Diagnostics;
 namespace Snap.Data.Mapper.Core;
 internal struct ValueStopwatch
 {
-    private static readonly double TimestampToTicks = TimeSpan.TicksPerSecond / (double)Stopwatch.Frequency;
+    private static readonly float TimestampToTicks = TimeSpan.TicksPerSecond / (float)Stopwatch.Frequency;
 
     private readonly long startTimestamp;
 

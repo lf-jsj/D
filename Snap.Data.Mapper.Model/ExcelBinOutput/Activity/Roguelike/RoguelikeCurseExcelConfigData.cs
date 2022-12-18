@@ -21,7 +21,7 @@ public class RoguelikeCurseExcelConfigData : DataObject
     public bool OJBDKDOGJAK { get; set; }
 
     [JsonPropertyName("descParamList")]
-    public IList<double> DescParamList { get; set; } = default!;
+    public IList<float> DescParamList { get; set; } = default!;
 
     [JsonPropertyName("PBLMHJIPEHN")]
     public IList<bool> PBLMHJIPEHN { get; set; } = default!;

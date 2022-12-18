@@ -9,7 +9,7 @@ public class ActivitySummerTimeRaceExcelConfigData : DataObject
     public IList<int> HGOBIMGIBNF { get; set; } = default!;
 
     [JsonPropertyName("FCDBNBNJECE")]
-    public IList<double> FCDBNBNJECE { get; set; } = default!;
+    public IList<float> FCDBNBNJECE { get; set; } = default!;
 
     [JsonPropertyName("JNGIPFOIHCM")]
     public IList<int> JNGIPFOIHCM { get; set; } = default!;

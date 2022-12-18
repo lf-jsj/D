@@ -15,5 +15,5 @@ public class EmotionTemplateExcelConfigData : DataObject
     public string EmotionPath { get; set; } = default!;
 
     [JsonPropertyName("protectTime")]
-    public double ProtectTime { get; set; }
+    public float ProtectTime { get; set; }
 }

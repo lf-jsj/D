@@ -6,7 +6,7 @@ public class ChatExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("priority")]
-    public double Priority { get; set; }
+    public float Priority { get; set; }
 
     [JsonPropertyName("tabShownNameTextMapHash")]
     public Text TabShownNameTextMapHash { get; set; }

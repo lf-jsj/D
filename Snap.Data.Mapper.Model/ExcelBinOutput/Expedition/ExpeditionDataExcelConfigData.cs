@@ -24,8 +24,8 @@ public class ExpeditionDataExcelConfigData : DataObject
     public string Picture { get; set; } = default!;
 
     [JsonPropertyName("posX")]
-    public double PosX { get; set; }
+    public float PosX { get; set; }
 
     [JsonPropertyName("posY")]
-    public double PosY { get; set; }
+    public float PosY { get; set; }
 }

@@ -6,8 +6,8 @@ public class LLGFMGKCCFM : DataObject
     public int JJLHEOMOFHP { get; set; }
 
     [JsonPropertyName("weight")]
-    public double Weight { get; set; }
+    public float Weight { get; set; }
 
     [JsonPropertyName("EBKPOJHICNE")]
-    public double EBKPOJHICNE { get; set; }
+    public float EBKPOJHICNE { get; set; }
 }

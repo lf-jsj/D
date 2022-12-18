@@ -27,7 +27,7 @@ public class IrodoriFlowerThemeExcelConfigData : DataObject
     public int LEGLJINDHNG { get; set; }
 
     [JsonPropertyName("MDMLMJDBCHA")]
-    public double MDMLMJDBCHA { get; set; }
+    public float MDMLMJDBCHA { get; set; }
 
     [JsonPropertyName("ELINCNPNIPJ")]
     public IList<int> ELINCNPNIPJ { get; set; } = default!;

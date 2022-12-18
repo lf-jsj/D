@@ -24,7 +24,7 @@ public class SalvageOverAllExcelConfigData : DataObject
     public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("regionCenter")]
-    public IList<double> RegionCenter { get; set; } = default!;
+    public IList<float> RegionCenter { get; set; } = default!;
 
     [JsonPropertyName("regionRadius")]
     public int RegionRadius { get; set; }

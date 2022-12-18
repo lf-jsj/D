@@ -28,7 +28,7 @@ public class ActivityChessCardExcelConfigData : DataObject
 
     [JsonPropertyName("descParamList")]
     [DataArray(Length = 3)]
-    public IList<IList<double>> DescParamList { get; set; } = default!;
+    public IList<IList<float>> DescParamList { get; set; } = default!;
 
     [JsonPropertyName("PBLMHJIPEHN")]
     [DataArray(Length = 3)]
@@ -41,7 +41,7 @@ public class ActivityChessCardExcelConfigData : DataObject
     public string? GMHNKGFHLMC { get; set; }
 
     [JsonPropertyName("ADCOECLELMG")]
-    public double ADCOECLELMG { get; set; }
+    public float ADCOECLELMG { get; set; }
 
     [JsonPropertyName("costPoints")]
     public int CostPoints { get; set; }

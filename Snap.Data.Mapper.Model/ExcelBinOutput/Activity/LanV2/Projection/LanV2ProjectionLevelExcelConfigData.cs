@@ -21,31 +21,31 @@ public class LanV2ProjectionLevelExcelConfigData : DataObject
     public string HEGCEHCAHBN { get; set; } = default!;
 
     [JsonPropertyName("LDPNKDIOJNG")]
-    public double LDPNKDIOJNG { get; set; }
+    public float LDPNKDIOJNG { get; set; }
 
     [JsonPropertyName("GFBMGGLELPI")]
-    public double GFBMGGLELPI { get; set; }
+    public float GFBMGGLELPI { get; set; }
 
     [JsonPropertyName("AJHLEOFEMPB")]
-    public double AJHLEOFEMPB { get; set; }
+    public float AJHLEOFEMPB { get; set; }
 
     [JsonPropertyName("LCAFPFMJINI")]
     public int LCAFPFMJINI { get; set; }
 
     [JsonPropertyName("FPLKJFKMPBE")]
-    public IList<double> FPLKJFKMPBE { get; set; } = default!;
+    public IList<float> FPLKJFKMPBE { get; set; } = default!;
 
     [JsonPropertyName("LKNBJNEPOCA")]
-    public IList<double> LKNBJNEPOCA { get; set; } = default!;
+    public IList<float> LKNBJNEPOCA { get; set; } = default!;
 
     [JsonPropertyName("DBNDOHDIPLP")]
     public IList<DataObject> DBNDOHDIPLP { get; set; } = default!;
 
     [JsonPropertyName("MAHGDJEOCOA")]
-    public IList<double> MAHGDJEOCOA { get; set; } = default!;
+    public IList<float> MAHGDJEOCOA { get; set; } = default!;
 
     [JsonPropertyName("IAFPHHKNPPG")]
-    public IList<double> IAFPHHKNPPG { get; set; } = default!;
+    public IList<float> IAFPHHKNPPG { get; set; } = default!;
 
     [JsonPropertyName("LBEGJEAJPGD")]
     public IList<IList<int>> LBEGJEAJPGD { get; set; } = default!;
@@ -60,5 +60,5 @@ public class LanV2ProjectionLevelExcelConfigData : DataObject
     public string NGBCCIEJLAH { get; set; } = default!;
 
     [JsonPropertyName("NFMAMKGFCCI")]
-    public double? NFMAMKGFCCI { get; set; }
+    public float? NFMAMKGFCCI { get; set; }
 }

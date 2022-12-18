@@ -21,5 +21,5 @@ public class ExpeditionDifficultyExcelConfigData : DataObject
     public int MaxRefreshCount { get; set; }
 
     [JsonPropertyName("coef")]
-    public double Coef { get; set; }
+    public float Coef { get; set; }
 }

@@ -6,7 +6,7 @@ public class PropTypeValue : DataObject
     public string? PropType { get; set; }
 
     [JsonPropertyName("value")]
-    public double? Value { get; set; }
+    public float? Value { get; set; }
 }
 
 public class FightPropTypeValue : DataObject
@@ -16,7 +16,7 @@ public class FightPropTypeValue : DataObject
     public FightProperty PropType { get; set; }
 
     [JsonPropertyName("value")]
-    public double? Value { get; set; }
+    public float? Value { get; set; }
 }
 
 

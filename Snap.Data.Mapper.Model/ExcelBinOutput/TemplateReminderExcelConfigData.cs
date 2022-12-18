@@ -18,7 +18,7 @@ public class TemplateReminderExcelConfigData : DataObject
     public string Param { get; set; } = default!;
 
     [JsonPropertyName("showTime")]
-    public double? ShowTime { get; set; }
+    public float? ShowTime { get; set; }
 
     [JsonPropertyName("style")]
     public string Style { get; set; } = default!;

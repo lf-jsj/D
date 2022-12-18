@@ -12,5 +12,5 @@ public class EntityMultiPlayerExcelConfigData : DataObject
     public IList<int> EndureNumVec { get; set; }
 
     [JsonPropertyName("elementShieldPerVec")]
-    public IList<double> ElementShieldPerVec { get; set; }
+    public IList<float> ElementShieldPerVec { get; set; }
 }

@@ -11,7 +11,7 @@ public class BuffExcelConfigData : DataObject
     public string Desc { get; set; } = default!;
 
     [JsonPropertyName("time")]
-    public double Time { get; set; }
+    public float Time { get; set; }
 
     [JsonPropertyName("isPersistent")]
     public bool IsPersistent { get; set; }

@@ -15,7 +15,7 @@ public class ChannellerSlabLoopDungeonDifficultyExcelConfigData : DataObject
     public string Difficulty { get; set; } = default!;
 
     [JsonPropertyName("scoreRatio")]
-    public double ScoreRatio { get; set; }
+    public float ScoreRatio { get; set; }
 
     [JsonPropertyName("baseScore")]
     public int BaseScore { get; set; }

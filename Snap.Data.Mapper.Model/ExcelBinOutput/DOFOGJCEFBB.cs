@@ -3,7 +3,7 @@
 public class DOFOGJCEFBB : DataObject
 {
     [JsonPropertyName("ILFKEFEGMEN")]
-    public double ILFKEFEGMEN { get; set; }
+    public float ILFKEFEGMEN { get; set; }
 
     [JsonPropertyName("IHFLEAPLBMD")]
     public int IHFLEAPLBMD { get; set; }

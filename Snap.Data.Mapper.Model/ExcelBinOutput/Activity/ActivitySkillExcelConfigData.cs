@@ -21,10 +21,10 @@ public class ActivitySkillExcelConfigData : DataObject
     public int EnergyMax { get; set; }
 
     [JsonPropertyName("cdTime")]
-    public double CdTime { get; set; }
+    public float CdTime { get; set; }
 
     [JsonPropertyName("guideTime")]
-    public double GuideTime { get; set; }
+    public float GuideTime { get; set; }
 
     [JsonPropertyName("skillIcon")]
     public string SkillIcon { get; set; } = default!;

@@ -17,5 +17,5 @@ public class LevelTagExcelConfigData : DataObject
     public int EACLGGPNALJ { get; set; }
 
     [JsonPropertyName("PDHCLCEOPDB")]
-    public double PDHCLCEOPDB { get; set; }
+    public float PDHCLCEOPDB { get; set; }
 }

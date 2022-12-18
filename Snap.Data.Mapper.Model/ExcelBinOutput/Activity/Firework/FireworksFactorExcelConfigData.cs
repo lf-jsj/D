@@ -21,5 +21,5 @@ public class FireworksFactorExcelConfigData : DataObject
     public Text JGKJMPFMHGC { get; set; }
 
     [JsonPropertyName("GNLKJOCNNFM")]
-    public double GNLKJOCNNFM { get; set; }
+    public float GNLKJOCNNFM { get; set; }
 }

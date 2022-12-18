@@ -2,17 +2,17 @@
 public class MichiaeAntiErosionExcelConfigData : DataObject
 {
     [JsonPropertyName("FKBDILHJGGD")]
-    public double FKBDILHJGGD { get; set; }
+    public float FKBDILHJGGD { get; set; }
 
     [JsonPropertyName("HCNDAIEOOPL")]
     public int? HCNDAIEOOPL { get; set; }
 
     [JsonPropertyName("IGNNAJODFDF")]
-    public double? IGNNAJODFDF { get; set; }
+    public float? IGNNAJODFDF { get; set; }
 
     [JsonPropertyName("NKGIHFACPAL")]
-    public double? NKGIHFACPAL { get; set; }
+    public float? NKGIHFACPAL { get; set; }
 
     [JsonPropertyName("GFLPOPGOKLO")]
-    public double? GFLPOPGOKLO { get; set; }
+    public float? GFLPOPGOKLO { get; set; }
 }

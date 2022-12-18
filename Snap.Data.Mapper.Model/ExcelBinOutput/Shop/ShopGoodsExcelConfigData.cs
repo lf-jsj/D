@@ -79,7 +79,7 @@ public class ShopGoodsExcelConfigData : DataObject
     public int? RotateId { get; set; }
 
     [JsonPropertyName("discountRate")]
-    public double? DiscountRate { get; set; }
+    public float? DiscountRate { get; set; }
 
     [JsonPropertyName("originalPrice")]
     public int? OriginalPrice { get; set; }

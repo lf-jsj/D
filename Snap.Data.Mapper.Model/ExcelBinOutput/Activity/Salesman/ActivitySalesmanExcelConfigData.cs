@@ -15,7 +15,7 @@ public class ActivitySalesmanExcelConfigData : DataObject
     public IList<int> SpecialRewardIdList { get; set; } = default!;
 
     [JsonPropertyName("specialProbList")]
-    public IList<double> SpecialProbList { get; set; } = default!;
+    public IList<float> SpecialProbList { get; set; } = default!;
 
     [JsonPropertyName("specialReward")]
     public SpecialReward SpecialReward { get; set; } = default!;

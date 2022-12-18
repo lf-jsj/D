@@ -9,8 +9,8 @@ public class HitLevelTemplateExcelConfigData : DataObject
     public string HitLevel { get; set; } = default!;
 
     [JsonPropertyName("hitImpulseX")]
-    public double? HitImpulseX { get; set; }
+    public float? HitImpulseX { get; set; }
 
     [JsonPropertyName("hitImpulseY")]
-    public double? HitImpulseY { get; set; }
+    public float? HitImpulseY { get; set; }
 }

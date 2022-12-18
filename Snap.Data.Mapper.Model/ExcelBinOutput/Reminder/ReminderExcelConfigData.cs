@@ -11,7 +11,7 @@ public class ReminderExcelConfigData : DataObject
     public Text ContentTextMapHash { get; set; }
 
     [JsonPropertyName("showTime")]
-    public double ShowTime { get; set; }
+    public float ShowTime { get; set; }
 
     [JsonPropertyName("nextReminderId")]
     public long NextReminderId { get; set; }
@@ -23,7 +23,7 @@ public class ReminderExcelConfigData : DataObject
     public bool HasAudio { get; set; }
 
     [JsonPropertyName("delay")]
-    public double? Delay { get; set; }
+    public float? Delay { get; set; }
 
     [JsonPropertyName("style")]
     public string Style { get; set; } = default!;

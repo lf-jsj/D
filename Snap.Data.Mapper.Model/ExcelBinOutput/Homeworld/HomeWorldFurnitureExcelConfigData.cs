@@ -66,13 +66,13 @@ public class HomeWorldFurnitureExcelConfigData : DataObject
     public int? IsSpecialFurniture { get; set; }
 
     [JsonPropertyName("height")]
-    public double? Height { get; set; }
+    public float? Height { get; set; }
 
     [JsonPropertyName("GPABMPMJDEB")]
     public int? GPABMPMJDEB { get; set; }
 
     [JsonPropertyName("HHFEOBHEAII")]
-    public double? HHFEOBHEAII { get; set; }
+    public float? HHFEOBHEAII { get; set; }
 
     [JsonPropertyName("MFFNHIOPPNH")]
     public int? MFFNHIOPPNH { get; set; }
@@ -81,7 +81,7 @@ public class HomeWorldFurnitureExcelConfigData : DataObject
     public int? JEPHMCAEIHO { get; set; }
 
     [JsonPropertyName("BKGLOPMNFEH")]
-    public double? BKGLOPMNFEH { get; set; }
+    public float? BKGLOPMNFEH { get; set; }
 
     [JsonPropertyName("NGCNIGDJDJB")]
     public int? NGCNIGDJDJB { get; set; }

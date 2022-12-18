@@ -42,7 +42,7 @@ public class DungeonChallengeConfigData : DataObject
     public string SubChallengeFadeOutRule { get; set; } = default!;
 
     [JsonPropertyName("subChallengeFadeOutDelayTime")]
-    public double? SubChallengeFadeOutDelayTime { get; set; }
+    public float? SubChallengeFadeOutDelayTime { get; set; }
 
     [JsonPropertyName("subChallengeBannerRule")]
     public string SubChallengeBannerRule { get; set; } = default!;

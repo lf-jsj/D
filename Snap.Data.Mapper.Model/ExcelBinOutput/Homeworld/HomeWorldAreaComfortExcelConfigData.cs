@@ -33,8 +33,8 @@ public class HomeWorldAreaComfortExcelConfigData : DataObject
     public int DKGCOJBLCJM { get; set; }
 
     [JsonPropertyName("LLKGIIKBOFE")]
-    public IList<double> LLKGIIKBOFE { get; set; } = default!;
+    public IList<float> LLKGIIKBOFE { get; set; } = default!;
 
     [JsonPropertyName("BHMHDPGKNHA")]
-    public IList<double> BHMHDPGKNHA { get; set; } = default!;
+    public IList<float> BHMHDPGKNHA { get; set; } = default!;
 }

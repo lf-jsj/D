@@ -38,5 +38,5 @@ public class BounceConjuringChapterExcelConfigData : DataObject
     public IList<DataObject> FGKGOPAKKEO { get; set; } = default!;
 
     [JsonPropertyName("pos")]
-    public IList<double> Pos { get; set; } = default!;
+    public IList<float> Pos { get; set; } = default!;
 }

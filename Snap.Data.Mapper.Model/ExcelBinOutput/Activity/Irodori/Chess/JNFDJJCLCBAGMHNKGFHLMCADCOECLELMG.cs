@@ -9,5 +9,5 @@ public class JNFDJJCLCBAGMHNKGFHLMCADCOECLELMG : DataObject
     public string GMHNKGFHLMC { get; set; } = default!;
 
     [JsonPropertyName("ADCOECLELMG")]
-    public double ADCOECLELMG { get; set; }
+    public float ADCOECLELMG { get; set; }
 }

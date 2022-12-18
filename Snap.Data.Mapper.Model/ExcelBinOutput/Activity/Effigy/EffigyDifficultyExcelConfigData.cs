@@ -18,7 +18,7 @@ public class EffigyDifficultyExcelConfigData : DataObject
     public int MonsterLevel { get; set; }
 
     [JsonPropertyName("scoreRatio")]
-    public double ScoreRatio { get; set; }
+    public float ScoreRatio { get; set; }
 
     [JsonPropertyName("KFAPPIPPEOO")]
     public int KFAPPIPPEOO { get; set; }

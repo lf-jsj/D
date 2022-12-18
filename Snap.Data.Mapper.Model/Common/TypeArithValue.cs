@@ -9,5 +9,5 @@ public class TypeArithValue : DataObject
     public string Arith { get; set; } = default!;
 
     [JsonPropertyName("value")]
-    public double Value { get; set; }
+    public float Value { get; set; }
 }

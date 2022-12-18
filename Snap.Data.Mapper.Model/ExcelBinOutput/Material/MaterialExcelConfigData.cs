@@ -55,7 +55,8 @@ public class MaterialExcelConfigData : IndexableDataObject
     public string Icon { get; set; } = default!;
 
     [JsonPropertyName("itemType")]
-    public string ItemType { get; set; } = default!;
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public ItemType ItemType { get; set; } = default!;
 
     [JsonPropertyName("rank")]
     public int? Rank { get; set; }

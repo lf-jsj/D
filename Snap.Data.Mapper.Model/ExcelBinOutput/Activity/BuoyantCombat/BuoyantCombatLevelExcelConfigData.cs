@@ -33,5 +33,5 @@ public class BuoyantCombatLevelExcelConfigData : DataObject
     public IList<int> RecommendLevel { get; set; } = default!;
 
     [JsonPropertyName("PHHPONIMAEE")]
-    public IList<double> PHHPONIMAEE { get; set; } = default!;
+    public IList<float> PHHPONIMAEE { get; set; } = default!;
 }

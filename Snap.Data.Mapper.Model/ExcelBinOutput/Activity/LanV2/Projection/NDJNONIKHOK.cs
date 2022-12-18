@@ -9,19 +9,19 @@ public class NDJNONIKHOK : DataObject
     public string FBAIAIDLBKC { get; set; } = default!;
 
     [JsonPropertyName("NAALEEPAOGF")]
-    public IList<double> NAALEEPAOGF { get; set; } = default!;
+    public IList<float> NAALEEPAOGF { get; set; } = default!;
 
     [JsonPropertyName("FHBPHPBLGJH")]
-    public IList<double> FHBPHPBLGJH { get; set; } = default!;
+    public IList<float> FHBPHPBLGJH { get; set; } = default!;
 
     [JsonPropertyName("OOJJHPGJCPI")]
-    public IList<double> OOJJHPGJCPI { get; set; } = default!;
+    public IList<float> OOJJHPGJCPI { get; set; } = default!;
 
     [JsonPropertyName("JLFNAEEPMDH")]
-    public IList<double> JLFNAEEPMDH { get; set; } = default!;
+    public IList<float> JLFNAEEPMDH { get; set; } = default!;
 
     [JsonPropertyName("FJONMCAOELL")]
-    public IList<double> FJONMCAOELL { get; set; } = default!;
+    public IList<float> FJONMCAOELL { get; set; } = default!;
 
     [JsonPropertyName("DGBKDBHIKPJ")]
     public int? DGBKDBHIKPJ { get; set; }
@@ -30,5 +30,5 @@ public class NDJNONIKHOK : DataObject
     public string CJOCFLGCJIJ { get; set; } = default!;
 
     [JsonPropertyName("GADLKBPCCJO")]
-    public double? GADLKBPCCJO { get; set; }
+    public float? GADLKBPCCJO { get; set; }
 }

@@ -23,7 +23,7 @@ public class EquipAffixExcelConfigData : DataObject
     public IList<PropTypeValue> AddProps { get; set; } = default!;
 
     [JsonPropertyName("paramList")]
-    public IList<double> ParamList { get; set; } = default!;
+    public IList<float> ParamList { get; set; } = default!;
 
     [JsonPropertyName("level")]
     public int? Level { get; set; }

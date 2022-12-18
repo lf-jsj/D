@@ -15,7 +15,7 @@ public class TreasureMapExcelConfigData : DataObject
     public int NpcId { get; set; }
 
     [JsonPropertyName("npcPos")]
-    public IList<double> NpcPos { get; set; } = default!;
+    public IList<float> NpcPos { get; set; } = default!;
 
     [JsonPropertyName("treasureDays")]
     public int TreasureDays { get; set; }
@@ -24,7 +24,7 @@ public class TreasureMapExcelConfigData : DataObject
     public int QuestId { get; set; }
 
     [JsonPropertyName("monsterProbability")]
-    public double MonsterProbability { get; set; }
+    public float MonsterProbability { get; set; }
 
     [JsonPropertyName("rewardWorktopGadgetId")]
     public int RewardWorktopGadgetId { get; set; }

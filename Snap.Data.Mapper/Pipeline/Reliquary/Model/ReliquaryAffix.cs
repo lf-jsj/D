@@ -6,5 +6,5 @@ public class ReliquaryAffix
 {
     public int Id { get; set; }
     public FightProperty Type { get; set; }
-    public double Value { get; set; }
+    public float Value { get; set; }
 }

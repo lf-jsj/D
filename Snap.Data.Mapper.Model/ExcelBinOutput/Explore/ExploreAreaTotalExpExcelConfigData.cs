@@ -8,5 +8,5 @@ public class ExploreAreaTotalExpExcelConfigData : DataObject
     public int TotalExp { get; set; }
 
     [JsonPropertyName("JNBOPGBDCDJ")]
-    public double? JNBOPGBDCDJ { get; set; }
+    public float? JNBOPGBDCDJ { get; set; }
 }

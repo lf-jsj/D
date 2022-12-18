@@ -6,5 +6,5 @@ public class DropIdHpPercent : DataObject
     public int DropId { get; set; }
 
     [JsonPropertyName("hpPercent")]
-    public double HpPercent { get; set; }
+    public float HpPercent { get; set; }
 }

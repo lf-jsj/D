@@ -17,7 +17,7 @@ public class QuestAcceptionMarkExcelConfigData : DataObject
     public int SceneId { get; set; }
 
     [JsonPropertyName("JHPOFDOKCLH")]
-    public IList<double> JHPOFDOKCLH { get; set; } = default!;
+    public IList<float> JHPOFDOKCLH { get; set; } = default!;
 
     [JsonPropertyName("DOBKNHBFMGP")]
     public bool DOBKNHBFMGP { get; set; }

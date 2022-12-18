@@ -9,5 +9,5 @@ public class ExpeditionBonusExcelConfigData : DataObject
     public int AvatarLevel { get; set; }
 
     [JsonPropertyName("probability")]
-    public double Probability { get; set; }
+    public float Probability { get; set; }
 }

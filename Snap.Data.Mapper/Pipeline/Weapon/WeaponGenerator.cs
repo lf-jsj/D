@@ -113,7 +113,7 @@ public class WeaponGenerator
         };
     }
 
-    public IEnumerable<double> GetPropertyValues(
+    public IEnumerable<float> GetPropertyValues(
         WeaponExcelConfigData item,
         int level,
         int promoteIndex,
@@ -131,7 +131,7 @@ public class WeaponGenerator
                 // seek curve in avatarCurves by curve name
                 TypeArithValue? curve = weaponCurves.First(x => x.Level == level).CurveInfos.FirstOrDefault(x => x.Type == curveName);
 
-                double baseValue = item.WeaponProp.First(x => x.PropType == p).InitValue;
+                float baseValue = item.WeaponProp.First(x => x.PropType == p).InitValue;
                 if (curve != null)
                 {
                     baseValue *= curve.Value;

@@ -5,14 +5,14 @@ public class AttackAttenuationExcelConfigData : DataObject
     public string EPNPPBPKAHE { get; set; } = default!;
 
     [JsonPropertyName("IJFDPDFAPID")]
-    public double IJFDPDFAPID { get; set; }
+    public float IJFDPDFAPID { get; set; }
 
     [JsonPropertyName("HKLKPLCKFPE")]
-    public IList<double> HKLKPLCKFPE { get; set; } = default!;
+    public IList<float> HKLKPLCKFPE { get; set; } = default!;
 
     [JsonPropertyName("CDPAIBLMDJP")]
-    public IList<double> CDPAIBLMDJP { get; set; } = default!;
+    public IList<float> CDPAIBLMDJP { get; set; } = default!;
 
     [JsonPropertyName("FKMBAONAGHD")]
-    public IList<double> FKMBAONAGHD { get; set; } = default!;
+    public IList<float> FKMBAONAGHD { get; set; } = default!;
 }

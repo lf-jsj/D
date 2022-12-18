@@ -10,6 +10,6 @@ public class ReliquaryMainAffixLevel
     public ItemQuality Quality { get; set; }
     public int Level { get; set; }
 
-    [JsonConverter(typeof(StringEnumDictionaryConverter<FightProperty, double>))]
-    public IDictionary<FightProperty, double> Properties { get; set; } = default!;
+    [JsonConverter(typeof(StringEnumDictionaryConverter<FightProperty, float>))]
+    public IDictionary<FightProperty, float> Properties { get; set; } = default!;
 }

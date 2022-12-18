@@ -15,7 +15,7 @@ public class MoonfinTrialLevelExcelConfigData : DataObject
     public int MainQuest { get; set; }
 
     [JsonPropertyName("KKLKONNFDBG")]
-    public IList<double> KKLKONNFDBG { get; set; } = default!;
+    public IList<float> KKLKONNFDBG { get; set; } = default!;
 
     [JsonPropertyName("levelNameTextMapHash")]
     public Text LevelNameTextMapHash { get; set; }

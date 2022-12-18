@@ -6,17 +6,17 @@ public class FishRodExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("PAAIDJHHALD")]
-    public double PAAIDJHHALD { get; set; }
+    public float PAAIDJHHALD { get; set; }
 
     [JsonPropertyName("cityId")]
     public int? CityId { get; set; }
 
     [JsonPropertyName("MCDLDLFLODL")]
-    public double? MCDLDLFLODL { get; set; }
+    public float? MCDLDLFLODL { get; set; }
 
     [JsonPropertyName("EOKEPMLDGOA")]
-    public double? EOKEPMLDGOA { get; set; }
+    public float? EOKEPMLDGOA { get; set; }
 
     [JsonPropertyName("DBONCGLALEL")]
-    public double? DBONCGLALEL { get; set; }
+    public float? DBONCGLALEL { get; set; }
 }

@@ -6,11 +6,11 @@ public class PerceptionTemplateExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("JIFGABLLIIA")]
-    public double JIFGABLLIIA { get; set; }
+    public float JIFGABLLIIA { get; set; }
 
     [JsonPropertyName("LCGOGLIJFNL")]
-    public double? LCGOGLIJFNL { get; set; }
+    public float? LCGOGLIJFNL { get; set; }
 
     [JsonPropertyName("HJAMBNCGJOM")]
-    public double? HJAMBNCGJOM { get; set; }
+    public float? HJAMBNCGJOM { get; set; }
 }

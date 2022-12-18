@@ -30,7 +30,7 @@ public class GalleryExcelConfigData : DataObject
     public string LimitRegion { get; set; } = default!;
 
     [JsonPropertyName("centerPosList")]
-    public IList<double> CenterPosList { get; set; } = default!;
+    public IList<float> CenterPosList { get; set; } = default!;
 
     [JsonPropertyName("duration")]
     public int Duration { get; set; }

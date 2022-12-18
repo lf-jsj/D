@@ -12,7 +12,7 @@ public class ActivityArenaChallengePreviewExcelConfigData : DataObject
 
     [JsonPropertyName("centerPosList")]
     [DataArray(Length = 3)]
-    public IList<double> CenterPosList { get; set; } = default!;
+    public IList<float> CenterPosList { get; set; } = default!;
 
     //TODO: link up id
     [JsonPropertyName("guideQuestId1")]

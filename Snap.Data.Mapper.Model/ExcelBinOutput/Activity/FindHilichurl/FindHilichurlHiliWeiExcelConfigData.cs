@@ -15,7 +15,7 @@ public class FindHilichurlHiliWeiExcelConfigData : DataObject
     public int GroupId { get; set; }
 
     [JsonPropertyName("positionCenter")]
-    public IList<double> PositionCenter { get; set; } = default!;
+    public IList<float> PositionCenter { get; set; } = default!;
 
     [JsonPropertyName("positionRadius")]
     public int PositionRadius { get; set; }

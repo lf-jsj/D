@@ -21,22 +21,22 @@ public class FishExcelConfigData : DataObject
     public int NOBIELEHBOE { get; set; }
 
     [JsonPropertyName("GBALIGDIKKA")]
-    public IList<double> GBALIGDIKKA { get; set; } = default!;
+    public IList<float> GBALIGDIKKA { get; set; } = default!;
 
     [JsonPropertyName("MLHKPEPCIMJ")]
     public IList<int> MLHKPEPCIMJ { get; set; } = default!;
 
     [JsonPropertyName("ADAIFFEOELG")]
-    public IList<double> ADAIFFEOELG { get; set; } = default!;
+    public IList<float> ADAIFFEOELG { get; set; } = default!;
 
     [JsonPropertyName("ECHHNKEKBCF")]
-    public IList<double> ECHHNKEKBCF { get; set; } = default!;
+    public IList<float> ECHHNKEKBCF { get; set; } = default!;
 
     [JsonPropertyName("PJMMOHJBIFG")]
-    public double PJMMOHJBIFG { get; set; }
+    public float PJMMOHJBIFG { get; set; }
 
     [JsonPropertyName("ABIDCEADKKC")]
-    public double ABIDCEADKKC { get; set; }
+    public float ABIDCEADKKC { get; set; }
 
     [JsonPropertyName("rewardId")]
     public int RewardId { get; set; }

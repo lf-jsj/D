@@ -6,5 +6,5 @@ public class ELPCOOLNPFFLNJAEIIDNAO : DataObject
     public string ELPCOOLNPFF { get; set; } = string.Empty;
 
     [JsonPropertyName("LNJAEIIDNAO")]
-    public double? LNJAEIIDNAO { get; set; }
+    public float? LNJAEIIDNAO { get; set; }
 }

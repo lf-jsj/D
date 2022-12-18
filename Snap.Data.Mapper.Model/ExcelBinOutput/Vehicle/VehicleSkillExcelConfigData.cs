@@ -18,7 +18,7 @@ public class VehicleSkillExcelConfigData : DataObject
     public string SkillIcon { get; set; } = default!;
 
     [JsonPropertyName("GCICAFBONNB")]
-    public double GCICAFBONNB { get; set; }
+    public float GCICAFBONNB { get; set; }
 
     [JsonPropertyName("GKLIEMDLFLM")]
     public int GKLIEMDLFLM { get; set; }
@@ -27,5 +27,5 @@ public class VehicleSkillExcelConfigData : DataObject
     public string LockShape { get; set; } = default!;
 
     [JsonPropertyName("lockWeightParams")]
-    public IList<double> LockWeightParams { get; set; } = default!;
+    public IList<float> LockWeightParams { get; set; } = default!;
 }

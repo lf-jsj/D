@@ -66,40 +66,40 @@ public class MonsterExcelConfigData : DataObject
     public int EntityBudgetLevel { get; set; }
 
     [JsonPropertyName("hpBase")]
-    public double HpBase { get; set; }
+    public float HpBase { get; set; }
 
     [JsonPropertyName("attackBase")]
-    public double AttackBase { get; set; }
+    public float AttackBase { get; set; }
 
     [JsonPropertyName("defenseBase")]
-    public double DefenseBase { get; set; }
+    public float DefenseBase { get; set; }
 
     [JsonPropertyName("fireSubHurt")]
-    public double FireSubHurt { get; set; }
+    public float FireSubHurt { get; set; }
 
     [JsonPropertyName("grassSubHurt")]
-    public double GrassSubHurt { get; set; }
+    public float GrassSubHurt { get; set; }
 
     [JsonPropertyName("waterSubHurt")]
-    public double WaterSubHurt { get; set; }
+    public float WaterSubHurt { get; set; }
 
     [JsonPropertyName("elecSubHurt")]
-    public double ElecSubHurt { get; set; }
+    public float ElecSubHurt { get; set; }
 
     [JsonPropertyName("windSubHurt")]
-    public double WindSubHurt { get; set; }
+    public float WindSubHurt { get; set; }
 
     [JsonPropertyName("iceSubHurt")]
-    public double IceSubHurt { get; set; }
+    public float IceSubHurt { get; set; }
 
     [JsonPropertyName("rockSubHurt")]
-    public double RockSubHurt { get; set; }
+    public float RockSubHurt { get; set; }
 
     [JsonPropertyName("propGrowCurves")]
     public IList<TypeGrowCurve> PropGrowCurves { get; set; } = default!;
 
     [JsonPropertyName("physicalSubHurt")]
-    public double PhysicalSubHurt { get; set; }
+    public float PhysicalSubHurt { get; set; }
 
     [JsonPropertyName("prefabPathRagdollHashSuffix")]
     public HashSuffix PrefabPathRagdollHashSuffix { get; set; }

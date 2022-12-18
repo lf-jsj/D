@@ -18,7 +18,7 @@ public class LunaRiteSearchingExcelConfigData : DataObject
     public IList<int> MIIJOHIJPNP { get; set; } = default!;
 
     [JsonPropertyName("regionCenter")]
-    public IList<double> RegionCenter { get; set; } = default!;
+    public IList<float> RegionCenter { get; set; } = default!;
 
     [JsonPropertyName("FIHMKHBDOEM")]
     public Text FIHMKHBDOEM { get; set; }
@@ -27,7 +27,7 @@ public class LunaRiteSearchingExcelConfigData : DataObject
     public int FANMGOBJKKP { get; set; }
 
     [JsonPropertyName("regionRadius")]
-    public double RegionRadius { get; set; }
+    public float RegionRadius { get; set; }
 
     [JsonPropertyName("ANLJEAMNIKH")]
     public int ANLJEAMNIKH { get; set; }

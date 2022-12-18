@@ -6,5 +6,5 @@ public class KeyValue : DataObject
     public string Key { get; set; } = default!;
 
     [JsonPropertyName("value")]
-    public double Value { get; set; }
+    public float Value { get; set; }
 }

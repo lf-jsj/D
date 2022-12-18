@@ -26,7 +26,7 @@ public class WorldAreaConfigData : DataObject
     public bool ShowTips { get; set; }
 
     [JsonPropertyName("minimapScale")]
-    public double MinimapScale { get; set; }
+    public float MinimapScale { get; set; }
 
     [JsonPropertyName("AreaID2")]
     public int? AreaID2 { get; set; }

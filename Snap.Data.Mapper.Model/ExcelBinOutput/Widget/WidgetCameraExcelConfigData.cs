@@ -6,7 +6,7 @@ public class WidgetCameraExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("OGIIFCLAIPP")]
-    public double OGIIFCLAIPP { get; set; }
+    public float OGIIFCLAIPP { get; set; }
 
     [JsonPropertyName("OBLIIPHKPGE")]
     public string OBLIIPHKPGE { get; set; } = default!;

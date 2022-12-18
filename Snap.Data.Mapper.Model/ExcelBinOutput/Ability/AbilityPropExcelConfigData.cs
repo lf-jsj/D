@@ -7,16 +7,16 @@ public class AbilityPropExcelConfigData : DataObject
     public string PropName { get; set; } = default!;
 
     [JsonPropertyName("overallMin")]
-    public double OverallMin { get; set; }
+    public float OverallMin { get; set; }
 
     [JsonPropertyName("overallMax")]
-    public double OverallMax { get; set; }
+    public float OverallMax { get; set; }
 
     [JsonPropertyName("limitTagMin")]
-    public double LimitTagMin { get; set; }
+    public float LimitTagMin { get; set; }
 
     [JsonPropertyName("limitTagMax")]
-    public double LimitTagMax { get; set; }
+    public float LimitTagMax { get; set; }
 
     [JsonPropertyName("succeedOwner")]
     public bool? SucceedOwner { get; set; }

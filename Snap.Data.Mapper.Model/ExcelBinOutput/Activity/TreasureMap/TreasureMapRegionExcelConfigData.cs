@@ -12,7 +12,7 @@ public class TreasureMapRegionExcelConfigData : DataObject
     public int TokenNum { get; set; }
 
     [JsonPropertyName("regionCenter")]
-    public IList<double> RegionCenter { get; set; } = default!;
+    public IList<float> RegionCenter { get; set; } = default!;
 
     [JsonPropertyName("regionRadius")]
     public int RegionRadius { get; set; }
@@ -45,7 +45,7 @@ public class TreasureMapRegionExcelConfigData : DataObject
     public int MpTokenThreshold { get; set; }
 
     [JsonPropertyName("GPNHKDHKGFJ")]
-    public IList<double> GPNHKDHKGFJ { get; set; } = default!;
+    public IList<float> GPNHKDHKGFJ { get; set; } = default!;
 
     [JsonPropertyName("KNGCEIHOKED")]
     public Text KNGCEIHOKED { get; set; }

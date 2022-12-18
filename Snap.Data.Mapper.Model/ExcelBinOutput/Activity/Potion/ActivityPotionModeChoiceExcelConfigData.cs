@@ -9,7 +9,7 @@ public class ActivityPotionModeChoiceExcelConfigData : DataObject
     public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("scoreRatio")]
-    public double ScoreRatio { get; set; }
+    public float ScoreRatio { get; set; }
 
     [JsonPropertyName("EAANBLBBFEE")]
     public int EAANBLBBFEE { get; set; }

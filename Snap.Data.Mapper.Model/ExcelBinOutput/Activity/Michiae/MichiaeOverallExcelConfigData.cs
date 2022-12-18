@@ -24,16 +24,16 @@ public class MichiaeOverallExcelConfigData : DataObject
     public int IADHIECFPKK { get; set; }
 
     [JsonPropertyName("BHLEBBFHKIF")]
-    public double BHLEBBFHKIF { get; set; }
+    public float BHLEBBFHKIF { get; set; }
 
     [JsonPropertyName("PNPHKKJFIPM")]
-    public double PNPHKKJFIPM { get; set; }
+    public float PNPHKKJFIPM { get; set; }
 
     [JsonPropertyName("DFJGPBCPPAG")]
     public int DFJGPBCPPAG { get; set; }
 
     [JsonPropertyName("FGPINKOBLMH")]
-    public double FGPINKOBLMH { get; set; }
+    public float FGPINKOBLMH { get; set; }
 
     [JsonPropertyName("IHMMHEOEIDB")]
     public int IHMMHEOEIDB { get; set; }

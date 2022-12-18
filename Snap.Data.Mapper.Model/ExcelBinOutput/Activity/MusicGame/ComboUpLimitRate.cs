@@ -6,5 +6,5 @@ public class ComboUpLimitRate : DataObject
     public int ComboUpLimit { get; set; }
 
     [JsonPropertyName("rate")]
-    public double Rate { get; set; }
+    public float Rate { get; set; }
 }

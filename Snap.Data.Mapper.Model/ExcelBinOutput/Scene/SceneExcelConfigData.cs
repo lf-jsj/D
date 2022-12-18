@@ -41,7 +41,7 @@ public class SceneExcelConfigData : DataObject
     public bool? OGPODEBAOKA { get; set; }
 
     [JsonPropertyName("KHOHJOLLACG")]
-    public double? KHOHJOLLACG { get; set; }
+    public float? KHOHJOLLACG { get; set; }
 
     [JsonPropertyName("entityAppearSorted")]
     public int? EntityAppearSorted { get; set; }

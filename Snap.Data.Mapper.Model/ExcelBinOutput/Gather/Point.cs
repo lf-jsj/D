@@ -9,20 +9,20 @@ public class Point : DataObject
     public int PointType { get; set; }
 
     [JsonPropertyName("offsetX")]
-    public double OffsetX { get; set; }
+    public float OffsetX { get; set; }
 
     [JsonPropertyName("offsetY")]
-    public double OffsetY { get; set; }
+    public float OffsetY { get; set; }
 
     [JsonPropertyName("offsetZ")]
-    public double OffsetZ { get; set; }
+    public float OffsetZ { get; set; }
 
     [JsonPropertyName("rotY")]
-    public double RotY { get; set; }
+    public float RotY { get; set; }
 
     [JsonPropertyName("rotX")]
-    public double? RotX { get; set; }
+    public float? RotX { get; set; }
 
     [JsonPropertyName("rotZ")]
-    public double? RotZ { get; set; }
+    public float? RotZ { get; set; }
 }

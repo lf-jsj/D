@@ -6,5 +6,5 @@ public class PropTypePropValue : DataObject
     public string PropType { get; set; } = default!;
 
     [JsonPropertyName("PropValue")]
-    public IList<double> PropValue { get; set; } = default!;
+    public IList<float> PropValue { get; set; } = default!;
 }

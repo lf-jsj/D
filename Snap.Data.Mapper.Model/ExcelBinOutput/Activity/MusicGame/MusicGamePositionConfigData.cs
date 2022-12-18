@@ -6,10 +6,10 @@ public class MusicGamePositionConfigData : DataObject
     public int OKNELPNBMGO { get; set; }
 
     [JsonPropertyName("EIEPFCGNNED")]
-    public IList<double> EIEPFCGNNED { get; set; } = default!;
+    public IList<float> EIEPFCGNNED { get; set; } = default!;
 
     [JsonPropertyName("DOHNADLJJFD")]
-    public double DOHNADLJJFD { get; set; }
+    public float DOHNADLJJFD { get; set; }
 
     [JsonPropertyName("LMNMJEOFJNC")]
     public int LMNMJEOFJNC { get; set; }

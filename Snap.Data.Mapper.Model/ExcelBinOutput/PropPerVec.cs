@@ -6,5 +6,5 @@ public class PropPerVec : DataObject
     public string PropType { get; set; } = default!;
 
     [JsonPropertyName("propValueVec")]
-    public IList<double> PropValueVec { get; set; } = default!;
+    public IList<float> PropValueVec { get; set; } = default!;
 }

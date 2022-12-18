@@ -6,11 +6,11 @@ public class ActivityPotionOverallExcelConfigData : DataObject
     public int ScheduleId { get; set; }
 
     [JsonPropertyName("DADKMAHIDLK")]
-    public double DADKMAHIDLK { get; set; }
+    public float DADKMAHIDLK { get; set; }
 
     [JsonPropertyName("POLCGDCODLB")]
-    public double POLCGDCODLB { get; set; }
+    public float POLCGDCODLB { get; set; }
 
     [JsonPropertyName("GKIGGJMDEGK")]
-    public double GKIGGJMDEGK { get; set; }
+    public float GKIGGJMDEGK { get; set; }
 }

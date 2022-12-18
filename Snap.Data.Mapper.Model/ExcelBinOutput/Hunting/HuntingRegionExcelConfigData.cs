@@ -6,7 +6,7 @@ public class HuntingRegionExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("centerPosList")]
-    public IList<double> CenterPosList { get; set; } = default!;
+    public IList<float> CenterPosList { get; set; } = default!;
 
     [JsonPropertyName("centerRadius")]
     public int CenterRadius { get; set; }

@@ -9,20 +9,20 @@ public class WeatherTemplateExcelConfigData : DataObject
     public string WeatherType { get; set; } = default!;
 
     [JsonPropertyName("sunnyProb")]
-    public double SunnyProb { get; set; }
+    public float SunnyProb { get; set; }
 
     [JsonPropertyName("cloudyProb")]
-    public double CloudyProb { get; set; }
+    public float CloudyProb { get; set; }
 
     [JsonPropertyName("rainProb")]
-    public double RainProb { get; set; }
+    public float RainProb { get; set; }
 
     [JsonPropertyName("thunderstormProb")]
-    public double ThunderstormProb { get; set; }
+    public float ThunderstormProb { get; set; }
 
     [JsonPropertyName("snowProb")]
-    public double? SnowProb { get; set; }
+    public float? SnowProb { get; set; }
 
     [JsonPropertyName("mistProb")]
-    public double? MistProb { get; set; }
+    public float? MistProb { get; set; }
 }

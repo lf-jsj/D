@@ -24,7 +24,7 @@ public class AvatarExcelConfigData : DataObject
     public ItemQuality QualityType { get; set; } = default!;
 
     [JsonPropertyName("chargeEfficiency")]
-    public double ChargeEfficiency { get; set; }
+    public float ChargeEfficiency { get; set; }
 
     [JsonPropertyName("combatConfigHashSuffix")]
     public HashSuffix CombatConfigHashSuffix { get; set; }
@@ -61,7 +61,7 @@ public class AvatarExcelConfigData : DataObject
     public int SkillDepotId { get; set; }
 
     [JsonPropertyName("staminaRecoverSpeed")]
-    public double StaminaRecoverSpeed { get; set; }
+    public float StaminaRecoverSpeed { get; set; }
 
     [JsonPropertyName("candSkillDepotIds")]
     public IList<int> CandSkillDepotIds { get; set; } = default!;
@@ -97,19 +97,19 @@ public class AvatarExcelConfigData : DataObject
     public Text InfoDescTextMapHash { get; set; }
 
     [JsonPropertyName("hpBase")]
-    public double HpBase { get; set; }
+    public float HpBase { get; set; }
 
     [JsonPropertyName("attackBase")]
-    public double AttackBase { get; set; }
+    public float AttackBase { get; set; }
 
     [JsonPropertyName("defenseBase")]
-    public double DefenseBase { get; set; }
+    public float DefenseBase { get; set; }
 
     [JsonPropertyName("critical")]
-    public double Critical { get; set; }
+    public float Critical { get; set; }
 
     [JsonPropertyName("criticalHurt")]
-    public double CriticalHurt { get; set; }
+    public float CriticalHurt { get; set; }
 
     [JsonPropertyName("propGrowCurves")]
     public IList<FightPropertyTypeGrowCurve> PropGrowCurves { get; set; } = default!;

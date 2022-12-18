@@ -3,22 +3,22 @@
 public class LevelSuppressExcelConfigData : DataObject
 {
     [JsonPropertyName("levelSuppressDamageCo")]
-    public double LevelSuppressDamageCo { get; set; }
+    public float LevelSuppressDamageCo { get; set; }
 
     [JsonPropertyName("levelSuppressEndure")]
-    public double LevelSuppressEndure { get; set; }
+    public float LevelSuppressEndure { get; set; }
 
     [JsonPropertyName("levelSuppressDisMinHorizontal")]
-    public double LevelSuppressDisMinHorizontal { get; set; }
+    public float LevelSuppressDisMinHorizontal { get; set; }
 
     [JsonPropertyName("levelSuppressDisMaxHorizontal")]
-    public double LevelSuppressDisMaxHorizontal { get; set; }
+    public float LevelSuppressDisMaxHorizontal { get; set; }
 
     [JsonPropertyName("levelSuppressDisMinVertical")]
-    public double LevelSuppressDisMinVertical { get; set; }
+    public float LevelSuppressDisMinVertical { get; set; }
 
     [JsonPropertyName("levelSuppressDisMaxVertical")]
-    public double LevelSuppressDisMaxVertical { get; set; }
+    public float LevelSuppressDisMaxVertical { get; set; }
 
     [JsonPropertyName("isAttackerPlayer")]
     public bool IsAttackerPlayer { get; set; }

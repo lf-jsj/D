@@ -48,5 +48,5 @@ public class FleurFairMiniGameExcelConfigData : DataObject
     public Text TipsDescTextMapHash { get; set; }
 
     [JsonPropertyName("pos")]
-    public IList<double> Pos { get; set; } = default!;
+    public IList<float> Pos { get; set; } = default!;
 }

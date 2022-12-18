@@ -6,14 +6,14 @@ public class EndureTemplateExcelConfigData : DataObject
     public string Type { get; set; } = default!;
 
     [JsonPropertyName("gaugeLength")]
-    public double GaugeLength { get; set; }
+    public float GaugeLength { get; set; }
 
     [JsonPropertyName("waneSpeed")]
-    public double WaneSpeed { get; set; }
+    public float WaneSpeed { get; set; }
 
     [JsonPropertyName("recoverTime")]
-    public double RecoverTime { get; set; }
+    public float RecoverTime { get; set; }
 
     [JsonPropertyName("endurance")]
-    public double Endurance { get; set; }
+    public float Endurance { get; set; }
 }

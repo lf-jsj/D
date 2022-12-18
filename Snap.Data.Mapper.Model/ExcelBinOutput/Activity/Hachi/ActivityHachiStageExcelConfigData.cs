@@ -42,13 +42,13 @@ public class ActivityHachiStageExcelConfigData : DataObject
     public int OpenDay { get; set; }
 
     [JsonPropertyName("LNNJDMDMDOO")]
-    public IList<double> LNNJDMDMDOO { get; set; } = default!;
+    public IList<float> LNNJDMDMDOO { get; set; } = default!;
 
     [JsonPropertyName("NAIKELIBIMP")]
-    public IList<double> NAIKELIBIMP { get; set; } = default!;
+    public IList<float> NAIKELIBIMP { get; set; } = default!;
 
     [JsonPropertyName("KIKCKGOGCOA")]
-    public IList<double> KIKCKGOGCOA { get; set; } = default!;
+    public IList<float> KIKCKGOGCOA { get; set; } = default!;
 
     [JsonPropertyName("JAIODHNIGGO")]
     public IList<int> JAIODHNIGGO { get; set; } = default!;

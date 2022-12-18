@@ -12,7 +12,7 @@ public class RadarHintExcelConfigData : DataObject
     public string Name { get; set; } = default!;
 
     [JsonPropertyName("radius")]
-    public double Radius { get; set; }
+    public float Radius { get; set; }
 
     [JsonPropertyName("effectName")]
     public string EffectName { get; set; } = default!;
@@ -24,8 +24,8 @@ public class RadarHintExcelConfigData : DataObject
     public string AudioName { get; set; } = default!;
 
     [JsonPropertyName("offsetRadius")]
-    public double? OffsetRadius { get; set; }
+    public float? OffsetRadius { get; set; }
 
     [JsonPropertyName("areaRadius")]
-    public double? AreaRadius { get; set; }
+    public float? AreaRadius { get; set; }
 }

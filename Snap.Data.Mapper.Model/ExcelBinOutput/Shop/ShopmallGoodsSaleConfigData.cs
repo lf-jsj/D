@@ -12,7 +12,7 @@ public class ShopmallGoodsSaleConfigData : DataObject
     public int INEDCGIIIEI { get; set; }
 
     [JsonPropertyName("discountRate")]
-    public double DiscountRate { get; set; }
+    public float DiscountRate { get; set; }
 
     [JsonPropertyName("ILCCMAJJGDG")]
     [JsonConverter(typeof(ParsedDateTimeConverter))]

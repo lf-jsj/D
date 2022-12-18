@@ -30,5 +30,5 @@ public class FurnitureSuiteExcelConfigData : DataObject
     public string MapIcon { get; set; } = default!;
 
     [JsonPropertyName("HMLBOCCHLLI")]
-    public double? HMLBOCCHLLI { get; set; }
+    public float? HMLBOCCHLLI { get; set; }
 }

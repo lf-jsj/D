@@ -7,6 +7,7 @@ using Snap.Data.Mapper.Pipeline.Abstraction;
 using Snap.Data.Mapper.Pipeline.Achievement;
 using Snap.Data.Mapper.Pipeline.Avatar;
 using Snap.Data.Mapper.Pipeline.GachaEvent;
+using Snap.Data.Mapper.Pipeline.Material;
 using Snap.Data.Mapper.Pipeline.Reliquary;
 using Snap.Data.Mapper.Pipeline.Weapon;
 using Snap.Data.Mapper.TextMapping;
@@ -44,6 +45,7 @@ internal class Program
                 RunPipeLine<ReliquaryPipeline>(genshinDataFolder, outputFolder, options);
                 RunPipeLine<WeaponPipeline>(genshinDataFolder, outputFolder, options);
                 RunPipeLine<GachaEventPipeline>(genshinDataFolder, outputFolder, options);
+                RunPipeLine<MaterialPipeline>(genshinDataFolder, outputFolder, options);
 
                 Console.WriteLine("All Pipelines Completed.");
 

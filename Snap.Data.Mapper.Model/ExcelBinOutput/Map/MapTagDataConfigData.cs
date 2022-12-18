@@ -24,10 +24,10 @@ public class MapTagDataConfigData : DataObject
     public IList<int> SceneIdList { get; set; } = default!;
 
     [JsonPropertyName("PLJNNLDLDME")]
-    public double? PLJNNLDLDME { get; set; }
+    public float? PLJNNLDLDME { get; set; }
 
     [JsonPropertyName("FOIAKKOFLPB")]
-    public double? FOIAKKOFLPB { get; set; }
+    public float? FOIAKKOFLPB { get; set; }
 
     [JsonPropertyName("unlockByDefault")]
     public bool? UnlockByDefault { get; set; }

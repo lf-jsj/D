@@ -14,5 +14,5 @@ public class MonsterMultiPlayerExcelConfigData : DataObject
     public IList<int> EndureNum { get; set; } = default!;
 
     [JsonPropertyName("ElementShield")]
-    public IList<double> ElementShield { get; set; } = default!;
+    public IList<float> ElementShield { get; set; } = default!;
 }

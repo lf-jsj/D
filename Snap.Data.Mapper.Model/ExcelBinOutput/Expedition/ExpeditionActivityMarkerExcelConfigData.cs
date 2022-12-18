@@ -5,10 +5,10 @@ public class ExpeditionActivityMarkerExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("posX")]
-    public double PosX { get; set; }
+    public float PosX { get; set; }
 
     [JsonPropertyName("posY")]
-    public double PosY { get; set; }
+    public float PosY { get; set; }
 
     [JsonPropertyName("pictureHashPre")]
     public HashSuffix PictureHashPre { get; set; }

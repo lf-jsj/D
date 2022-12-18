@@ -18,7 +18,7 @@ public class AvatarSkillExcelConfigData : DataObject
     public string SkillIcon { get; set; } = string.Empty;
 
     [JsonPropertyName("costStamina")]
-    public double CostStamina { get; set; }
+    public float CostStamina { get; set; }
 
     [JsonPropertyName("maxChargeNum")]
     public int MaxChargeNum { get; set; }
@@ -27,7 +27,7 @@ public class AvatarSkillExcelConfigData : DataObject
     public string LockShape { get; set; } = default!;
 
     [JsonPropertyName("lockWeightParams")]
-    public IList<double> LockWeightParams { get; set; } = default!;
+    public IList<float> LockWeightParams { get; set; } = default!;
 
     [JsonPropertyName("isAttackCameraLock")]
     public bool IsAttackCameraLock { get; set; }
@@ -39,7 +39,7 @@ public class AvatarSkillExcelConfigData : DataObject
     public string GlobalValueKey { get; set; } = string.Empty;
 
     [JsonPropertyName("cdTime")]
-    public double? CdTime { get; set; }
+    public float? CdTime { get; set; }
 
     [JsonPropertyName("triggerID")]
     public int? TriggerID { get; set; }
@@ -60,7 +60,7 @@ public class AvatarSkillExcelConfigData : DataObject
     public string? CostElemType { get; set; }
 
     [JsonPropertyName("costElemVal")]
-    public double? CostElemVal { get; set; }
+    public float? CostElemVal { get; set; }
 
     [JsonPropertyName("ignoreCDMinusRatio")]
     public bool? IgnoreCDMinusRatio { get; set; }
@@ -81,7 +81,7 @@ public class AvatarSkillExcelConfigData : DataObject
     public int? CdSlot { get; set; }
 
     [JsonPropertyName("energyMin")]
-    public double? EnergyMin { get; set; }
+    public float? EnergyMin { get; set; }
 
     [JsonPropertyName("APONDIJMMMB")]
     public int? APONDIJMMMB { get; set; }

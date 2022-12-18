@@ -29,7 +29,7 @@ public class AvatarTalentExcelConfigData : DataObject
     public IList<PropTypeValue> AddProps { get; set; } = default!;
 
     [JsonPropertyName("paramList")]
-    public IList<double> ParamList { get; set; } = default!;
+    public IList<float> ParamList { get; set; } = default!;
 
     [JsonPropertyName("prevTalent")]
     public int? PrevTalent { get; set; }

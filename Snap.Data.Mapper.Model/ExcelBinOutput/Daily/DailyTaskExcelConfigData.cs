@@ -51,7 +51,7 @@ public class DailyTaskExcelConfigData : DataObject
     public Text TargetTextMapHash { get; set; }
 
     [JsonPropertyName("radarRadius")]
-    public double RadarRadius { get; set; }
+    public float RadarRadius { get; set; }
 
     [JsonPropertyName("finishParam1")]
     public int? FinishParam1 { get; set; }

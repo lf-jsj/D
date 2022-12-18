@@ -50,13 +50,13 @@ public class MpPlayGroupExcelConfigData : DataObject
     public int PrepareTime { get; set; }
 
     [JsonPropertyName("centerPosList")]
-    public IList<double> CenterPosList { get; set; } = default!;
+    public IList<float> CenterPosList { get; set; } = default!;
 
     [JsonPropertyName("centerRadius")]
     public int CenterRadius { get; set; }
 
     [JsonPropertyName("targetPosList")]
-    public IList<double> TargetPosList { get; set; } = default!;
+    public IList<float> TargetPosList { get; set; } = default!;
 
     [JsonPropertyName("reviseId")]
     public int ReviseId { get; set; }

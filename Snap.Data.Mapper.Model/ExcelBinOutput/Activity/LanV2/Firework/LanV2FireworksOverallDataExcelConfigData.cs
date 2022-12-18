@@ -12,10 +12,10 @@ public class LanV2FireworksOverallDataExcelConfigData : DataObject
     public IList<MJJDNALGLOJLPICMNCMNCG> IFACAFEIHLB { get; set; } = default!;
 
     [JsonPropertyName("NEEEOBDOCPP")]
-    public double NEEEOBDOCPP { get; set; }
+    public float NEEEOBDOCPP { get; set; }
 
     [JsonPropertyName("HGFNEAPOIOL")]
-    public double HGFNEAPOIOL { get; set; }
+    public float HGFNEAPOIOL { get; set; }
 
     [JsonPropertyName("pushTipsId")]
     public int PushTipsId { get; set; }

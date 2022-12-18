@@ -27,7 +27,7 @@ public class IrodoriChessCardExcelConfigData : DataObject
     public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("descParam")]
-    public IList<double> DescParam { get; set; } = default!;
+    public IList<float> DescParam { get; set; } = default!;
 
     [JsonPropertyName("HPKKLACDOAL")]
     public IList<JNFDJJCLCBAGMHNKGFHLMCADCOECLELMG> HPKKLACDOAL { get; set; } = default!;

@@ -20,7 +20,7 @@ public class CityConfigData : DataObject
     public int MapPosY { get; set; }
 
     [JsonPropertyName("zoomForExploration")]
-    public double ZoomForExploration { get; set; }
+    public float ZoomForExploration { get; set; }
 
     [JsonPropertyName("adventurePointId")]
     public int AdventurePointId { get; set; }

@@ -5,5 +5,5 @@ public class FlightActivityDayExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("pos")]
-    public IList<double> Pos { get; set; } = default!;
+    public IList<float> Pos { get; set; } = default!;
 }

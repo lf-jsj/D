@@ -27,7 +27,7 @@ public class TeamResonanceExcelConfigData : DataObject
     public IList<DataObject> AddProps { get; set; } = default!;
 
     [JsonPropertyName("paramList")]
-    public IList<double> ParamList { get; set; } = default!;
+    public IList<float> ParamList { get; set; } = default!;
 
     [JsonPropertyName("waterAvatarCount")]
     public int? WaterAvatarCount { get; set; }

@@ -6,10 +6,10 @@ public class RegionSearchRegionExcelConfigData : DataObject
     public int Id { get; set; }
 
     [JsonPropertyName("regionCenter")]
-    public IList<double> RegionCenter { get; set; } = default!;
+    public IList<float> RegionCenter { get; set; } = default!;
 
     [JsonPropertyName("regionRadius")]
-    public double RegionRadius { get; set; }
+    public float RegionRadius { get; set; }
 
     [JsonPropertyName("oneoffGroupList")]
     public IList<int> OneoffGroupList { get; set; } = default!;

@@ -17,5 +17,5 @@ public class ReliquaryAffixExcelConfigData : DataObject
     public FightProperty PropType { get; set; } = default!;
 
     [JsonPropertyName("propValue")]
-    public double PropValue { get; set; }
+    public float PropValue { get; set; }
 }

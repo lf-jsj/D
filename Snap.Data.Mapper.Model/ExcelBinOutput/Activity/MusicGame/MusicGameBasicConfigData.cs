@@ -18,22 +18,22 @@ public class MusicGameBasicConfigData : DataObject
     public int HEPAKGHLEKM { get; set; }
 
     [JsonPropertyName("KEFFLFAENIO")]
-    public double KEFFLFAENIO { get; set; }
+    public float KEFFLFAENIO { get; set; }
 
     [JsonPropertyName("LCAPNKKIOHG")]
     public int LCAPNKKIOHG { get; set; }
 
     [JsonPropertyName("successPrePoint")]
-    public double SuccessPrePoint { get; set; }
+    public float SuccessPrePoint { get; set; }
 
     [JsonPropertyName("successLatePoint")]
-    public double SuccessLatePoint { get; set; }
+    public float SuccessLatePoint { get; set; }
 
     [JsonPropertyName("scaleTime")]
     public int ScaleTime { get; set; }
 
     [JsonPropertyName("scaleRange")]
-    public double ScaleRange { get; set; }
+    public float ScaleRange { get; set; }
 
     [JsonPropertyName("scoreLevelList")]
     public IList<int> ScoreLevelList { get; set; } = default!;

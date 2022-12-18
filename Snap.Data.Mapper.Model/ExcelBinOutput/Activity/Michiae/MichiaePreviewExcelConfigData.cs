@@ -24,10 +24,10 @@ public class MichiaePreviewExcelConfigData : DataObject
     public int EBDIGCAOGBG { get; set; }
 
     [JsonPropertyName("CMALDGFOBPO")]
-    public double CMALDGFOBPO { get; set; }
+    public float CMALDGFOBPO { get; set; }
 
     [JsonPropertyName("AFHBNOEHJFC")]
-    public double AFHBNOEHJFC { get; set; }
+    public float AFHBNOEHJFC { get; set; }
 
     [JsonPropertyName("ENAAPPJHAHC")]
     public int ENAAPPJHAHC { get; set; }

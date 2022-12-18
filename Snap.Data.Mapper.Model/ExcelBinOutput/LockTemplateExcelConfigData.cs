@@ -6,11 +6,11 @@ public class LockTemplateExcelConfigData : DataObject
     public string Type { get; set; } = default!;
 
     [JsonPropertyName("range")]
-    public double Range { get; set; }
+    public float Range { get; set; }
 
     [JsonPropertyName("normalPri")]
-    public double? NormalPri { get; set; }
+    public float? NormalPri { get; set; }
 
     [JsonPropertyName("combatPri")]
-    public double? CombatPri { get; set; }
+    public float? CombatPri { get; set; }
 }

@@ -201,7 +201,7 @@ public class AvatarGenerator
         };
     }
 
-    public IEnumerable<double> GetPropertyValues(
+    public IEnumerable<float> GetPropertyValues(
         AvatarExcelConfigData item,
         int level,
         int promoteIndex,
@@ -218,7 +218,7 @@ public class AvatarGenerator
                 // seek curve in avatarCurves by curve name
                 TypeArithValue? curve = avatarCurves.First(x => x.Level == level).CurveInfos.FirstOrDefault(x => x.Type == curveName);
 
-                double baseValue = GetBaseValueByFightProperty(item, p);
+                float baseValue = GetBaseValueByFightProperty(item, p);
                 if (curve != null)
                 {
                     baseValue *= curve.Value;
@@ -233,7 +233,7 @@ public class AvatarGenerator
             });
     }
 
-    public static double GetBaseValueByFightProperty(AvatarExcelConfigData item, FightProperty prop)
+    public static float GetBaseValueByFightProperty(AvatarExcelConfigData item, FightProperty prop)
     {
         return prop switch
         {

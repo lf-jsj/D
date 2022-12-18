@@ -30,13 +30,13 @@ public class RoguelikeCardExcelConfigData : DataObject
     public Text ABNJNLOOJMJ { get; set; }
 
     [JsonPropertyName("descParamList")]
-    public IList<double> DescParamList { get; set; } = default!;
+    public IList<float> DescParamList { get; set; } = default!;
 
     [JsonPropertyName("PBLMHJIPEHN")]
     public IList<bool> PBLMHJIPEHN { get; set; } = default!;
 
     [JsonPropertyName("GKABOOAPMJP")]
-    public IList<double> GKABOOAPMJP { get; set; } = default!;
+    public IList<float> GKABOOAPMJP { get; set; } = default!;
 
     [JsonPropertyName("EDMDDHJJKAN")]
     public string EDMDDHJJKAN { get; set; } = default!;

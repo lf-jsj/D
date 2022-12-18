@@ -47,8 +47,8 @@ public class CoopChapterExcelConfigData : DataObject
     public string PointGraphPath { get; set; } = default!;
 
     [JsonPropertyName("graphXRatio")]
-    public double GraphXRatio { get; set; }
+    public float GraphXRatio { get; set; }
 
     [JsonPropertyName("graphYRatio")]
-    public double GraphYRatio { get; set; }
+    public float GraphYRatio { get; set; }
 }

@@ -27,7 +27,7 @@ public class ActivitySpiceStageDataExcelConfigData : DataObject
     public Text DescTextMapHash { get; set; }
 
     [JsonPropertyName("AOPLOMIFMMC")]
-    public double AOPLOMIFMMC { get; set; }
+    public float AOPLOMIFMMC { get; set; }
 
     [JsonPropertyName("times")]
     public int Times { get; set; }

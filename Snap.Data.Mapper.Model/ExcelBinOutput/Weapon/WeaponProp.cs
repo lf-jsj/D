@@ -9,7 +9,7 @@ public class WeaponProp : DataObject
     public FightProperty PropType { get; set; } = default!;
 
     [JsonPropertyName("initValue")]
-    public double InitValue { get; set; }
+    public float InitValue { get; set; }
 
     [JsonPropertyName("type")]
     public string Type { get; set; } = default!;

@@ -5,22 +5,22 @@ public class LanV2ProjectionExcelConfigData : DataObject
     public int ScheduleId { get; set; }
 
     [JsonPropertyName("LJLBIHLNKJD")]
-    public double LJLBIHLNKJD { get; set; }
+    public float LJLBIHLNKJD { get; set; }
 
     [JsonPropertyName("NBHDLLLGKNK")]
-    public double NBHDLLLGKNK { get; set; }
+    public float NBHDLLLGKNK { get; set; }
 
     [JsonPropertyName("PILANAKMHHB")]
-    public double PILANAKMHHB { get; set; }
+    public float PILANAKMHHB { get; set; }
 
     [JsonPropertyName("OKDEMFMNLCK")]
-    public double OKDEMFMNLCK { get; set; }
+    public float OKDEMFMNLCK { get; set; }
 
     [JsonPropertyName("PLAALIKOMJE")]
-    public double PLAALIKOMJE { get; set; }
+    public float PLAALIKOMJE { get; set; }
 
     [JsonPropertyName("FMOPOMLGLJE")]
-    public double FMOPOMLGLJE { get; set; }
+    public float FMOPOMLGLJE { get; set; }
 
     [JsonPropertyName("PBKGAGODOLI")]
     public int PBKGAGODOLI { get; set; }
