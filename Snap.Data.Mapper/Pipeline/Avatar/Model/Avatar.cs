@@ -20,4 +20,5 @@ public class Avatar
     public SkillDepot SkillDepot { get; set; } = default!;
     public FetterInfo FetterInfo { get; set; } = default!;
     public IEnumerable<Costume> Costumes { get; set; } = default!;
+    public List<int> CultivationItems { get; set; } = default!;
 }

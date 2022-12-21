@@ -4,7 +4,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Mapper Started.");
+        Console.WriteLine("AssetMover Started.");
         Console.WriteLine("Please input GenshinAsset Folder Path:");
 
         if (Console.ReadLine() is string assetFolder)
@@ -13,28 +13,37 @@ internal class Program
 
             if (Console.ReadLine() is string staticFolder)
             {
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "Skill"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "AchievementIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "AvatarIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "ChapterIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "EmotionIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "EquipIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarImg"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "GachaEquipIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "IconElement"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "ItemIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "LoadingPic"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterSmallIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardPic"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "RelicIcon"));
-                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "Talent"));
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "Skill")); // Skill_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "AchievementIcon")); // UI_AchievementIcon_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "AvatarIcon")); // UI_AvatarIcon_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "AvatarCard")); // UI_AvatarIcon_ _Card
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "ChapterIcon")); // UI_ChapterIcon_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "EmotionIcon")); // UI_EmotionIcon
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "EquipIcon")); // UI_EquipIcon
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarIcon")); // UI_Gacha_AvatarIcon_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "GachaAvatarImg")); // UI_Gacha_AvatarImg_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "GachaEquipIcon")); // UI_Gacha_EquipIcon_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "GcgCardFace")); // UI_Gcg_CardFace_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "IconElement")); // UI_Icon_Element_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "ItemIcon")); // UI_ItemIcon_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "LoadingPic")); // UI_LoadingPic_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterIcon")); // UI_MonsterIcon_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "MonsterSmallIcon")); // UI_MonsterSmallIcon_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardIcon")); // UI_NameCardIcon_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "NameCardPic")); // UI_NameCardPic_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "RelicIcon")); // UI_RelicIcon_
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "Talent")); // UI_Talent_
 
-                foreach (string file in Directory.GetFiles(assetFolder))
+                foreach (string file in Directory.EnumerateFiles(assetFolder, "*.png", SearchOption.AllDirectories))
                 {
                     string fileName = Path.GetFileName(file);
+
+                    if (fileName.StartsWith("UI_QUALITY_"))
+                    {
+                        File.Copy(file, Path.Combine(staticFolder, "Bg", TrimBlkName(fileName)), true);
+                        continue;
+                    }
+
                     if (fileName.StartsWith("Skill_"))
                     {
                         File.Copy(file, Path.Combine(staticFolder, "Skill", TrimBlkName(fileName)), true);
@@ -47,10 +56,22 @@ internal class Program
                         continue;
                     }
 
-                    if (fileName.StartsWith("UI_AvatarIcon_") && (!fileName.Contains("_Card")) /*&& (!fileName.Contains("Costume"))*/)
+                    if (fileName.StartsWith("UI_AvatarIcon_"))
                     {
-                        File.Copy(file, Path.Combine(staticFolder, "AvatarIcon", TrimBlkName(fileName)), true);
-                        continue;
+                        if (fileName.Contains("_Card"))
+                        {
+                            File.Copy(file, Path.Combine(staticFolder, "AvatarCard", TrimBlkName(fileName)), true);
+                            continue;
+                        }
+                        else
+                        {
+                            string iconFile = Path.Combine(staticFolder, "AvatarIcon", TrimBlkName(fileName));
+                            if (!File.Exists(iconFile))
+                            {
+                                File.Copy(file, iconFile, true);
+                            }
+                            continue;
+                        }
                     }
 
                     if (fileName.StartsWith("UI_ChapterIcon_"))
@@ -72,6 +93,16 @@ internal class Program
                         {
                             File.Copy(file, iconFile, false);
                         }
+                        else
+                        {
+                            FileInfo iconFileInfo = new(iconFile);
+                            FileInfo fileInfo = new(file);
+
+                            if(fileInfo.Length >= iconFileInfo.Length)
+                            {
+                                File.Copy(file, iconFile, true);
+                            }
+                        }
                         continue;
                     }
 
@@ -90,6 +121,26 @@ internal class Program
                     if (fileName.StartsWith("UI_Gacha_EquipIcon_"))
                     {
                         File.Copy(file, Path.Combine(staticFolder, "GachaEquipIcon", TrimBlkName(fileName)), true);
+                        continue;
+                    }
+
+                    if (fileName.StartsWith("UI_Gcg_CardFace_") && !fileName.Contains("_Golden"))
+                    {
+                        string iconFile = Path.Combine(staticFolder, "GcgCardFace", TrimBlkName(fileName));
+                        if (!File.Exists(iconFile))
+                        {
+                            File.Copy(file, iconFile, false);
+                        }
+                        else
+                        {
+                            FileInfo iconFileInfo = new(iconFile);
+                            FileInfo fileInfo = new(file);
+
+                            if (fileInfo.Length >= iconFileInfo.Length)
+                            {
+                                File.Copy(file, iconFile, true);
+                            }
+                        }
                         continue;
                     }
 
@@ -136,12 +187,6 @@ internal class Program
                     if (fileName.StartsWith("UI_NameCardPic_"))
                     {
                         File.Copy(file, Path.Combine(staticFolder, "NameCardPic", TrimBlkName(fileName)), true);
-                        continue;
-                    }
-
-                    if (fileName.StartsWith("UI_QUALITY_"))
-                    {
-                        File.Copy(file, Path.Combine(staticFolder, "Bg", TrimBlkName(fileName)), true);
                         continue;
                     }
 

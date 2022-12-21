@@ -129,6 +129,7 @@ public class AvatarGenerator
                 Sort = avatarCodex[avatar.Id].SortId,
                 Costumes = GetCostumes(avatar),
                 FetterInfo = GetFetterInfoById(avatar.Id, fettersMap, fetterStoryMap),
+                CultivationItems = GetCultivationItems(avatarPromoteMap[avatar.AvatarPromoteId].ToList(), proudSkillsMap[skillDepot.Skills.First().GroupId].ElementAt(9))
             };
 
             resultsCache.Add(result);
@@ -268,35 +269,17 @@ public class AvatarGenerator
         });
 
         CookBonusExcelConfigData? cookBonusData = cookBonusMap.GetValueOrDefault(id);
-        CookBonus? cookBonus = null;
+        CookBonus2? cookBonus2 = null;
         if (cookBonusData != null)
         {
             CookRecipeExcelConfigData recipeData = cookRecipeMap[cookBonusData.RecipeId];
             MaterialExcelConfigData materialData = materialMap[cookBonusData.ParamVec[0]];
 
-            cookBonus = new()
+            cookBonus2 = new()
             {
-                OriginName = recipeData.NameTextMapHash.Value,
-                OriginDescription = recipeData.DescTextMapHash.Value,
-                OriginIcon = recipeData.Icon,
-                Name = materialData.NameTextMapHash.Value,
-                Description = materialData.DescTextMapHash.Value,
-                EffectDescription = materialData.EffectDescTextMapHash.Value,
-                Icon = materialData.Icon,
-                RankLevel = materialData.RankLevel,
-                InputList = recipeData.InputVec.Where(x => x.Count > 0).Select(idCount =>
-                {
-                    MaterialExcelConfigData material = materialMap[idCount.Id ?? 0];
-
-                    return new Item
-                    {
-                        Id = idCount.Id ?? 0,
-                        Name = material.NameTextMapHash.Value,
-                        Icon = material.Icon,
-                        RankLevel = material.RankLevel,
-                        Count = idCount.Count,
-                    };
-                }).ToList(),
+                OriginItemId = recipeData.QualityOutputVec[1].Id ?? 0,
+                ItemId = cookBonusData.ParamVec[0],
+                InputList = recipeData.InputVec.Where(x => x.Count > 0).Select(idCount => idCount.Id ?? 0).ToList(),
             };
         }
         
@@ -319,7 +302,7 @@ public class AvatarGenerator
             CvJapanese = fetterData.CvJapaneseTextMapHash.Value,
             CvEnglish = fetterData.CvEnglishTextMapHash.Value,
             CvKorean = fetterData.CvKoreanTextMapHash.Value,
-            CookBonus = cookBonus,
+            CookBonus2 = cookBonus2,
             Fetters = fetters,
             FetterStories = fetterStories,
         };
@@ -426,5 +409,23 @@ public class AvatarGenerator
                 Icon = c.IconName == string.Empty ? null : c.IconName,
                 SideIcon = c.SideIconName == string.Empty ? null : c.SideIconName,
             });
+    }
+
+    private static List<int> GetCultivationItems(List<AvatarPromoteExcelConfigData> promoteData, ProudSkillExcelConfigData level10Data)
+    {
+        List<int> items = new();
+
+        foreach(AvatarPromoteExcelConfigData data in promoteData)
+        {
+            if(data.PromoteLevel == 6)
+            {
+                items.AddRange(data.CostItems.Select(i => i.Id ?? 0));
+            }
+        }
+
+        items.Add(level10Data.CostItems[0].Id ?? 0);
+        items.Add(level10Data.CostItems[2].Id ?? 0);
+
+        return items;
     }
 }

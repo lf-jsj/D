@@ -2,14 +2,7 @@
 
 public class AvatarCostumeExcelConfigData : DataObject
 {
-    /// <summary>
-    /// GMECDCKBFJM
-    /// BDFMGMADMGC
-    /// EEFPIKPJIBC
-    /// OGKFGGNLLDG
-    /// HPECGIGEJKG
-    /// </summary>
-    [JsonPropertyName("HPECGIGEJKG")]
+    [JsonPropertyName("EMHIFNAHCOA")]
     public int Id { get; set; }
 
     [JsonPropertyName("nameTextMapHash")]
@@ -18,15 +11,7 @@ public class AvatarCostumeExcelConfigData : DataObject
     [JsonPropertyName("descTextMapHash")]
     public Text DescTextMapHash { get; set; }
 
-    /// <summary>
-    /// Important! used to linq with avatar
-    /// FMAJGGBGKKN
-    /// PDBPABLOMMA
-    /// MJIEAHCHGFC
-    /// AKOANLMAFDD
-    /// POLBJDFCJMD
-    /// </summary>
-    [JsonPropertyName("POLBJDFCJMD")]
+    [JsonPropertyName("DHIPGFMDBEN")]
     public int AvatarId { get; set; }
 
     [JsonPropertyName("itemId")]
@@ -35,14 +20,7 @@ public class AvatarCostumeExcelConfigData : DataObject
     [JsonPropertyName("jsonName")]
     public string JsonName { get; set; } = default!;
 
-    /// <summary>
-    /// FOINIGFDKIP
-    /// MKPEEANCLCO
-    /// AEKONDDFAHF
-    /// IFIODPDADEI
-    /// GAKJDLMBFHJ
-    /// </summary>
-    [JsonPropertyName("GAKJDLMBFHJ")]
+    [JsonPropertyName("NGDIFAOMOHA")]
     public string IconName { get; set; } = default!;
 
     [JsonPropertyName("sideIconName")]

@@ -25,6 +25,13 @@ public class CookBonus
     public List<Item> InputList { get; set; } = default!;
 }
 
+public class CookBonus2
+{
+    public int OriginItemId { get; set; }
+    public int ItemId { get; set; }
+    public List<int> InputList { get; set; } = default!;
+}
+
 public class Item
 {
     public int Id { get; set; }
