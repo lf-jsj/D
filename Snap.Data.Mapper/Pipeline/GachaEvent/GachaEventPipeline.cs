@@ -842,7 +842,7 @@ internal class GachaEventPipeline : IPipeline
             From = new(2022, 12, 27, 18, 0, 0, UTC8),
             To = new(2023, 1, 17, 14, 59, 59, UTC8)
         },
-        new("3.3","苍流踏花", GachaType.AvatarEventWish)
+        new("3.3","苍流踏花", GachaType.AvatarEventWish2)
         {
             UpOrangeList = new() { "神里绫人" },
             UpPurpleList = new() { "罗莎莉亚", "早柚", "九条裟罗" },
