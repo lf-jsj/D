@@ -858,6 +858,32 @@ internal class GachaEventPipeline : IPipeline
             From = new(2022, 12, 27, 18, 0, 0, UTC8),
             To = new(2023, 1, 17, 14, 59, 59, UTC8)
         },
+
+        //3.4上半
+        new("3.4","敕诫枢谋", GachaType.AvatarEventWish)
+        {
+            UpOrangeList = new() { "艾尔海森" },
+            UpPurpleList = new() { "瑶瑶", "云堇", "辛焱" },
+            Banner = "https://upload-bbs.miyoushe.com/upload/2023/01/13/75276539/5648e99e80ec87d0b3977378a38e021f_4848053752090849514.jpg",
+            From = new(2023, 1, 18, 6, 0, 0, UTC8),
+            To = new(2023, 2, 7, 17, 59, 59, UTC8)
+        },
+        new("3.4","烟火之邀", GachaType.AvatarEventWish2)
+        {
+            UpOrangeList = new() { "魈" },
+            UpPurpleList = new() { "瑶瑶", "云堇", "辛焱" },
+            Banner = "https://upload-bbs.miyoushe.com/upload/2023/01/13/75276539/eb26f86e8eb62c528126f13f998658c2_233357724180408195.jpg",
+            From = new(2023, 1, 18, 6, 0, 0, UTC8),
+            To = new(2023, 2, 7, 17, 59, 59, UTC8)
+        },
+        new("3.4","神铸赋形", GachaType.WeaponEventWish)
+        {
+            UpOrangeList = new() { "裁叶萃光", "和璞鸢" },
+            UpPurpleList = new() { "笛剑", "流浪乐章", "雨裁", "祭礼弓", "千岩长枪" },
+            Banner = "https://upload-bbs.miyoushe.com/upload/2023/01/13/75276539/cf6b3bd2e382a9b90370f21ead517d43_2400596938038719618.jpg",
+            From = new(2023, 1, 18, 6, 0, 0, UTC8),
+            To = new(2023, 2, 7, 17, 59, 59, UTC8)
+        },
     };
 
     public void Run(string genshinDataFolder, string outputFolder, JsonSerializerOptions options)
