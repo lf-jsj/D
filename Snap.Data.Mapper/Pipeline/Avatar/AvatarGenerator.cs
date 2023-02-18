@@ -257,15 +257,15 @@ public class AvatarGenerator
         IEnumerable<Fetter> fetters = fettersMap[id].Select(x => {
             return new Fetter
             {
-                Title = x.VoiceTitleTextMapHash.Value,
-                Context = x.VoiceFileTextTextMapHash.Value.Replace(@"\n", "\n"),
+                Title = x.VoiceTitleTextMapHash.UnescapedValue,
+                Context = x.VoiceFileTextTextMapHash.UnescapedValue.Replace(@"\n", "\n"),
             };
         });
 
         IEnumerable<Fetter> fetterStories = fetterStoryMap[id].Select(x => new Fetter
         {
-            Title = x.StoryTitleTextMapHash.Value,
-            Context = x.StoryContextTextMapHash.Value.Replace(@"\n", "\n"),
+            Title = x.StoryTitleTextMapHash.UnescapedValue,
+            Context = x.StoryContextTextMapHash.UnescapedValue.Replace(@"\n", "\n"),
         });
 
         CookBonusExcelConfigData? cookBonusData = cookBonusMap.GetValueOrDefault(id);

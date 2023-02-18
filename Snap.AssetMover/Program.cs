@@ -17,6 +17,7 @@ internal class Program
                 _ = Directory.CreateDirectory(Path.Combine(staticFolder, "AchievementIcon")); // UI_AchievementIcon_
                 _ = Directory.CreateDirectory(Path.Combine(staticFolder, "AvatarIcon")); // UI_AvatarIcon_
                 _ = Directory.CreateDirectory(Path.Combine(staticFolder, "AvatarCard")); // UI_AvatarIcon_ _Card
+                _ = Directory.CreateDirectory(Path.Combine(staticFolder, "Costume")); // UI_Costume_
                 _ = Directory.CreateDirectory(Path.Combine(staticFolder, "ChapterIcon")); // UI_ChapterIcon_
                 _ = Directory.CreateDirectory(Path.Combine(staticFolder, "EmotionIcon")); // UI_EmotionIcon
                 _ = Directory.CreateDirectory(Path.Combine(staticFolder, "EquipIcon")); // UI_EquipIcon
@@ -65,13 +66,15 @@ internal class Program
                         }
                         else
                         {
-                            string iconFile = Path.Combine(staticFolder, "AvatarIcon", TrimBlkName(fileName));
-                            if (!File.Exists(iconFile))
-                            {
-                                File.Copy(file, iconFile, true);
-                            }
+                            File.Copy(file, Path.Combine(staticFolder, "AvatarIcon", TrimBlkName(fileName)), true);
                             continue;
                         }
+                    }
+
+                    if (fileName.StartsWith("UI_Costume_"))
+                    {
+                        File.Copy(file, Path.Combine(staticFolder, "Costume", TrimBlkName(fileName)), true);
+                        continue;
                     }
 
                     if (fileName.StartsWith("UI_ChapterIcon_"))
@@ -88,21 +91,7 @@ internal class Program
 
                     if (fileName.StartsWith("UI_EquipIcon"))
                     {
-                        string iconFile = Path.Combine(staticFolder, "EquipIcon", TrimBlkName(fileName));
-                        if (!File.Exists(iconFile))
-                        {
-                            File.Copy(file, iconFile, false);
-                        }
-                        else
-                        {
-                            FileInfo iconFileInfo = new(iconFile);
-                            FileInfo fileInfo = new(file);
-
-                            if(fileInfo.Length >= iconFileInfo.Length)
-                            {
-                                File.Copy(file, iconFile, true);
-                            }
-                        }
+                        File.Copy(file, Path.Combine(staticFolder, "EquipIcon", TrimBlkName(fileName)), true);
                         continue;
                     }
 
@@ -124,33 +113,9 @@ internal class Program
                         continue;
                     }
 
-                    if (fileName.StartsWith("UI_Gcg_CardFace_") && !fileName.Contains("_Golden"))
-                    {
-                        string iconFile = Path.Combine(staticFolder, "GcgCardFace", TrimBlkName(fileName));
-                        if (!File.Exists(iconFile))
-                        {
-                            File.Copy(file, iconFile, false);
-                        }
-                        else
-                        {
-                            FileInfo iconFileInfo = new(iconFile);
-                            FileInfo fileInfo = new(file);
-
-                            if (fileInfo.Length >= iconFileInfo.Length)
-                            {
-                                File.Copy(file, iconFile, true);
-                            }
-                        }
-                        continue;
-                    }
-
                     if (fileName.StartsWith("UI_Icon_Element_"))
                     {
-                        string iconFile = Path.Combine(staticFolder, "IconElement", TrimBlkName(fileName));
-                        if (!File.Exists(iconFile))
-                        {
-                            File.Copy(file, iconFile, false);
-                        }
+                        File.Copy(file, Path.Combine(staticFolder, "IconElement", TrimBlkName(fileName)), true);
                         continue;
                     }
 

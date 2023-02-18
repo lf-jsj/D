@@ -13,6 +13,21 @@ public struct Text
 
     public ulong Hash { get; }
 
+    public string UnescapedValue
+    { 
+        get
+        {
+            if (Value.StartsWith('#') && Value.Contains("REALNAME"))
+            {
+                return Value[1..].Replace("{REALNAME[ID(1)]}", "流浪者");
+            }
+            else
+            {
+                return Value;
+            }
+        }
+    }
+
     public string Value { get; }
 
     public override string ToString()

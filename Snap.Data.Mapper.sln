@@ -18,7 +18,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snap.Data.Mapper", "Snap.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snap.AssetMover", "Snap.AssetMover\Snap.AssetMover.csproj", "{62A44301-6652-4347-9240-232CA6410DC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snap.AssetClassifer", "Snap.AssetClassifer\Snap.AssetClassifer.csproj", "{A1D75898-3224-4F5F-A7A5-120B1C1DE979}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Snap.AssetClassifer", "Snap.AssetClassifer\Snap.AssetClassifer.csproj", "{A1D75898-3224-4F5F-A7A5-120B1C1DE979}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
